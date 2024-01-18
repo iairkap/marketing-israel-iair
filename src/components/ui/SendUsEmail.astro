@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string;
+  email: string;
+}
+const { title, email } = Astro.props;
+---
+
+<article class="general-container">
+  <span class="title"> Send us an Email</span>
+  <h6 class="email">{email}</h6>
+</article>
+
+<style>
+  .general-container {
+    color: white;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+  .email {
+    font-size: 1rem;
+    font-weight: 900;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    padding-bottom: 5px; /* Adjust this value to increase or decrease the space */
+  }
+
+  .email::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: gray; /* Always visible underline color */
+  }
+
+  .email::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: white; /* Underline color during hover */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .email:hover::after {
+    transform: scaleX(1);
+  }
+</style>

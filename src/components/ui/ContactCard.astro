@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+import linkedinicon from "./linkedinIcon.svg";
+interface Props {
+  picture: string | ImageMetadata;
+  name: string;
+  title: string;
+  alt: string | ImageMetadata;
+  href: string | URL;
+}
+
+const { picture, name, title, href } = Astro.props;
+---
+
+<article class="general-container">
+  <a href={href} target="_blank" class="general-container">
+    <div class="picture-container">
+      <Image src={picture} alt={name} width={80} height={80} />
+      <Image class="linkedin-icon" src={linkedinicon} alt="LinkedIn" />
+      <!-- Add this line -->
+    </div>
+    <div class="information">
+      <h2>{name}</h2>
+      <h4>{title}</h4>
+    </div>
+  </a>
+</article>
+
+<style>
+  h2 {
+    color: white;
+    font-size: 1.5rem;
+  }
+  h4 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .general-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .picture-container {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+  }
+
+  .picture-container img {
+    border-radius: 50%;
+  }
+  .picture-container {
+    position: relative; /* Add this line */
+  }
+
+  .linkedin-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    border-radius: 50%; /* Makes the icon round */
+  }
+</style>
