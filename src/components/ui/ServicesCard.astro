@@ -13,8 +13,10 @@ const { servicesTitle, description, svg } = Astro.props;
     <div class='image"'>
       <img src={svg.src} alt={servicesTitle} />
     </div>
-    <h3 class="subtitle">{servicesTitle}</h3>
-    <p class="span">{description}</p>
+    <div class="text-container">
+      <h3 class="subtitle">{servicesTitle}</h3>
+      <p class="span">{description}</p>
+    </div>
   </div>
 </div>
 
@@ -22,10 +24,10 @@ const { servicesTitle, description, svg } = Astro.props;
   .container {
     border-radius: 0.3125rem;
     background: #1b1f27;
-    padding: 4rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     border: 1px solid transparent; /* Añade un borde transparente */
     transition: border 0.2s ease-in-out; /* Añade una transición al borde */
   }
@@ -43,11 +45,20 @@ const { servicesTitle, description, svg } = Astro.props;
   }
   p {
     color: #fff;
-
     font-family: "Manrope" sans-serif;
     font-size: 1rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    margin-top: -2rem;
+  }
+  .text-container {
+    margin-top: -2rem;
+  }
+
+  @media (max-width: 1145px) {
+    .subtitle {
+      font-size: 1.2rem;
+    }
   }
 </style>

@@ -13,27 +13,30 @@ const { title } = Astro.props;
 ---
 
 <article class="general-container" id="services-card">
-  <div class="map-container">
-    <img src={map.src} alt="map" class="map-container" />
-  </div>
-  <div>
-    <h1 class="title">{title}</h1>
-    <div class="services-card-container">
+  <h1 class="title fade-in-up">{title}</h1>
+  <div class="services-card-container">
+    <div id="services-card-1" class="card">
       <ServicesCard
         description="Crafting user-centric interfaces, our UX/UI design team collaborates closely with marketing experts to elevate your brand, ensuring that every interaction leaves a lasting impression."
         servicesTitle="UI & UX Design"
         svg={Ux}
       />
+    </div>
+    <div id="services-card-2" class="card">
       <ServicesCard
         description="Elevate your online presence with our expert Web Development. We specialize in seamless websites, robust systems, and custom marketing solutions. Trust us to bring your vision to life."
         servicesTitle="Web Development"
         svg={WebDev}
       />
+    </div>
+    <div id="services-card-3" class="card">
       <ServicesCard
         description="Elevate your brand with our Digital Marketing expertise. From strategic campaigns to data-driven insights, we drive online success. Trust us to boost your digital presence effectively."
         servicesTitle="Digital Marketing"
         svg={Marketing}
       />
+    </div>
+    <div id="services-card-4" class="card">
       <ServicesCard
         description="Transform your brand with our skilled Branding & Graphic Design. Our creative solutions bring your vision to life, leaving a lasting impression. Trust us for a standout visual identity."
         servicesTitle="Branding & Graphic Design"
@@ -44,28 +47,19 @@ const { title } = Astro.props;
 </article>
 
 <style>
-  .map-container {
-    position: relative; /* Añade esta línea */
-  }
-
-  .map-container img {
-    position: absolute;
-    z-index: -1;
-    opacity: 5%;
-    scale: 1.4;
-  }
   .general-container {
-    margin-top: 9rem;
     padding: 0 15vw;
     position: absolute;
+    height: 100vh;
   }
   .services-card-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2rem;
     justify-content: space-between;
+    height: 80%;
     gap: 3rem;
-    margin-top: 2rem;
+    align-items: start;
+    align-content: space-around;
     @media screen and (max-width: 1024px) {
       grid-template-columns: 1fr;
       gap: 1rem;
@@ -80,4 +74,49 @@ const { title } = Astro.props;
     font-weight: 700;
     line-height: normal;
   }
+  @keyframes bounce-in-left {
+    0% {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    60% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce-in-right {
+    0% {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    60% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .bounce-in-left {
+    animation: bounce-in-left 1s forwards;
+  }
+  .bounce-in-right {
+    animation: bounce-in-right 1s forwards;
+  }
 </style>
+
+<script>
+  import {
+    animateOnScroll,
+    elementAnimateOnScroll,
+  } from "../../helpers/animation";
+  elementAnimateOnScroll("#services-card-1", "bounce-in-left");
+  elementAnimateOnScroll("#services-card-2", "bounce-in-right");
+  elementAnimateOnScroll("#services-card-3", "bounce-in-left");
+  elementAnimateOnScroll("#services-card-4", "bounce-in-right");
+</script>

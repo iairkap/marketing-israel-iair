@@ -3,21 +3,30 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Hero from "../components/widgets/Hero.astro";
 import Services from "../components/widgets/Services.astro";
+import Header from "../components/widgets/Header.astro";
+
+interface Props {}
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Marketing Agency israel.">
   <main>
-    <Hero
-      title="Website Design & Marketing Agency in Israel"
-      ,
-      description="Need a beautiful and high-end online presence? Elevate your brand with compelling design and strategic marketing. Let's redefine success together"
-      ,
-      button1="Request a Quote"
-      ,
-      button2="Schedule a call"
-    />
-    <div class="blue-divisor"></div>
-    <Services title="Lorem Ipsum Abocado Miller Fuerza" />
+    <section class="first-section">
+      <Header />
+      <Hero
+        title="Website Design & Marketing Agency in Israel"
+        ,
+        description="Need a beautiful and high-end online presence? Elevate your brand with compelling design and strategic marketing. Let's redefine success together"
+        ,
+        button1="Request a Quote"
+        ,
+        button2="Schedule a call"
+      />
+      <br />
+      <div class="blue-divisor"></div>
+    </section>
+    <div>
+      <Services title="Lorem Ipsum Abocado Miller Fuerza" />
+    </div>
   </main>
 </Layout>
 
@@ -53,9 +62,13 @@ import Services from "../components/widgets/Services.astro";
     background-size: 400%;
     background-position: 0%;
   }
+
+  .first-section {
+    min-height: 100vh;
+  }
   .blue-divisor {
     width: 100%;
-    height: 8.03431rem;
+    height: 5.03431rem;
     transform: rotate(2.312deg);
     flex-shrink: 0;
     background: #3a1fff;
@@ -87,4 +100,32 @@ import Services from "../components/widgets/Services.astro";
     gap: 2rem;
     padding: 0;
   }
+
+  .fade-in-up.in-viewport {
+    animation: fadeInUp 1s ease-out;
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  html {
+    scroll-snap-type: y mandatory;
+  }
+
+  /*   section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  } */
 </style>
+
+<script>
+  import { animateOnScroll } from "../../src/helpers/animation";
+  animateOnScroll("#services");
+</script>
