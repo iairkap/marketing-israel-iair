@@ -1,4 +1,6 @@
 ---
+import DropDown from "./DropDown";
+
 interface SubLink {
   Subtitle: string;
   options: string[];
@@ -48,34 +50,11 @@ let links: Link[] = [
   {
     links.map((link) =>
       link.subLinks ? (
-        <div class="dropdown">
-          <button class="buttonNav"> {link.title} </button>
-          <div class="dropdown-content">
-            {link.subLinks.map((subLink) => (
-              <div class="dropdown-column">
-                <a href={subLink.href} class="subtitle">
-                  <span class="subtitle">{subLink.Subtitle}</span>
-                </a>
-                <br />
-                <br />
-                <br />
-                <div>
-                  {subLink.options.map((option) => (
-                    <a href={subLink.href}>
-                      <span class="options">{option}</span>
-                      </a>
-                      <br/>
-                      <br />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <DropDown client:load title={link.title} subLinks={link.subLinks} />
       ) : (
         <a
           href={link.href}
-          class={`nav-button ${
+          className={`nav-button ${
             link.title === "Contact" ? "contact-button" : ""
           }`}
         >
@@ -111,25 +90,44 @@ let links: Link[] = [
     background-color: #391fff22;
     color: #3a1fff;
   }
+
   .contact-button {
     border: 1px solid white;
   }
+
   .dropdown {
-  position: relative;
-  display: inline-block;
-}
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+  }
+
+  .dropdown-wrapper:hover::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+  }
+  .dropdown-wrapper:hover .dropdown-content {
+    display: flex;
+  }
+
   .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     left: 50%;
-  transform: translateX(-50%);
-  flex-direction: row;
+    transform: translateX(-50%);
+    flex-direction: row;
     height: fit-content;
     padding: 2rem;
     width: 40vw;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 3;
     border-radius: 0.3125rem;
     background: #1b1f27;
     color: #fff;
