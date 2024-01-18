@@ -1,0 +1,56 @@
+---
+interface Link {
+  title: string;
+  href: string;
+}
+
+let links = [
+  { title: "Works", href: "/works" },
+  { title: "Services", href: "/services" },
+  { title: "About", href: "/about" },
+  { title: "Contact", href: "/contact" },
+];
+---
+
+<div class="buttons-nav">
+  {
+    links.map((link) => (
+      <a
+        href={link.href}
+        class={`nav-button ${link.title === "Contact" ? "contact-button" : ""}`}
+      >
+        <button class="buttonNav"> {link.title} </button>
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  .buttons-nav {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+  }
+
+  .buttonNav {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: all 0.3s ease 0s;
+    padding: 1rem 2rem;
+    border-radius: 0.25rem;
+  }
+
+  .buttonNav:hover {
+    background-color: #391fff22;
+    color: #3a1fff;
+  }
+  .contact-button {
+    border: 1px solid white;
+  }
+</style>

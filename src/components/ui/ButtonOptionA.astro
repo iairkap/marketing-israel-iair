@@ -1,0 +1,32 @@
+---
+interface Button {
+  text: string;
+  onClick: () => void;
+}
+
+const { text, onClick } = Astro.props;
+---
+
+<button onclick={onClick}>
+  <span class="parallax-text">{text}</span>
+</button>
+
+<style>
+  button {
+    display: flex;
+    padding: 1.25rem 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    min-width: 7.31rem;
+    border: none;
+    border-radius: 0.3125rem;
+    background: #3a1fff;
+    color: #fff;
+    font-family: "Manrope" sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+</style>

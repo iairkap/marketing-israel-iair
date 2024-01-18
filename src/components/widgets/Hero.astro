@@ -1,0 +1,102 @@
+---
+import ButtonOptionA from "../ui/ButtonOptionA.astro";
+import ButtonOptionB from "../ui/ButtonOptionB.astro";
+import BackgroundGrid from "../ui/BackgroudGrid.astro";
+interface Props {
+  title: string;
+  description: string;
+  button1: string;
+  button2: string;
+}
+
+const { title, description, button1, button2 } = Astro.props;
+---
+
+<article class="general-container">
+  <!--   <div class="grid" style="position: absolute">
+    <BackgroundGrid />
+  </div> -->
+  <div class="background-gradient"></div>
+  <div class="left-container">
+    <h1 class="title">{title}</h1>
+    <span>{description}</span>
+    <div class="button-container">
+      <ButtonOptionA
+        text={button1}
+        onClick={() => console.log("Button clicked")}
+      />
+      <ButtonOptionB
+        text={button2}
+        onClick={() => console.log("Button clicked")}
+      />
+    </div>
+  </div>
+  <div>
+    <div class="image-container">
+      <img src="./HeroVector.png" alt="background vector" class="vector" />
+    </div>
+  </div>
+
+  <style>
+    .general-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      padding: 0 15vw;
+    }
+    .background-gradient {
+      width: 100vw;
+      position: absolute;
+      margin-top: -350px;
+      opacity: 70%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(
+        102.91% 64.71% at 75.38% 27.65%,
+        #3a1fff 0%,
+        #3920f1 3%,
+        #2e1cb9 18%,
+        #241988 33%,
+        #1c1660 47%,
+        #161441 61%,
+        #12132b 75%,
+        #0f121e 88%,
+        #0f121a 100%
+      );
+      z-index: -1;
+    }
+    .vector {
+      width: 40rem;
+      height: 30rem;
+    }
+    .title {
+      font-size: 3.5rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    span {
+      color: #fff;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .grid {
+      z-index: -1;
+      width: 100vw;
+      align-items: center;
+      opacity: 0.5;
+    }
+  </style>
+</article>

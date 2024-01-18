@@ -1,0 +1,83 @@
+---
+import ServicesCard from "../ui/ServicesCard.astro";
+import Ux from "../../../public/ux.svg";
+import WebDev from "../../../public/webdev.svg";
+import Marketing from "../../../public/marketing.svg";
+import GraphicDesign from "../../../public/graphicDesign.svg";
+import map from "../../../public/map.png";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<article class="general-container" id="services-card">
+  <div class="map-container">
+    <img src={map.src} alt="map" class="map-container" />
+  </div>
+  <div>
+    <h1 class="title">{title}</h1>
+    <div class="services-card-container">
+      <ServicesCard
+        description="Crafting user-centric interfaces, our UX/UI design team collaborates closely with marketing experts to elevate your brand, ensuring that every interaction leaves a lasting impression."
+        servicesTitle="UI & UX Design"
+        svg={Ux}
+      />
+      <ServicesCard
+        description="Elevate your online presence with our expert Web Development. We specialize in seamless websites, robust systems, and custom marketing solutions. Trust us to bring your vision to life."
+        servicesTitle="Web Development"
+        svg={WebDev}
+      />
+      <ServicesCard
+        description="Elevate your brand with our Digital Marketing expertise. From strategic campaigns to data-driven insights, we drive online success. Trust us to boost your digital presence effectively."
+        servicesTitle="Digital Marketing"
+        svg={Marketing}
+      />
+      <ServicesCard
+        description="Transform your brand with our skilled Branding & Graphic Design. Our creative solutions bring your vision to life, leaving a lasting impression. Trust us for a standout visual identity."
+        servicesTitle="Branding & Graphic Design"
+        svg={GraphicDesign}
+      />
+    </div>
+  </div>
+</article>
+
+<style>
+  .map-container {
+    position: relative; /* Añade esta línea */
+  }
+
+  .map-container img {
+    position: absolute;
+    z-index: -1;
+    opacity: 5%;
+    scale: 1.4;
+  }
+  .general-container {
+    margin-top: 9rem;
+    padding: 0 15vw;
+    position: absolute;
+  }
+  .services-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2rem;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 2rem;
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  h1 {
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+</style>

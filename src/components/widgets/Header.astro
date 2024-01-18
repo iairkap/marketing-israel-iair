@@ -1,0 +1,51 @@
+---
+import ButtonsNav from "../ui/ButtonsNav.astro";
+---
+
+<nav class="navbar">
+  <div>
+    <h1>
+      <span class="logo"> logo</span>
+    </h1>
+  </div>
+  <div class="navbar-right">
+    <ButtonsNav />
+    <button class="hamburger-button">☰</button>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    margin-top: 2rem;
+    padding: 2rem 10vw;
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .hamburger-button {
+    display: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    color: var(--color-text);
+  }
+  .logo {
+    color: white;
+  }
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1rem;
+    }
+
+    .hamburger-button {
+      display: block;
+    }
+  }
+</style>

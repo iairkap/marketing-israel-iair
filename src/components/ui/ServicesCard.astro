@@ -1,0 +1,53 @@
+---
+interface Props {
+  servicesTitle: string;
+  description: string;
+  svg: { src: string; width: number; height: number; format: string };
+}
+
+const { servicesTitle, description, svg } = Astro.props;
+---
+
+<div>
+  <div class="container">
+    <div class='image"'>
+      <img src={svg.src} alt={servicesTitle} />
+    </div>
+    <h3 class="subtitle">{servicesTitle}</h3>
+    <p class="span">{description}</p>
+  </div>
+</div>
+
+<style>
+  .container {
+    border-radius: 0.3125rem;
+    background: #1b1f27;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 1px solid transparent; /* Añade un borde transparente */
+    transition: border 0.2s ease-in-out; /* Añade una transición al borde */
+  }
+  .container:hover {
+    border: 1px solid #3a1fff;
+  }
+
+  h3 {
+    color: #fff;
+    font-family: "Manrope" sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  p {
+    color: #fff;
+
+    font-family: "Manrope" sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+</style>
