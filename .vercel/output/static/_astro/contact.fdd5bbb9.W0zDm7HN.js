@@ -1,0 +1,1 @@
+const t="_subtitles_1exul_1",n="_buttons_1exul_6",e="_buttonContainer_1exul_16",s="_input_1exul_23",u="_text_1exul_35",_="_inputContainer_1exul_39",o="_selected_1exul_66",i="_submit_1exul_72",l={subtitles:t,buttons:n,buttonContainer:e,input:s,text:u,inputContainer:_,selected:o,submit:i};export{l as s};
