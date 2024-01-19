@@ -3,7 +3,14 @@ import { useForm, ValidationError } from "@formspree/react";
 import * as Yup from "yup";
 import styles from "../styles/form.module.css";
 import TextareaAutosize from "react-textarea-autosize";
-import rocket from "../../../public/rocket.svg";
+
+interface FormValues {
+  name: string;
+  idea: string;
+  projectTypes: string[];
+  servicesNeeded: string[];
+  email: string;
+}
 
 const projectTypes = ["Web App", "UX/UI", "Marketing", "Mobile App", "Other"];
 const servicesNeeded = [
@@ -23,27 +30,27 @@ const validationSchema = Yup.object({
 });
 
 function Form() {
-  const [selectedProjectTypes, setSelectedProjectTypes] = useState([]);
-  const [selectedServicesNeeded, setSelectedServicesNeeded] = useState([]);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [text, setText] = useState("");
+  const [selectedProjectTypes, setSelectedProjectTypes] = useState<string[]>([]);
+  const [selectedServicesNeeded, setSelectedServicesNeeded] = useState<string[]>([]);
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [text, setText] = useState<string>("");
   const [state, handleSubmit] = useForm("mayrnzvj");
-  const [submitStatus, setSubmitStatus] = useState("success");
+  const [submitStatus, setSubmitStatus] = useState<string>("");
 
-  const validate = (values) => {
-    let errors = {};
+  const validate = (values: FormValues) => {
+    let errors: { [key: string]: string } = {};
     try {
       validationSchema.validateSync(values, { abortEarly: false });
     } catch (error) {
-      error.inner.forEach((validationError) => {
+      (error as any).inner.forEach((validationError: any) => {
         errors[validationError.path] = validationError.message;
       });
     }
     return errors;
   };
 
-  const handleProjectTypeClick = (type) => {
+  const handleProjectTypeClick = (type: string) => {
     if (selectedProjectTypes.includes(type)) {
       setSelectedProjectTypes(
         selectedProjectTypes.filter((item) => item !== type)
@@ -53,7 +60,7 @@ function Form() {
     }
   };
 
-  const handleServiceNeededClick = (service) => {
+  const handleServiceNeededClick = (service: string) => {
     if (selectedServicesNeeded.includes(service)) {
       setSelectedServicesNeeded(
         selectedServicesNeeded.filter((item) => item !== service)
@@ -63,7 +70,7 @@ function Form() {
     }
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const errors = validate({
       projectTypes: selectedProjectTypes,
@@ -133,9 +140,8 @@ function Form() {
         <div className={styles.buttonContainer}>
           {projectTypes.map((type) => (
             <button
-              className={`${styles.buttons} ${
-                selectedProjectTypes.includes(type) ? styles.selected : ""
-              }`}
+              className={`${styles.buttons} ${selectedProjectTypes.includes(type) ? styles.selected : ""
+                }`}
               type="button"
               onClick={() => handleProjectTypeClick(type)}
             >
@@ -147,9 +153,8 @@ function Form() {
         <div className={styles.buttonContainer}>
           {servicesNeeded.map((service) => (
             <button
-              className={`${styles.buttons} ${
-                selectedServicesNeeded.includes(service) ? styles.selected : ""
-              }`}
+              className={`${styles.buttons} ${selectedServicesNeeded.includes(service) ? styles.selected : ""
+                }`}
               type="button"
               onClick={() => handleServiceNeededClick(service)}
             >
@@ -184,7 +189,6 @@ function Form() {
         </div>
         <button
           type="submit"
-          disabled={state.submitting}
           className={styles.submit}
         >
           Submit
