@@ -12,13 +12,21 @@ interface FormValues {
   email: string;
 }
 
+
+
 const projectTypes = ["Web App", "UX/UI", "Marketing", "Mobile App", "Other"];
 const servicesNeeded = [
+  "Development",
+  "VR/AR",
+  "AI Artificial Intelligence",
+  "Product Strategy",
+  "Content",
+  "Marketing Strategy",
+  "SEO",
+  "Email-Marketing",
   "Brand",
   "Web Design",
   "Graphic Design",
-  "Product Strategy",
-  "Development",
 ];
 
 const validationSchema = Yup.object({
@@ -135,7 +143,7 @@ function Form() {
   }
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className={styles.generalContainer}>
         <h4 className={styles.subtitles}>Your Project Types:</h4>
         <div className={styles.buttonContainer}>
           {projectTypes.map((type) => (
