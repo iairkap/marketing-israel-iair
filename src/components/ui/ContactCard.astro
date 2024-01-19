@@ -1,35 +1,41 @@
 ---
 import { Image } from "astro:assets";
 import linkedinicon from "./linkedinIcon.svg";
+export interface ImageMetadata {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
+  orientation?: number;
+}
+
 interface Props {
-  picture: string | ImageMetadata;
   name: string;
   title: string;
-  alt: string | ImageMetadata;
   href: string | URL;
 }
+
 interface ImageProps {
-  src: string | ImageMetadata;
+  src: ImageMetadata;
   alt: string;
   width?: number;
   height?: number;
 }
 
-const { picture, name, title, href } = Astro.props;
+const { name, title, href } = Astro.props;
 ---
 
 <article class="general-container">
   <a href={href} target="_blank" class="general-container">
     <div class="picture-container">
-      <Image src={picture} alt={name} width={80} height={80} />
       <Image class="linkedin-icon" src={linkedinicon} alt="LinkedIn" />
-      <!-- Add this line -->
     </div>
-    <div class="information">
-      <h2>{name}</h2>
-      <h4>{title}</h4>
-    </div>
+    <!-- Add this line -->
   </a>
+  <div class="information">
+    <h2>{name}</h2>
+    <h4>{title}</h4>
+  </div>
 </article>
 
 <style>
