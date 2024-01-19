@@ -4,16 +4,14 @@ import * as Yup from "yup";
 import styles from "../styles/form.module.css";
 import TextareaAutosize from "react-textarea-autosize";
 
-const projectTypes = [
-  "Web App",
-  "UX/UI",
+const projectTypes = ["Web App", "UX/UI", "Marketing", "Mobile App", "Other"];
+const servicesNeeded = [
+  "Brand",
+  "Web Design",
   "Graphic Design",
-  "Marketing",
-  "Mobile App",
-  "Ecommerce",
-  "Other",
+  "Product Strategy",
+  "Development",
 ];
-const servicesNeeded = ["Brand", "Web Design"];
 
 const validationSchema = Yup.object({
   projectTypes: Yup.array().required("Required"),

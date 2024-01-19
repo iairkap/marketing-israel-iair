@@ -1,25 +1,13 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import linkedinicon from "./linkedinIcon.svg";
-export interface ImageMetadata {
-  src: string;
-  width: number;
-  height: number;
-  format: string;
-  orientation?: number;
-}
+import { Image } from "astro:assets";
+import Fmage from "../../../src/link.jpeg";
 
 interface Props {
   name: string;
   title: string;
   href: string | URL;
-}
-
-interface ImageProps {
-  src: ImageMetadata;
-  alt: string;
-  width?: number;
-  height?: number;
 }
 
 const { name, title, href } = Astro.props;
@@ -28,6 +16,7 @@ const { name, title, href } = Astro.props;
 <article class="general-container">
   <a href={href} target="_blank" class="general-container">
     <div class="picture-container">
+      <Picture class="picture" src={Fmage} alt="Iair" />
       <Image class="linkedin-icon" src={linkedinicon} alt="LinkedIn" />
     </div>
     <!-- Add this line -->
@@ -63,6 +52,10 @@ const { name, title, href } = Astro.props;
     border-radius: 50%;
   }
 
+  .picture {
+    width: 80px;
+    height: 80px;
+  }
   .picture-container img {
     border-radius: 50%;
   }
