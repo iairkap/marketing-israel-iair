@@ -1,9 +1,16 @@
 ---
 import DropDown from "./DropDown";
+import type { HTMLAttributes } from "astro/types";
+
 interface SubLink {
   Subtitle: string;
   options: string[];
   href: string;
+}
+// or extend with an `interface`
+interface Props extends HTMLAttributes<"a"> {
+  myProp?: boolean;
+  className?: string;
 }
 
 interface Link {
@@ -43,6 +50,8 @@ let links: Link[] = [
   { title: "About", href: "/about" },
   { title: "Contact", href: "/contact" },
 ];
+
+const { href, className } = Astro.props;
 ---
 
 <div class="buttons-nav">
@@ -51,12 +60,7 @@ let links: Link[] = [
       link.subLinks ? (
         <DropDown client:load title={link.title} subLinks={link.subLinks} />
       ) : (
-        <a
-          href={link.href}
-          className={`nav-button ${
-            link.title === "Contact" ? "contact-button" : ""
-          }`}
-        >
+        <a href={link.href}>
           <button class="buttonNav"> {link.title} </button>
         </a>
       )
