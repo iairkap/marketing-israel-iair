@@ -4,6 +4,7 @@ import SendUsEmail from "../components/ui/SendUsEmail.astro";
 import Header from "../components/widgets/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import iairProfile from "../../src/iairkap-linkedin.jpeg";
+import ContactForm from "../components/widgets/ContactForm.astro";
 
 interface Props {}
 ---
@@ -25,7 +26,9 @@ interface Props {}
           </div>
         </div>
       </section>
-      <section class="right"><h1>hola</h1></section>
+      <section class="right">
+        <ContactForm title="Hey! Do you have a Project?" />
+      </section>
     </div>
   </main>
 
@@ -33,13 +36,13 @@ interface Props {}
     main {
       width: calc(100vw - 15vw);
       margin: 0vw 7.5vw;
-      height: calc(100vh - 3rem);
+      height: calc(100vh - 14rem);
     }
 
     .container {
       display: grid;
       grid-template-columns: 0.5fr 1fr;
-      min-height: 100%;
+      padding: 7rem;
     }
 
     .left,
@@ -51,7 +54,6 @@ interface Props {}
     }
 
     .left {
-      padding: 7rem;
     }
   </style>
 </Layout>
