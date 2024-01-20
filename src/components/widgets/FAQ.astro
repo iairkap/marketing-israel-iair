@@ -12,12 +12,17 @@ const { faqs } = Astro.props;
 ---
 
 <article>
+  <div class="title">
+    <h2>Curious?</h2>
+    <h2>We've got you <span id="span">covered.</span></h2>
+  </div>
+
   <div>
     <ul>
       {
         faqs.map((faq, index) => (
           <li>
-            <details name="FAQ">
+            <details id={`details-${index}`}>
               <summary>{faq.question}</summary>
               <p>{faq.answer}</p>
             </details>
@@ -26,4 +31,53 @@ const { faqs } = Astro.props;
       }
     </ul>
   </div>
+  <div></div>
 </article>
+
+<style>
+  .title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+
+  details {
+    list-style-type: none;
+  }
+  h2 {
+    margin: 0px;
+  }
+  span {
+    background-image: linear-gradient(to top, #391fffa8 50%, transparent 50%);
+  }
+  li {
+    list-style-type: none;
+    padding: 40px 0;
+    border-bottom: 0.5px solid white;
+    font-size: 1.5rem;
+  }
+
+  /* Esto es para asegurarse de que el último elemento no tenga un borde en la parte inferior */
+  li:last-child {
+    border-bottom: none;
+  }
+</style>
+
+<script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    const detailsElements = document.querySelectorAll("details");
+
+    detailsElements.forEach((details) => {
+      details.addEventListener("toggle", function () {
+        if (this.open) {
+          detailsElements.forEach((details) => {
+            if (details !== this) {
+              details.open = false;
+            }
+          });
+        }
+      });
+    });
+  });
+</script>
