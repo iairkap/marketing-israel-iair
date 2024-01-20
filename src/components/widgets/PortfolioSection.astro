@@ -1,10 +1,9 @@
 ---
 import WorkCard from "../ui/WorkCard.astro";
-import RealCover from "../../RealCover.jpg";
 
 interface Props {
   title: string;
-  button: string;
+  button?: string;
 }
 
 const { title, button } = Astro.props;
@@ -14,12 +13,29 @@ const { title, button } = Astro.props;
   <h1>{title}</h1>
   <div class="work-container">
     <div class="container-column">
-      <WorkCard name="Resi-Lense" class="smaller" />
-      <WorkCard name="Javaia" class="smaller" />
+      <WorkCard
+        name="Resi-Lense"
+        class="smaller"
+        description="Introducing Resi-Lense, where we spearheaded the UX/UI design and development of a cutting-edge app. This platform seamlessly blends user experience with interface design to deliver an engaging online course platform, reminiscent of Udemy. Ensuring security, we implemented token systems for both payments and access, enhancing the overall reliability and safety of the user journey."
+      />
+      <WorkCard
+        name="Javaia"
+        class="smaller"
+        description="Developed a responsive UX/UI for a comprehensive app using Next.js. Integrated user-friendly features like intuitive navigation, easy registration, and secure uploads. The code supports participant customization, communication, and content sharing. The admin dashboard aids efficient program management. Our in-house development ensures a polished user experience."
+      />
     </div>
     <div class="container-column">
-      <WorkCard name="Real Cover" class="taller" picture="RealCover" />
-      <WorkCard name="Talent Tech Hub" class="taller" />
+      <WorkCard
+        name="Real Cover"
+        class="taller"
+        picture="RealCover"
+        description="RealCover, a top wholesale supplier of laptop cases and suitcase covers, unveils a state-of-the-art e-commerce platform. Streamlining wholesale transactions, it features a user-friendly dashboard with robust data analytics for strategic marketing insights."
+      />
+      <WorkCard
+        name="Talent Tech Hub"
+        class="taller"
+        description="Crafted a platform connecting Israeli startups with Latin American professionals, addressing the talent gap. Leveraging Next.js, Prisma, Vercel, and more, we ensured seamless solutions for remote work opportunities and quality services. Integrated payment gateway and secure authentication for user interactions. Our project exemplifies technical prowess, teamwork, and global work connections. 🚀 "
+      />
     </div>
   </div>
 </article>

@@ -1,5 +1,8 @@
 ---
+import Javaia from "../../javaia.png";
 import RealCover from "../../RealCover.jpg";
+import Resilense from "../../Resilense.png";
+import TalentTech from "../../TalentTech.jpeg";
 import { Image } from "astro:assets";
 interface Props {
   picture?: string;
@@ -21,12 +24,24 @@ const {
 ---
 
 <div class={`container ${className}`}>
-  <h4 class="card-name">+</h4>
+  <h3 class="card-name">+</h3>
   <h4 class="card-name">{name}</h4>
+  <span class="span-name"> {description}</span>
   <div class="background-container">
     {
       name === "Real Cover" && (
         <Image src={RealCover} alt={name} class="cover-image" />
+      )
+    }
+    {name === "Javaia" && <Image src={Javaia} alt={name} class="cover-image" />}
+    {
+      name === "Resi-Lense" && (
+        <Image src={Resilense} alt={name} class="cover-image" />
+      )
+    }
+    {
+      name === "Talent Tech Hub" && (
+        <Image src={TalentTech} alt={name} class="cover-image" />
       )
     }
   </div>
@@ -35,17 +50,18 @@ const {
 <style>
   .container {
     position: relative;
-
     background-color: #3a1fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
   .container.taller {
     height: 393px;
     border-radius: 8px;
     width: 100%;
+    cursor: pointer;
   }
   .container.smaller {
     height: 343px;
@@ -58,7 +74,6 @@ const {
     position: absolute;
     top: 0;
     left: 0;
-
     display: flex;
     align-items: center;
     justify-self: center;
@@ -67,10 +82,12 @@ const {
     overflow: hidden;
     z-index: 0;
     transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
   }
 
   .background-container:hover {
     opacity: 0;
+    cursor: pointer;
   }
   .cover-image {
     width: 100%;
@@ -89,5 +106,33 @@ const {
   .container:hover .card-name {
     opacity: 1;
     transform: translateY(0);
+    cursor: pointer;
+  }
+
+  .span-name {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
+    margin-top: -1rem;
+  }
+
+  .container:hover .span-name {
+    opacity: 1;
+    transform: translateY(0);
+    cursor: pointer;
+  }
+
+  span {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  h3 {
+    font-size: 3rem;
+    margin-bottom: 0;
+    margin-top: -4rem;
   }
 </style>
