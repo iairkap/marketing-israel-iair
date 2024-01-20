@@ -22,6 +22,12 @@ const { name, review, compnayName, picture } = Astro.props;
             <img src={picture} alt="Real Cover Pic" />
           )
         }
+        {
+          name === "Natalia Malvicino" && (
+            <img src={picture} alt="Talent Tech" />
+          )
+        }
+        {name === "Nira Kaplansky" && <img src={picture} alt="Talent Tech" />}
       </div>
     </div>
     <div class="der">
