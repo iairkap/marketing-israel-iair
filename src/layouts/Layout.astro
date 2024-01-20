@@ -52,6 +52,101 @@ const { title } = Astro.props;
     font-family: system-ui, sans-serif;
     background: #0f121a;
   }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1em;
+  }
+  h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1em;
+  }
+  @keyframes sweepToTop {
+    0% {
+      opacity: 0;
+      transform: translateY(120px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes sweepToTopB {
+    0% {
+      opacity: 0;
+      transform: translateY(120px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Animación de barrido de arriba hacia abajo */
+  @keyframes sweepToBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Animación de barrido de izquierda a derecha */
+  @keyframes sweepToRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes sweepToLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .sweepToTop,
+  .sweepToBottom,
+  .sweepToRight,
+  .sweepToLeft {
+    opacity: 0;
+  }
+
+  .sweepToTop.animate {
+    animation: sweepToTop 1s forwards;
+    animation-timing-function: cubic-bezier(0.2, 1.5, 0.3, 1);
+    opacity: 1;
+  }
+
+  .sweepToBottom.animate {
+    animation: sweepToBottom 1s forwards;
+    animation-timing-function: cubic-bezier(0.2, 1.5, 0.3, 1);
+  }
+
+  .sweepToRight.animate {
+    animation: sweepToRight 1s forwards;
+    animation-timing-function: cubic-bezier(0.2, 1.5, 0.3, 1);
+  }
+
+  .sweepToLeft.animate {
+    animation: sweepToLeft 1s forwards;
+    animation-timing-function: cubic-bezier(0.2, 1.5, 0.3, 1);
+  }
   code {
     font-family:
       Menlo,
@@ -64,3 +159,28 @@ const { title } = Astro.props;
       monospace;
   }
 </style>
+
+<script>
+  const elements = document.querySelectorAll(
+    ".sweepToTop, .sweepToBottom, .sweepToRight, .sweepToLeft"
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        } else {
+          entry.target.classList.remove("animate");
+        }
+      });
+    },
+    {
+      rootMargin: "0px 0px -100px 0px", // Ajusta este valor según tus necesidades
+    }
+  );
+
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
+</script>

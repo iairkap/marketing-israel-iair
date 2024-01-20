@@ -9,7 +9,9 @@ interface Props {}
 ---
 
 <Layout title="Contact Form">
-  <Header />
+  <div class="header">
+    <Header />
+  </div>
   <main>
     <div class="background-gradient"></div>
 
@@ -42,18 +44,17 @@ interface Props {}
     .container {
       display: grid;
       grid-template-columns: 0.5fr 1fr;
-      padding: 6rem;
+      padding-left: 7.5vw;
+      padding-right: 5vw;
+      margin-top: 5rem;
     }
-
+    .header {
+      padding: 0 15vw;
+    }
     .left,
     .right {
       display: flex;
       flex-direction: column;
-    }
-    .right {
-    }
-
-    .left {
     }
 
     .background-gradient {

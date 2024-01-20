@@ -1,0 +1,48 @@
+---
+import ClientsCard from "../ui/ClientsCard.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<article class="sweepToTop">
+  <div class="izquierda">
+    <h2>{title}</h2>
+  </div>
+  <div class="derecha">
+    <ClientsCard
+      name="Fabian Feldman"
+      review="OutoftheTik consistently delivers top-notch quality in everything they create, from their innovative designs to their meticulously crafted code. Working with them has been a fantastic experience, and their commitment to enterprise-grade excellence shines through in every aspect of their work!"
+      compnayName="CEO Real Cover"
+    />
+    <ClientsCard
+      name="Natalia Malvicino"
+      review=" Outofthetik's commitment to excellence, coupled with their fantastic teamwork, has truly made this partnership a success. The project reflects not only their technical expertise but also their dedication to fostering global work connections. Kudos to Outofthetik for a fantastic collaboration!"
+      compnayName="Talent Tech Hub"
+    />
+    <ClientsCard
+      name="Nira Kaplansky"
+      review=" Outofthetik's commitment to excellence, coupled with their fantastic teamwork, has truly made this partnership a success. The project reflects not only their technical expertise but also their dedication to fostering global work connections. Kudos to Outofthetik for a fantastic collaboration!"
+      compnayName="Resi-Lense"
+    />
+  </div>
+</article>
+
+<style>
+  article {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+  }
+  .izquierda {
+    padding-top: 3rem;
+    min-width: 25%;
+    position: sticky;
+    top: 0;
+    max-height: 100vh; /* Asegúrate de que el elemento no sea más alto que su contenedor */
+  }
+</style>

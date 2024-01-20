@@ -5,7 +5,9 @@ import Hero from "../components/widgets/Hero.astro";
 import Services from "../components/widgets/Services.astro";
 import Header from "../components/widgets/Header.astro";
 import PortfolioSection from "../components/widgets/PortfolioSection.astro";
-
+import WhatOurClientSays from "../components/widgets/WhatOurClientSays.astro";
+import FAQ from "../components/widgets/FAQ.astro";
+import { faqs } from "../javascript/questions";
 interface Props {}
 ---
 
@@ -15,120 +17,144 @@ interface Props {}
       <Header />
       <Hero
         title="Website Design & Marketing Agency in Israel"
-        ,
         description="Need a beautiful and high-end online presence? Elevate your brand with compelling design and strategic marketing. Let's redefine success together"
-        ,
         button1="Request a Quote"
-        ,
         button2="Schedule a call"
       />
-      <br />
-      <div class="blue-divisor"></div>
+      <div
+        class="blue-divisor"
+        style={{
+          width: "100vw",
+          marginLeft: "-15vw",
+          marginTop: "9rem",
+          display: "Flex",
+          flexDirection: "row",
+          gap: "2rem",
+          color: "#272828",
+          fontSize: "1.5rem",
+          fontWeight: "600",
+          paddingLeft: "15vw",
+        }}
+      >
+        <h4>Real Cover</h4>
+        <h4>Punto Mov Studio</h4>
+        <h4>Siemens Healthinees</h4>
+        <h4>Resi-Lense</h4>
+        <h4>Highlight Films</h4>
+        <h4>Talent Tech Hub</h4>
+      </div>
     </section>
+    <div class="divider"></div>
+
     <section>
       <Services title="Lorem Ipsum Abocado Miller Fuerza" />
     </section>
+    <div class="divider"></div>
     <section>
       <PortfolioSection title="Our latest website design projects." />
     </section>
+    <div class="divider"></div>
+
+    <section>
+      <WhatOurClientSays title="What our clients say" />
+    </section>
+    <div class="divider">
+      <FAQ faqs={faqs} />
+    </div>
   </main>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+    main {
+      margin: auto;
+      width: 100vw;
+      color: white;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    .astro-a {
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      transform: translatex(-50%);
+      width: 220px;
+      height: auto;
+      z-index: -1;
+    }
+
+    .text-gradient {
+      background-image: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 400%;
+      background-position: 0%;
+    }
+
+    .first-section {
+      min-height: 100vh;
+    }
+    .blue-divisor {
+      width: 100%;
+      height: 5.03431rem;
+      transform: rotate(2.312deg);
+      flex-shrink: 0;
+      background: #3a1fff;
+    }
+    .instructions {
+      margin-bottom: 2rem;
+      border: 1px solid rgba(var(--accent-light), 25%);
+      background: linear-gradient(
+        rgba(var(--accent-dark), 66%),
+        rgba(var(--accent-dark), 33%)
+      );
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    .instructions code {
+      font-size: 0.8em;
+      font-weight: bold;
+      background: rgba(var(--accent-light), 12%);
+      color: rgb(var(--accent-light));
+      border-radius: 4px;
+      padding: 0.3em 0.4em;
+    }
+    .instructions strong {
+      color: rgb(var(--accent-light));
+    }
+    .link-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+      gap: 2rem;
+      padding: 0;
+    }
+    .divider {
+      height: 166px;
+    }
+    .fade-in-up.in-viewport {
+      animation: fadeInUp 1s ease-out;
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    html {
+      scroll-snap-type: y mandatory;
+    }
+    section {
+      padding: 0 15vw;
+      min-height: 100vh;
+    }
+  </style>
+
+  <script>
+    import { animateOnScroll } from "../../src/helpers/animation";
+    animateOnScroll("#services");
+  </script>
 </Layout>
-
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
-  main {
-    margin: auto;
-    width: 100vw;
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-
-  .first-section {
-    min-height: 100vh;
-  }
-  .blue-divisor {
-    width: 100%;
-    height: 5.03431rem;
-    transform: rotate(2.312deg);
-    flex-shrink: 0;
-    background: #3a1fff;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
-  }
-
-  .fade-in-up.in-viewport {
-    animation: fadeInUp 1s ease-out;
-  }
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  html {
-    scroll-snap-type: y mandatory;
-  }
-  section {
-    padding: 0 15vw;
-    min-height: 100vh;
-  }
-</style>
-
-<script>
-  import { animateOnScroll } from "../../src/helpers/animation";
-  animateOnScroll("#services");
-</script>
