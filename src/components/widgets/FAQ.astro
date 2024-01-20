@@ -17,7 +17,7 @@ const { faqs } = Astro.props;
     <h2>We've got you <span id="span">covered.</span></h2>
   </div>
 
-  <div>
+  <div class="list">
     <ul>
       {
         faqs.map((faq, index) => (
@@ -61,6 +61,20 @@ const { faqs } = Astro.props;
   /* Esto es para asegurarse de que el último elemento no tenga un borde en la parte inferior */
   li:last-child {
     border-bottom: none;
+  }
+
+  details > summary::after {
+    content: "▶"; /* You can use any character or image here */
+    float: right; /* Position it at the end */
+    color: blue;
+  }
+
+  /* Change the marker when the details is open */
+  details[open] > summary::after {
+    content: "▼"; /* You can use any character or image here */
+  }
+  .list {
+    min-height: 60vh;
   }
 </style>
 
