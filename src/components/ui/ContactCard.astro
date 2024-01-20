@@ -16,7 +16,11 @@ const { name, title, href } = Astro.props;
 <article class="general-container">
   <a href={href} target="_blank" class="general-container">
     <div class="picture-container">
-      <Picture class="picture" src={Fmage} alt="Iair" />
+      <img
+        class="picture"
+        src={"https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2Flink.jpeg?alt=media&token=2eb6dde3-5115-4297-9d21-49d8d0f2adeb"}
+        alt="Iair"
+      />
       <Image class="linkedin-icon" src={linkedinicon} alt="LinkedIn" />
     </div>
     <!-- Add this line -->
