@@ -1,5 +1,6 @@
 ---
 import WorkCard from "../ui/WorkCard.astro";
+import RealCover from "../../RealCover.jpg";
 
 interface Props {
   title: string;
@@ -17,7 +18,7 @@ const { title, button } = Astro.props;
       <WorkCard name="Javaia" class="smaller" />
     </div>
     <div class="container-column">
-      <WorkCard name="Real Cover" class="taller" />
+      <WorkCard name="Real Cover" class="taller" picture="RealCover" />
       <WorkCard name="Talent Tech Hub" class="taller" />
     </div>
   </div>
