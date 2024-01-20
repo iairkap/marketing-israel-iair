@@ -7,9 +7,10 @@ interface Props {
   name: string;
   review: string;
   compnayName: string;
+  picture?: string;
 }
 
-const { name, review, compnayName } = Astro.props;
+const { name, review, compnayName, picture } = Astro.props;
 ---
 
 <article>
@@ -18,7 +19,7 @@ const { name, review, compnayName } = Astro.props;
       <div class="image-container">
         {
           name === "Fabian Feldman" && (
-            <Image src={RealCoverPic} alt="Real Cover Pic" />
+            <img src={picture} alt="Real Cover Pic" />
           )
         }
       </div>
