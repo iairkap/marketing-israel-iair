@@ -1,0 +1,43 @@
+---
+interface Props {
+  picture?: string;
+  name: string;
+  description?: string;
+  github?: string;
+  url?: string;
+  class?: string;
+}
+
+const {
+  picture,
+  name,
+  description,
+  github,
+  url,
+  class: className,
+} = Astro.props;
+---
+
+<div class={`container ${className}`}>
+  <h4>{name}</h4>
+</div>
+
+<style>
+  .container {
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container.taller {
+    height: 393px;
+    border-radius: 8px;
+    width: 100%;
+  }
+  .container.smaller {
+    height: 343px;
+    border-radius: 8px;
+    width: 100%;
+  }
+</style>

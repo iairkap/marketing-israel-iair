@@ -1,0 +1,41 @@
+---
+import WorkCard from "../ui/WorkCard.astro";
+
+interface Props {
+  title: string;
+  button: string;
+}
+
+const { title, button } = Astro.props;
+---
+
+<article>
+  <h1>{title}</h1>
+  <div class="work-container">
+    <div class="container-column">
+      <WorkCard name="Resi-Lense" class="smaller" />
+      <WorkCard name="Javaia" class="smaller" />
+    </div>
+    <div class="container-column">
+      <WorkCard name="Real Cover" class="taller" />
+      <WorkCard name="Talent Tech Hub" class="taller" />
+    </div>
+  </div>
+</article>
+
+<style>
+  .work-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+  }
+
+  .container-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+</style>
