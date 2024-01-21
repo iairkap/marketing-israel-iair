@@ -3,24 +3,27 @@
 ---
 
 <article>
-  <div class="izq">
-    <span>WebAviv</span>
-    <span>Subtitles</span>
-  </div>
-  <div class="der">
-    <div class="col">
-      <h6>Company</h6>
-      <span>Works</span>
-      <span>Services</span>
-      <span>Portfolio</span>
-      <span>FAQ</span>
-      <span>Contact Us</span>
+  <div class="container">
+    <div class="izq">
+      <span>BeyondTik</span>
+      <span>Subtitles</span>
+    </div>
+    <div class="der">
+      <div class="col">
+        <h6>Company</h6>
+        <span>Works</span>
+        <span>Services</span>
+        <span>Portfolio</span>
+        <span>FAQ</span>
+        <span>Contact Us</span>
+      </div>
     </div>
   </div>
+  <span class="all-right">All rights Reserved</span>
 </article>
 
 <style>
-  article {
+  .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,6 +31,10 @@
   }
   h6 {
     margin-top: 0px;
+  }
+
+  span {
+    font-size: 1rem;
   }
   .izq {
     display: flex;
@@ -40,5 +47,11 @@
   .col {
     display: flex;
     flex-direction: column;
+  }
+  .all-right {
+    text-align: center;
+    display: block;
+    font-weight: 100;
+    font-size: 1rem;
   }
 </style>

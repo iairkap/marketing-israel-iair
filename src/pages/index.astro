@@ -23,30 +23,39 @@ interface Props {}
         button1="Request a Quote"
         button2="Schedule a call"
       />
-      <div class="desktop-style"></div>
+      <div
+        class="blue-divisor desktop-style"
+        style={{
+          width: "100vw",
+          marginLeft: "-15vw",
+          marginTop: "9rem",
+          display: "Flex",
+          flexDirection: "row",
+          gap: "2rem",
+          color: "#272828",
+          fontSize: "1.5rem",
+          fontWeight: "600",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h4>Real Cover</h4>
+        <h4>Punto Mov Studio</h4>
+        <h4>Siemens Healthinees</h4>
+        <h4>Resi-Lense</h4>
+        <h4>Highlight Films</h4>
+        <h4>Talent Tech Hub</h4>
+      </div>
     </section>
-    <div class="divider"></div>
 
     <section>
       <Services title="Lorem Ipsum Abocado Miller Fuerza" />
       <br class="display-only-mobile" />
       <br class="display-only-mobile" />
-      <br class="display-only-mobile" />
-      <br class="display-only-mobile" />
-      <br class="display-only-mobile" />
-      <br class="display-only-mobile" />
-      <br class="display-only-mobile" />
-      <br class="display-only-mobile" />
-      <br class="display-only-mobile" />
-      <br class="display-only-mobile" />
-      <br class="display-only-mobile" />
     </section>
-    <div class="divider"></div>
     <section>
       <PortfolioSection title="Our latest website design projects." />
     </section>
-    <div class="divider"></div>
-
     <section>
       <WhatOurClientSays title="What our clients say" />
     </section>
@@ -149,7 +158,7 @@ interface Props {}
     padding: 0;
   }
   .divider {
-    height: 166px;
+    height: 100px;
   }
   .fade-in-up.in-viewport {
     animation: fadeInUp 1s ease-out;

@@ -15,6 +15,7 @@ const { name, review, compnayName, picture } = Astro.props;
 
 <article>
   <div class="container">
+    <span class="triangle"></span>
     <div class="izq">
       <div class="image-container">
         {
@@ -55,22 +56,49 @@ const { name, review, compnayName, picture } = Astro.props;
     gap: 3rem;
     align-items: center;
     border: 1px solid transparent;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    transition:
+      background-color 0.3s ease,
+      border 0.3s ease;
+    border: 1px solid transparent; /* Make the border transparent when not hovering */
     @media screen and (max-width: 768px) {
       flex-direction: column;
       padding: 30px;
     }
   }
 
-  .container:hover {
-    border: 1px solid #3a1fff;
-    background: #1b1f27;
-  }
-
   .starsContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
+  }
+  .container {
+    position: relative;
+  }
+
+  .container::before {
+    content: "";
+    position: absolute;
+    left: -40px; /* Move the triangle outside the container */
+    top: 50%; /* Center the triangle vertically */
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent; /* Adjust this value to change the size of the triangle */
+    border-bottom: 40px solid transparent; /* Adjust this value to change the size of the triangle */
+    border-right: 40px solid transparent; /* Make the triangle transparent when not hovering */
+  }
+  .container:hover::before {
+    opacity: 1;
+  }
+
+  .container:hover {
+    background-color: #1b1f27; /* Replace with your hover color */
+  }
+
+  .container:hover::before {
+    border-right-color: #1b1f27; /* Replace with your hover color */
   }
 
   .image-container {

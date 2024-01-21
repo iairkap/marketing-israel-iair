@@ -11,9 +11,13 @@ interface Props {
   github?: string;
   url?: string;
   class?: string;
+  iframe?: string;
+  toggleIframe?: string;
+  link?: string;
 }
 
 const {
+  iframe,
   picture,
   name,
   description,
@@ -23,29 +27,42 @@ const {
 } = Astro.props;
 ---
 
-<div class={`container ${className}`}>
-  <h3 class="card-name">+</h3>
-  <h4 class="card-name">{name}</h4>
-  <span class="span-name"> {description}</span>
-  <div class="background-container">
-    {
-      name === "Real Cover" && (
-        <img src={picture} alt={name} class="cover-image" />
-      )
-    }
-    {name === "Javaia" && <img src={picture} alt={name} class="cover-image" />}
-    {
-      name === "Resi-Lense" && (
-        <img src={picture} alt={name} class="cover-image" />
-      )
-    }
-    {
-      name === "Talent Tech Hub" && (
-        <img src={picture} alt={name} class="cover-image" />
-      )
-    }
+<a href={`/portfolio/${iframe}`}>
+  <div class={`container ${className}`} id={name}>
+    <h3 class="card-name">+</h3>
+    <h4 class="card-name">{name}</h4>
+    <span class="span-name"> {description}</span>
+    <div class="background-container">
+      {
+        name === "Real Cover" && (
+          <img src={picture} alt={name} class="cover-image" />
+        )
+      }
+      {
+        name === "Javaia" && (
+          <img src={picture} alt={name} class="cover-image" />
+        )
+      }
+      {
+        name === "Resi-Lense" && (
+          <img src={picture} alt={name} class="cover-image" />
+        )
+      }
+      {
+        name === "Talent Tech Hub" && (
+          <img src={picture} alt={name} class="cover-image" />
+        )
+      }
+    </div>
+
+    <div>
+      <iframe
+        id="myIframe"
+        src="https://realcover-iairkap.vercel.app/"
+        style="display: none; width: 80%; height: 80%;"></iframe>
+    </div>
   </div>
-</div>
+</a>
 
 <style>
   .container {

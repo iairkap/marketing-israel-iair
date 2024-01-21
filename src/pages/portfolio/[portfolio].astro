@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+/* 
+let params = Astro.request.params;
+let portfolio = params.portfolio; */
+
+console.log(portfolio);
+interface Props {
+  src?: string;
+}
+---
+
+<Layout title="portfolio">
+  <article
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+      width: "100vw",
+    }}
+  >
+    <iframe
+      src="https://realcover-iairkap.vercel.app/"
+      frameborder="0"
+      width="75%"
+      height="75%"
+      style={{ border: "none" }}></iframe>
+  </article>
+</Layout>

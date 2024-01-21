@@ -4,21 +4,24 @@ import ButtonOptionB from "../ui/ButtonOptionB.astro";
 ---
 
 <article>
-  <div class="title">
-    <h1 class="h1">Talk To Us!</h1>
-    <h4>Let's dive deeper! Don't hold back</h4>
+  <div class="container">
+    <div class="title">
+      <h1 class="h1">Talk To Us!</h1>
+      <h4>Let's dive deeper! Don't hold back</h4>
+    </div>
+    <ButtonOptionA text="Schedule a Call" />
   </div>
-  <ButtonOptionA text="Schedule a Call" />
 </article>
 
 <style>
-  article {
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 5px solid white;
     gap: 2rem;
     padding: 2rem;
+    margin-top: 2rem;
   }
 
   h1 {
