@@ -2,5 +2,6 @@
 export default {
   defaultLocale: "en",
   locales: ["en", "he"],
-  resourcesBasePath: "src/locales",
+  /*   resourcesBasePath: "src/locales",
+   */
 };
