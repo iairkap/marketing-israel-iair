@@ -40,13 +40,19 @@ const { title } = Astro.props;
     display: flex;
     flex-direction: row;
     min-height: 100vh;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
   .izquierda {
     padding-top: 3rem;
     min-width: 25%;
     position: sticky;
     top: 0;
-    max-height: 30vh; /* Asegúrate de que el elemento no sea más alto que su contenedor */
+    max-height: 30vh;
+    @media screen and (max-width: 768px) {
+      position: relative;
+    }
   }
 </style>
 

@@ -54,8 +54,12 @@ const { name, review, compnayName, picture } = Astro.props;
     flex-direction: row;
     gap: 3rem;
     align-items: center;
-    border: 1px solid transparent; /* Añade un borde transparente */
-    transition: all 0.2s ease-in-out; /* Añade una transición al borde */
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      padding: 30px;
+    }
   }
 
   .container:hover {

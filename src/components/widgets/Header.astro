@@ -11,12 +11,19 @@ import ButtonsNav from "../ui/ButtonsNav.astro";
     </a>
   </div>
   <div class="navbar-right">
-    <ButtonsNav />
+    <div class="only-desktop">
+      <ButtonsNav />
+    </div>
     <button class="hamburger-button">☰</button>
   </div>
 </nav>
 
 <style>
+  .only-desktop {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
   .navbar {
     display: flex;
     justify-content: space-between;

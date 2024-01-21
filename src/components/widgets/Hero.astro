@@ -45,6 +45,11 @@ const { title, description, button1, button2 } = Astro.props;
       align-items: center;
       height: 60vh;
       margin-bottom: 2rem;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        height: 100vh;
+        gap: 2rem;
+      }
     }
     .background-gradient {
       width: 100vw;
@@ -70,6 +75,10 @@ const { title, description, button1, button2 } = Astro.props;
     .vector {
       width: 40rem;
       height: 30rem;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
     }
     .title {
       font-size: 3.5rem;

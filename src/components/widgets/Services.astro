@@ -14,6 +14,10 @@ const { title } = Astro.props;
 
 <article class="general-container" id="services-card">
   <h1 class="sweepToTop">{title}</h1>
+  <br class="display-only-mobile" />
+  <br class="display-only-mobile" />
+  <br class="display-only-mobile" />
+  <br class="display-only-mobile" />
   <div class="services-card-container">
     <div id="services-card-1" class="card">
       <ServicesCard
@@ -47,8 +51,22 @@ const { title } = Astro.props;
 </article>
 
 <style>
+  .sweepToTop {
+    /*    @media screen and (max-width: 768px) {
+      display: none;
+    } */
+  }
+
+  .display-only-mobile {
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
   .general-container {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
   .services-card-container {
     display: grid;
