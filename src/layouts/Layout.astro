@@ -193,7 +193,6 @@ const { title } = Astro.props;
         monospace;
     }
   </style>
-
   <script>
     const elements = document.querySelectorAll(
       ".sweepToTop, .sweepToBottom, .sweepToRight, .sweepToLeft"
@@ -210,7 +209,7 @@ const { title } = Astro.props;
         });
       },
       {
-        rootMargin: "0px 0px -100px 0px", // Ajusta este valor según tus necesidades
+        rootMargin: "0px 0px -100px 0px", // Adjust this value as needed
       }
     );
 
@@ -222,14 +221,19 @@ const { title } = Astro.props;
     const cursor2 = document.querySelector(".cursor2");
 
     document.addEventListener("mousemove", (e) => {
-      cursor.setAttribute(
-        "style",
-        "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
-      );
-      cursor2.setAttribute(
-        "style",
-        "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
-      );
+      if (cursor) {
+        cursor.setAttribute(
+          "style",
+          "top: " + (e.clientY - 10) + "px; left: " + (e.clientX - 10) + "px;"
+        );
+      }
+
+      if (cursor2) {
+        cursor2.setAttribute(
+          "style",
+          "top: " + (e.clientY - 10) + "px; left: " + (e.clientX - 10) + "px;"
+        );
+      }
     });
   </script>
 
