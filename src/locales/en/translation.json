@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "title": "Website Design & Marketing Agency in Israel",
+    "description": "Need a beautiful and high-end online presence? Elevate your brand with compelling design and strategic marketing. Let's redefine success together",
+    "button1": "Request a Quote",
+    "button2": "Schedule a call"
+  },
+
+  "buttonNav": {
+    "services": "Services",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "services": {
+    "title": "Creating Web Solutions that Convert Visitors into Customers",
+    "description1": "Crafting user-centric interfaces, our UX/UI design team collaborates closely with marketing experts to elevate your brand, ensuring that every interaction leaves a lasting impression.",
+    "servicetitle1": "UI & UX Design",
+    "description2": "Elevate your online presence with our expert Web Development. We specialize in seamless websites, robust systems, and custom marketing solutions. Trust us to bring your vision to life.",
+    "servicetitle2": "Web Development",
+    "description3": "Elevate your brand with our Digital Marketing expertise. From strategic campaigns to data-driven insights, we drive online success. Trust us to boost your digital presence effectively.",
+    "servicetitle3": "Digital Marketing",
+    "description4": "Transform your brand with our skilled Branding & Graphic Design. Our creative solutions bring your vision to life, leaving a lasting impression. Trust us for a standout visual identity.",
+    "servicetitle4": "Branding & Graphic Design"
+  },
+  "portfolio": {
+    "title": "Our latest website design projects.",
+    "resilenseDescription": "Introducing Resi-Lense, where we spearheaded the UX/UI design and development of a cutting-edge app. This platform seamlessly blends user experience with interface design to deliver an engaging online course platform, reminiscent of Udemy. Ensuring security, we implemented token systems for both payments and access, enhancing the overall reliability and safety of the user journey.",
+    "realCoverDescription": "RealCover, a top wholesale supplier of laptop cases and suitcase covers, unveils a state-of-the-art e-commerce platform. Streamlining wholesale transactions, it features a user-friendly dashboard with robust data analytics for strategic marketing insights.",
+    "javaiaDescription": "Developed a responsive UX/UI for a comprehensive app using Next.js. Integrated user-friendly features like intuitive navigation, easy registration, and secure uploads. The code supports participant customization, communication, and content sharing. The admin dashboard aids efficient program management. Our in-house development ensures a polished user experience.",
+    "talentTechHub": "Crafted a platform connecting Israeli startups with Latin American professionals, addressing the talent gap. Leveraging Next.js, Prisma, Vercel, and more, we ensured seamless solutions for remote work opportunities and quality services. Integrated payment gateway and secure authentication for user interactions. Our project exemplifies technical prowess, teamwork, and global work connections. 🚀"
+  },
+  "clients": {
+    "title": "What our clients say about us",
+    "nameRealCover": "Fabian Feldman",
+    "reviewRealCover": "BeyondTik consistently delivers top-notch quality in everything they create, from their innovative designs to their meticulously crafted code. Working with them has been a fantastic experience, and their commitment to enterprise-grade excellence shines through in every aspect of their work!",
+    "companyNameRealCover": "CEO Real Cover",
+    "nameTalentTech": "Natalia Malvicino",
+    "reviewTalentTech": "BeyondTik's commitment to excellence, coupled with their fantastic teamwork, has truly made this partnership a success. The project reflects not only their technical expertise but also their dedication to fostering global work connections. Kudos to BeyondTik for a fantastic collaboration!",
+    "companyNameTalentTech": "Talent Tech Hub",
+    "nameResilense": "Nira Kaplansky",
+    "reviewResilense": "BeyondTik's commitment to excellence, coupled with their fantastic teamwork, has truly made this partnership a success. The project reflects not only their technical expertise but also their dedication to fostering global work connections. Kudos to BeyondTik for a fantastic collaboration!",
+    "companyNameResilense": "CEO Resi-lense"
+  }
+}
