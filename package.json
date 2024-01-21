@@ -2,6 +2,11 @@
   "name": "marketing-israel",
   "type": "module",
   "version": "0.0.1",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/rd-component.es.js",
+    "require": "./dist/rd-component.umd.js"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -18,13 +23,16 @@
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.2.1",
+    "astro-i18next": "1.0.0-beta.21",
     "astro-icon": "^1.0.2",
     "formik": "^2.4.5",
     "gsap": "^3.12.4",
+    "i18next": "^23.7.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-select": "^5.8.0",
     "react-textarea-autosize": "^8.5.3",
+    "solid-js": "^1.8.11",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3",
     "vercel": "^33.1.0",

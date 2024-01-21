@@ -1,4 +1,5 @@
 ---
+import ButtonSwitchLanguage from "../ui/ButtonSwitchLanguage";
 import ButtonsNav from "../ui/ButtonsNav.astro";
 import Loader from "../ui/Loader.astro";
 ---
@@ -18,6 +19,7 @@ import Loader from "../ui/Loader.astro";
       <ButtonsNav />
     </div>
     <button class="hamburger-button">☰</button>
+    <ButtonSwitchLanguage client:idle />
   </div>
 </nav>
 
