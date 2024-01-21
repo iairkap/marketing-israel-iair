@@ -15,16 +15,15 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 changeLanguage("he");
 
-interface Props {}
+console.log(t("hero.title"));
+interface Props {
+}
 ---
 
 <Layout title="Marketing Agency israel.">
-  <html
-    lang={i18next.language}
-    style={{ direction: i18next.language === "he" ? "rtl" : "ltr" }}
-  >
+  <html lang={i18next.language}>
     <head>
-      <meta name="description" content={t("site.description")} />
+      <meta name="description" />
       <HeadHrefLangs />
     </head>
     <main>
