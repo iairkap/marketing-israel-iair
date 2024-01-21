@@ -1,6 +1,7 @@
 ---
 import Header from "../../components/widgets/Header.astro";
 import Layout from "../../layouts/Layout.astro";
+import Loader from "../../components/ui/Loader.astro";
 
 let iframeSrc = "";
 const currentPath = Astro.url.pathname;
@@ -32,6 +33,7 @@ switch (currentPath) {
       <Header />
     </div>
     <iframe
+      id="iframe"
       src={iframeSrc}
       frameborder="0"
       width="85%"

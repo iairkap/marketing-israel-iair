@@ -1,5 +1,6 @@
 ---
 import ButtonsNav from "../ui/ButtonsNav.astro";
+import Loader from "../ui/Loader.astro";
 ---
 
 <nav class="navbar">
@@ -7,12 +8,8 @@ import ButtonsNav from "../ui/ButtonsNav.astro";
     <a href="/">
       <h4>
         <span class="logo">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2Flogo.png?alt=media&token=7f9b1c28-e13f-450c-b61a-c9f36f358ddc"
-            alt="logo-BeyondTik"
-            width="70"
-          /></span
-        >
+          <Loader />
+        </span>
       </h4>
     </a>
   </div>
@@ -62,5 +59,9 @@ import ButtonsNav from "../ui/ButtonsNav.astro";
     .hamburger-button {
       display: block;
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 </style>
