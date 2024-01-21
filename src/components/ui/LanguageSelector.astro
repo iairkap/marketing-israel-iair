@@ -1,0 +1,12 @@
+---
+import { LanguageSelector as I18nextLanguageSelector } from "astro-i18next/components";
+---
+
+<I18nextLanguageSelector showFlag={true} class="my-select-class" />
+
+<!-- LanguageSelector with custom language naming -->
+<I18nextLanguageSelector
+  showFlag={true}
+  languageMapping={{ en: "Anglais" }}
+  class="my-select-class"
+/>

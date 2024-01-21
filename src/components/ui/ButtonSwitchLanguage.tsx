@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const ButtonSwitchLanguage = () => {
-    const languages = ['en', 'es'];
+    const languages = ['en', 'עי'];
     const [currentLanguage, setCurrentLanguage] = useState('en');
 
     useEffect(() => {

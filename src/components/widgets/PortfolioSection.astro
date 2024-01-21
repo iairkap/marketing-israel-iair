@@ -1,5 +1,7 @@
 ---
 import WorkCard from "../ui/WorkCard.astro";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 interface Props {
   title: string;
@@ -7,16 +9,20 @@ interface Props {
 }
 
 const { title, button } = Astro.props;
+
+let currentLanguage = i18next.language;
+
+
 ---
 
-<article>
+<article style={{ direction: currentLanguage === 'he' ? 'rtl' : 'ltr' }}>
   <h1>{title}</h1>
-  <div class="work-container">
+  <div class="work-container" style={{ flexDirection: currentLanguage === 'he' ? 'row-reverse' : 'row' }}>
     <div class="container-column sweepToRight">
       <WorkCard
         name="Resi-Lense"
         class="smaller"
-        description="Introducing Resi-Lense, where we spearheaded the UX/UI design and development of a cutting-edge app. This platform seamlessly blends user experience with interface design to deliver an engaging online course platform, reminiscent of Udemy. Ensuring security, we implemented token systems for both payments and access, enhancing the overall reliability and safety of the user journey."
+        description={t("portfolio.resilenseDescription")}
         picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2FResilense.png?alt=media&token=d99b1f74-5f9e-4daa-9202-2dd388d38110"
       />
  
@@ -24,7 +30,7 @@ const { title, button } = Astro.props;
         name="Real Cover"
         class="smaller"
         picture="RealCover"
-        description="RealCover, a top wholesale supplier of laptop cases and suitcase covers, unveils a state-of-the-art e-commerce platform. Streamlining wholesale transactions, it features a user-friendly dashboard with robust data analytics for strategic marketing insights."
+        description={t("portfolio.realCoverDescription")}
         picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2FRealCover.jpg?alt=media&token=34ba40a6-76b1-4498-a355-b4195f56eefb"
         iframe="https://realcover-iairkap.vercel.app/"
       />
@@ -33,14 +39,13 @@ const { title, button } = Astro.props;
       <WorkCard
       name="Javaia"
       class="taller"
-      description="Developed a responsive UX/UI for a comprehensive app using Next.js. Integrated user-friendly features like intuitive navigation, easy registration, and secure uploads. The code supports participant customization, communication, and content sharing. The admin dashboard aids efficient program management. Our in-house development ensures a polished user experience."
+      description={t("portfolio.javaiaDescription")}
       picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2Fjavaia.png?alt=media&token=3b17b677-58a0-45e0-a638-8c3971c0421c"
     />
       <WorkCard
         name="Talent Tech Hub"
         class="taller"
-        description="Crafted a platform connecting Israeli startups with Latin American professionals, addressing the talent gap. Leveraging Next.js, Prisma, Vercel, and more, we ensured seamless solutions for remote work opportunities and quality services. Integrated payment gateway and secure authentication for user interactions. Our project exemplifies technical prowess, teamwork, and global work connections. 🚀 "
-        
+        description={t("portfolio.talentTechHub")}
         picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2FTalentTech.jpeg?alt=media&token=95aa054b-6b04-4fdd-aee4-ff9d00c3fb1d"
       />
     </div>

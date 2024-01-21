@@ -5,6 +5,11 @@ import WebDev from "../../../public/webDev.svg";
 import Marketing from "../../../public/marketing.svg";
 import GraphicDesign from "../../../public/graphicDesign.svg";
 import map from "../../../public/map.png";
+
+import i18next, { t, changeLanguage } from "i18next";
+
+let currentLanguage = i18next.language;
+
 interface Props {
   title: string;
 }
@@ -12,7 +17,11 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<article class="general-container" id="services-card">
+<article
+  class="general-container"
+  id="services-card"
+  style={{ direction: currentLanguage === "he" ? "rtl" : "ltr" }}
+>
   <h1 class="sweepToTop">{title}</h1>
   <br class="display-only-mobile" />
   <br class="display-only-mobile" />
@@ -21,29 +30,29 @@ const { title } = Astro.props;
   <div class="services-card-container">
     <div id="services-card-1" class="card">
       <ServicesCard
-        description="Crafting user-centric interfaces, our UX/UI design team collaborates closely with marketing experts to elevate your brand, ensuring that every interaction leaves a lasting impression."
-        servicesTitle="UI & UX Design"
+        description={t("services.description1")}
+        servicesTitle={t("services.servicetitle1")}
         svg={Ux}
       />
     </div>
     <div id="services-card-2" class="card">
       <ServicesCard
-        description="Elevate your online presence with our expert Web Development. We specialize in seamless websites, robust systems, and custom marketing solutions. Trust us to bring your vision to life."
-        servicesTitle="Web Development"
+        description={t("services.description2")}
+        servicesTitle={t("services.servicetitle2")}
         svg={WebDev}
       />
     </div>
     <div id="services-card-3" class="card">
       <ServicesCard
-        description="Elevate your brand with our Digital Marketing expertise. From strategic campaigns to data-driven insights, we drive online success. Trust us to boost your digital presence effectively."
-        servicesTitle="Digital Marketing"
+        description={t("services.description3")}
+        servicesTitle={t("services.servicetitle3")}
         svg={Marketing}
       />
     </div>
     <div id="services-card-4" class="card">
       <ServicesCard
-        description="Transform your brand with our skilled Branding & Graphic Design. Our creative solutions bring your vision to life, leaving a lasting impression. Trust us for a standout visual identity."
-        servicesTitle="Branding & Graphic Design"
+        description={t("services.description4")}
+        servicesTitle={t("services.servicetitle4")}
         svg={GraphicDesign}
       />
     </div>

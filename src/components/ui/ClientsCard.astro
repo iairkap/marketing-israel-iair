@@ -2,6 +2,8 @@
 import StarsContainer from "./StarsContainer.astro";
 import RealCoverPic from "../../realcoverpic.jpeg";
 import { Image } from "astro:assets";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 interface Props {
   name: string;
@@ -9,26 +11,26 @@ interface Props {
   compnayName: string;
   picture?: string;
 }
+let currentLanguage = i18next.language;
 
 const { name, review, compnayName, picture } = Astro.props;
 ---
 
-<article>
-  <div class="container">
-    <span class="triangle"></span>
+<article style={{ direction: currentLanguage === "he" ? "rtl" : "ltr" }}>
+  <div class={`container ${currentLanguage === "he" ? "he" : "en"}`}>
     <div class="izq">
       <div class="image-container">
         {
-          name === "Fabian Feldman" && (
+          (name === "Fabian Feldman" || name === "פביאן פלדמן") && (
             <img src={picture} alt="Real Cover Pic" />
           )
         }
         {
-          name === "Natalia Malvicino" && (
+          (name === "Natalia Malvicino"||name ==="נטליה מלביצ'ינו") && (
             <img src={picture} alt="Talent Tech" />
           )
         }
-        {name === "Nira Kaplansky" && <img src={picture} alt="Talent Tech" />}
+        {(name === "Nira Kaplansky"||name ==="נירה קפלנסקי") && <img src={picture} alt="Talent Tech" />}
       </div>
     </div>
     <div class="der">
@@ -47,6 +49,8 @@ const { name, review, compnayName, picture } = Astro.props;
 
 <style>
   .container {
+    content: "";
+    position: absolute;
     background: #1b1f272a;
     padding: 70px;
     margin-bottom: 1rem;
@@ -58,8 +62,7 @@ const { name, review, compnayName, picture } = Astro.props;
     border: 1px solid transparent;
     transition: all 0.3s ease-in-out;
     position: relative;
-    transition:
-      background-color 0.3s ease,
+      background-color 0.3s ease;
       border 0.3s ease;
     border: 1px solid transparent; /* Make the border transparent when not hovering */
     @media screen and (max-width: 768px) {
@@ -77,7 +80,19 @@ const { name, review, compnayName, picture } = Astro.props;
     position: relative;
   }
 
-  .container::before {
+  .container.he::before {
+    content: "";
+    position: absolute;
+    right: -40px; /* Move the triangle outside the container */
+    top: 50%; /* Center the triangle vertically */
+    transform: translateY(-50%) scaleX(-1);
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent; /* Adjust this value to change the size of the triangle */
+    border-bottom: 40px solid transparent; /* Adjust this value to change the size of the triangle */
+    border-right: 40px solid transparent; /* Make the triangle transparent when not hovering */
+  }
+  .container.en::before {
     content: "";
     position: absolute;
     left: -40px; /* Move the triangle outside the container */
@@ -112,6 +127,11 @@ const { name, review, compnayName, picture } = Astro.props;
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  article[style*="direction: rtl"] .container::before {
+    left: auto;
+    right: -40px;
+    transform: translateY(-50%) scaleX(-1);
   }
   p {
     font-size: 1rem;

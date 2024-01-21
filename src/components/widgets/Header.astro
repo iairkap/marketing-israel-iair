@@ -1,10 +1,17 @@
 ---
 import ButtonSwitchLanguage from "../ui/ButtonSwitchLanguage";
 import ButtonsNav from "../ui/ButtonsNav.astro";
+import LanguageSelector from "../ui/LanguageSelector.astro";
 import Loader from "../ui/Loader.astro";
+import i18next, { t, changeLanguage } from "i18next";
+
+let currentLanguage = i18next.language;
 ---
 
-<nav class="navbar">
+<nav
+  class="navbar"
+  style={{ flexDirection: currentLanguage === "he" ? "row-reverse" : "row" }}
+>
   <div>
     <a href="/">
       <h4>
@@ -19,7 +26,8 @@ import Loader from "../ui/Loader.astro";
       <ButtonsNav />
     </div>
     <button class="hamburger-button">☰</button>
-    <ButtonSwitchLanguage client:idle />
+    <!--     <LanguageSelector />
+ -->
   </div>
 </nav>
 

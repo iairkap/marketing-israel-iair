@@ -1,0 +1,47 @@
+{
+  "hero": {
+    "title": "סטודיו לעיצוב אתרים ושיווק בישראל",
+    "description": "צריך נוכחות אונליין יפה ומתקדמת? הגבר את המותג שלך עם עיצוב מתקדם ושיווק אסטרטגי. בואו נגדיר מחדש את ההצלחה יחד",
+    "button1": "בקש הצעת מחיר",
+    "button2": "קבע שיחה"
+  },
+
+  "buttonNav": {
+    "services": "שירותים",
+    "work": "עבודות",
+    "about": "אודות",
+    "contact": "צור קשר"
+  },
+  "services": {
+    "title": "יצירת פתרונות אינטרנט המהפכים מבקרים ללקוחות",
+    "description1": "ביצירת ממשקי משתמש שמתמקדים במשתמש, צוות העיצוב שלנו עובד בשיתוף פעולה קרוב עם מומחים לשיווק כדי להעלות את המותג שלך, ולוודא שכל אינטראקציה תשאיר חוויות שנשמרות.",
+    "servicetitle1": "עיצוב UI & UX",
+    "description2": "העלה את הנוכחות המקוונת שלך עם פיתוח האתר המומחה שלנו. אנו מתמחים באתרים חלקים, מערכות חזקות ופתרונות שיווק מותאמים אישית. תאמין לנו להביא לחיים את החזון שלך.",
+    "servicetitle2": "פיתוח אתרים",
+    "description3": "העלה את המותג שלך עם התמחותנו בשיווק דיגיטלי. מקמפיינים אסטרטגיים ותובנות מבוססות נתונים, אנו מקדמים הצלחה מקוונת. תאמין לנו להגביר את הנוכחות הדיגיטלית שלך בצורה יעילה.",
+    "servicetitle3": "שיווק דיגיטלי",
+    "description4": "שנה את המותג שלך עם התמחותנו בעיצוב מותג וגרפיקה. פתרונות יצירתיים שלנו מביאים לחיים את החזון שלך, משאירים רושם שנשמר. תאמין לנו לזהות זהות חזונית.",
+    "servicetitle4": "עיצוב מותג וגרפיקה"
+  },
+
+  "portfolio": {
+    "title": "פרויקטי עיצוב האתר האחרונים שלנו.",
+    "resilenseDescription": "הצגה מובנית של Resi-Lense, בה הובילנו את עיצוב החוויה של המשתמש ופיתוחה של אפליקציה מתקדמת. פלטפורמה זו משלבת בצורה חלקה את חוויית המשתמש עם עיצוב ממשק כדי לספק פלטפורמת לימוד מקוונת מעוררת השראה, המזכירה את Udemy. כדי להבטיח ביטחון, הטמענו מערכות אסימונים לתשלומים ולגישה, משפרות את האמינות והביטחון הכללי של מסע המשתמש.",
+    "realCoverDescription": "RealCover, ספק סיטונאי מוביל של תיקי מחשב וכיסויים למזוודות, מציג פלטפורמה למסחר אלקטרוני מתקדמת. בקיצור דרך עסקאות סיטונאיות, הפלטפורמה כוללת לוח בקרה ידידותי למשתמש עם ניתוח נתונים חזקים לצורך תובנות שיווק אסטרטגיות.",
+    "javaiaDescription": "פיתחנו חוויית משתמש רספונסיבית UI/UX לאפליקציה נרחבת באמצעות Next.js. שלבנו תכונות ידידותיות למשתמש כמו ניווט אינטואיטיבי, הרשמה קלה והעלאות מאובטחות. הקוד תומך בהתאמה אישית של המשתתפים, תקשורת ושיתוף תוכן. לוח הבקרה של המנהל תומך בניהול יעיל של התוכנית. פיתוח בבית מבטיח חוויית משתמש מקודם.",
+    "talentTechHub": "יצרנו פלטפורמה המקשרת בין סטארטאפים ישראלים לבין מקצוענים לטינים-אמריקאים, מתמודדת עם חוסר הכישורין. באמצעות Next.js, Prisma, Vercel ועוד, הבטחנו פתרונות חלקים להזדמנויות עבודה מרחוק ושירותים ברמה גבוהה. שולבנו שער תשלום ואימות מאובטח למערכת האינטראקציות של המשתמש. הפרויקט שלנו מציין ברמה טכנית, עבודת צוות וחיבורי עבודה גלובליים. 🚀"
+  },
+  "clients": {
+    "title": "מה לקוחותינו אומרים עלינו",
+
+    "nameRealCover": "פביאן פלדמן",
+    "reviewRealCover": "BeyondTik מספקת באופן יציב איכות מצוינת בכל מה שהם יוצרים, מעיצובים חדשניים ועד לקוד המסורב. העבודה איתם הייתה חוויה פנטסטית, והמחויבות שלהם למעמד המסחרי מופיעה בכל פרט של עבודתם!",
+    "companyNameRealCover": "CEO Real Cover",
+    "nameTalentTech": "נטליה מלביצ'ינו",
+    "reviewTalentTech": "המחויבות של BeyondTik למעמד המסחרי, בשילוב עם יכולת העבודה הפנטסטית שלהם, בהחלט עשתה מהשותפות הזו הצלחה. הפרויקט משקף לא רק את המומחיות הטכנית שלהם, אלא גם את המחויבות שלהם לקידום חיבורים עבודה גלובליים. כל הכבוד ל-BeyondTik על שיתוף פעולה נפלא!",
+    "companyNameTalentTech": "Talent Tech Hub",
+    "nameResilense": "נירה קפלנסקי",
+    "reviewResilense": "המחויבות של BeyondTik למעמד המסחרי, בשילוב עם יכולת העבודה הפנטסטית שלהם, בהחלט עשתה מהשותפות הזו הצלחה. הפרויקט משקף לא רק את המומחיות הטכנית שלהם, אלא גם את המחויבות שלהם לקידום חיבורים עבודה גלובליים. כל הכבוד ל-BeyondTik על שיתוף פעולה נפלא!",
+    "companyNameResilense": "CEO Resi-lense"
+  }
+}

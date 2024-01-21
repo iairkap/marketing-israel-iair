@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
 interface SubLink {
   Subtitle: string;
   options: string[];
@@ -19,9 +20,9 @@ interface Link {
 }
 
 let links: Link[] = [
-  { title: "Works", href: "#works" },
+  { title: t("buttonNav.work"), href: "#works" },
   {
-    title: "Services",
+    title: t("buttonNav.services"),
     href: "#services",
     subLinks: [
       {
@@ -46,14 +47,17 @@ let links: Link[] = [
       },
     ],
   },
-  { title: "About", href: "#about" },
-  { title: "Contact", href: "/contact" },
+  { title: t("buttonNav.about"), href: "#about" },
+  { title: t("buttonNav.contact"), href: "/contact" },
 ];
-
+let currentLanguage = i18next.language;
 const { href, className } = Astro.props as Props;
 ---
 
-<div class="buttons-nav">
+<div
+  class="buttons-nav"
+  style={{ flexDirection: currentLanguage === "he" ? "row-reverse" : "row" }}
+>
   {
     links.map((link) => (
       <a href={link.href} class="nav-link">
