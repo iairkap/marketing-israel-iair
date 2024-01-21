@@ -1,12 +1,21 @@
 ---
+import Header from "../../components/widgets/Header.astro";
 import Layout from "../../layouts/Layout.astro";
-/* 
-let params = Astro.request.params;
-let portfolio = params.portfolio; */
 
-console.log(portfolio);
-interface Props {
-  src?: string;
+let iframeSrc = "";
+const currentPath = Astro.url.pathname;
+
+switch (currentPath) {
+  case "/portfolio/Real%20Cover":
+    iframeSrc = "https://realcover-iairkap.vercel.app/";
+    break;
+  case "/portfolio/Resi-Lense":
+    iframeSrc = "https://resilense.com/";
+    break;
+  case "/portfolio/Talent%20Tech%20Hub":
+    iframeSrc =
+      "https://tech-talent-hub-actual-git-develop-equipo3henry.vercel.app/";
+    break;
 }
 ---
 
@@ -14,17 +23,19 @@ interface Props {
   <article
     style={{
       display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      flexDirection: "column",
       height: "100vh",
       width: "100vw",
     }}
   >
+    <div style={{ padding: "0 15vw", marginBottom: "2rem" }}>
+      <Header />
+    </div>
     <iframe
-      src="https://realcover-iairkap.vercel.app/"
+      src={iframeSrc}
       frameborder="0"
-      width="75%"
-      height="75%"
-      style={{ border: "none" }}></iframe>
+      width="85%"
+      height="80%"
+      style={{ border: "none", alignSelf: "center" }}></iframe>
   </article>
 </Layout>
