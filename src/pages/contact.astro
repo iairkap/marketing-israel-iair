@@ -42,17 +42,44 @@ interface Props {}
       width: calc(100vw - 15vw);
       margin: 0vw 7.5vw;
       height: calc(100vh - 2rem);
+
+      @media (max-width: 768px) {
+        width: 100vw;
+        margin: 0;
+        padding: 16px;
+      }
     }
 
     .container {
       display: grid;
       grid-template-columns: 0.5fr 1fr;
+      grid-template-areas: "left right";
       padding-left: 7.5vw;
       padding-right: 5vw;
       margin-top: 5rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "right" "left";
+        padding-left: 0;
+        padding-right: 0;
+        gap: 2rem;
+      }
+    }
+
+    .left {
+      grid-area: left;
+    }
+
+    .right {
+      grid-area: right;
     }
     .header {
       padding: 0 15vw;
+
+      @media (max-width: 768px) {
+        padding: 0;
+      }
     }
     .left,
     .right {
@@ -80,6 +107,9 @@ interface Props {}
         #0f121a 100%
       );
       z-index: -1;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
     }
   </style>
 </Layout>

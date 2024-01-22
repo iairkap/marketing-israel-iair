@@ -22,6 +22,12 @@
   flex-direction: row;
   gap: 1rem;
   flex-wrap: wrap;
+  width: 90vw;
+  @media screen and (max-width: 768px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
 }
 
 .input {
@@ -33,6 +39,10 @@
   padding-bottom: 1rem;
   font-weight: 900;
   font-size: 1.2rem;
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    margin: 0 10%;
+  }
 }
 
 .input:focus,
@@ -46,6 +56,11 @@
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 5rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+  }
 }
 
 .text {
@@ -60,6 +75,10 @@
   resize: none;
   height: fit-content;
   margin-bottom: 5rem;
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    align-self: center;
+  }
 }
 
 .buttons:hover {
