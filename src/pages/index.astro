@@ -16,8 +16,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 changeLanguage("en");
 
 console.log(t("hero.title"));
-interface Props {
-}
+interface Props {}
 ---
 
 <Layout title="Marketing Agency israel.">
@@ -30,10 +29,10 @@ interface Props {
       <section class="first-section">
         <Header />
         <Hero
-          title={t("hero.title")}
-          description={t("hero.description")}
-          button1={t("hero.button1")}
-          button2={t("hero.button2")}
+          title="Website Design & Marketing Agency in Israel"
+          description="Need a beautiful and high-end online presence? Elevate your brand with compelling design and strategic marketing. Let's redefine success together"
+          button1="Request a Quote"
+          button2="Schedule a call"
         />
         <div
           class="blue-divisor desktop-style"
