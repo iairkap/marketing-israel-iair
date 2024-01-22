@@ -21,7 +21,7 @@ const { language } = Astro.props;
   <div>
     <a href="/">
       <h4>
-        <span class="logo">
+        <span class="logo only-desktop">
           <Loader />
         </span>
       </h4>
@@ -31,11 +31,14 @@ const { language } = Astro.props;
     <div class="only-desktop">
       <ButtonsNav language={language} />
     </div>
-    <div class="only-mobile">
-      <button class="hamburger-button">☰</button>
-    </div>
   </div>
 </nav>
+<div
+  class="only-mobile"
+  style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
+>
+  <button class="hamburger-button">☰</button>
+</div>
 
 <style>
   .only-desktop {
@@ -69,6 +72,7 @@ const { language } = Astro.props;
     background-color: transparent;
     border: none;
     color: rgb(136, 136, 136);
+    justify-self: flex-end;
   }
   .logo {
     color: white;
@@ -78,6 +82,7 @@ const { language } = Astro.props;
       flex-direction: column;
       align-items: center;
       transform: scale(1);
+      padding: -8px;
     }
 
     .hamburger-button {
