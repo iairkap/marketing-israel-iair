@@ -24,7 +24,6 @@ const t = language === "he" ? he : en;
 >
   <div class="container">
     <h1 class="sweepToTop">{title}</h1>
-
     <div class="services-card-container">
       <div id="services-card-1" class="card">
         <ServicesCard
@@ -59,16 +58,18 @@ const t = language === "he" ? he : en;
 </article>
 
 <style>
+  @media screen and (max-width: 768px) {
+    .container {
+      min-height: 100vh !important;
+    }
+  }
   .container {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    @media screen and (max-width: 768px) {
-      height: 100% !important;
-      padding: 0 1rem;
-    }
   }
+
   .services-card-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
