@@ -59,17 +59,12 @@ const t = language === "he" ? he : en;
 </article>
 
 <style>
-  .display-only-mobile {
-    @media screen and (min-width: 1024px) {
-      display: none;
-    }
-  }
   .container {
     height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    @media screen and (max-height: 768px) {
+    @media screen and (max-width: 768px) {
       height: 100% !important;
       padding: 0 1rem;
     }
@@ -95,7 +90,7 @@ const t = language === "he" ? he : en;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    @media screen and (max-height: 768px) {
+    @media screen and (max-width: 768px) {
       font-size: 1.5rem;
       te: center;
     }
@@ -141,8 +136,15 @@ const t = language === "he" ? he : en;
     animateOnScroll,
     elementAnimateOnScroll,
   } from "../../helpers/animation";
-  elementAnimateOnScroll("#services-card-1", "bounce-in-left");
-  elementAnimateOnScroll("#services-card-2", "bounce-in-right");
-  elementAnimateOnScroll("#services-card-3", "bounce-in-left");
-  elementAnimateOnScroll("#services-card-4", "bounce-in-right");
+
+  // Get the width of the window
+  const windowWidth = window.innerWidth;
+
+  // Only run the animation if the window width is greater than 768px
+  if (windowWidth > 768) {
+    elementAnimateOnScroll("#services-card-1", "bounce-in-left");
+    elementAnimateOnScroll("#services-card-2", "bounce-in-right");
+    elementAnimateOnScroll("#services-card-3", "bounce-in-left");
+    elementAnimateOnScroll("#services-card-4", "bounce-in-right");
+  }
 </script>
