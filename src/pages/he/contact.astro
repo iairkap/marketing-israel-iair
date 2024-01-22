@@ -15,24 +15,25 @@ interface Props {}
   <div class="header">
     <Header language="he" />
   </div>
-  <main>
+  <main style={{ direction: "rtl" }}>
     <div class="background-gradient"></div>
 
     <div class="container">
       <section class="left">
         <div>
-          <SendUsEmail title="hola" email="iairkap@gmail.com" />
+          <SendUsEmail title="hola" email="iairkap@gmail.com" language="he" />
           <div>
             <ContactCard
-              name="Iair Kaplun"
+              name="יאיר קפלון"
               title="Web Developer"
               href="https://www.linkedin.com/in/iair-kaplun-50872a292/"
+              language="he"
             />
           </div>
         </div>
       </section>
       <section class="right">
-        <ContactForm title="Hey! Do you have a Project?" />
+        <ContactForm title="שלום! יש לך פרויקט?" language="he" />
       </section>
     </div>
   </main>
@@ -47,8 +48,8 @@ interface Props {}
     .container {
       display: grid;
       grid-template-columns: 0.5fr 1fr;
-      padding-left: 7.5vw;
-      padding-right: 5vw;
+      padding-left: 5vw;
+      padding-right: 10vw;
       margin-top: 5rem;
     }
     .header {
@@ -80,6 +81,7 @@ interface Props {}
         #0f121a 100%
       );
       z-index: -1;
+      transform: scaleX(-1);
     }
   </style>
 </Layout>

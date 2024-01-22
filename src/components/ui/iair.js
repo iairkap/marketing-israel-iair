@@ -1,8 +1,6 @@
 import { gsap } from "https://esm.sh/gsap";
 
-export function handleClick() {
-  console.log("Button clicked");
-}
+export function handleClick() {}
 
 export function initParallax() {
   document.addEventListener("DOMContentLoaded", function () {

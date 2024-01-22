@@ -3,13 +3,18 @@ import { useForm, ValidationError } from "@formspree/react";
 import * as Yup from "yup";
 import styles from "../styles/form.module.css";
 import TextareaAutosize from "react-textarea-autosize";
-
+import he from "../../../public/locales/he/translation.json";
+import en from "../../../public/locales/en/translation.json";
 interface FormValues {
   name: string;
   idea: string;
   projectTypes: string[];
   servicesNeeded: string[];
   email: string;
+}
+
+interface FormProps {
+  language?: string;
 }
 
 
@@ -29,6 +34,21 @@ const servicesNeeded = [
   "Graphic Design",
 ];
 
+const projectTypesHebrew = ["אפליקציה ווב", "UX/UI", "שיווק", "אפליקציה ניידת", "אחר"];
+const servicesNeededHebrew = [
+  "פיתוח",
+  "VR/AR",
+  "בינה מלאכותית (AI)",
+  "אסטרטגית מוצר",
+  "תוכן",
+  "אסטרטגיה שיווקית",
+  "SEO",
+  "דואר אלקטרוני-שיווק",
+  "מותג",
+  "עיצוב אתרים",
+  "עיצוב גרפי",
+];
+
 const validationSchema = Yup.object({
   projectTypes: Yup.array().required("Required"),
   servicesNeeded: Yup.array().required("Required"),
@@ -37,7 +57,7 @@ const validationSchema = Yup.object({
   idea: Yup.string().required("Required"),
 });
 
-function Form() {
+function Form({ language = "defaultLanguage" }: FormProps) {
   const [selectedProjectTypes, setSelectedProjectTypes] = useState<string[]>([]);
   const [selectedServicesNeeded, setSelectedServicesNeeded] = useState<string[]>([]);
   const [name, setName] = useState<string>("");
@@ -45,6 +65,10 @@ function Form() {
   const [text, setText] = useState<string>("");
   const [state, handleSubmit] = useForm("mayrnzvj");
   const [submitStatus, setSubmitStatus] = useState<string>("");
+
+  console.log(language)
+
+  const t = language === "he" ? he : en;
 
   const validate = (values: FormValues) => {
     let errors: { [key: string]: string } = {};
@@ -144,9 +168,10 @@ function Form() {
   return (
     <div>
       <form onSubmit={onSubmit} className={styles.generalContainer}>
-        <h4 className={styles.subtitles}>Your Project Types:</h4>
+        <h4 className={styles.subtitles}>{t.contact.YourProjectTypes}</h4>
         <div className={styles.buttonContainer}>
-          {projectTypes.map((type) => (
+
+          {(language === "he" ? projectTypesHebrew : projectTypes).map((type) => (
             <button
               className={`${styles.buttons} ${selectedProjectTypes.includes(type) ? styles.selected : ""
                 }`}
@@ -157,9 +182,9 @@ function Form() {
             </button>
           ))}
         </div>
-        <h4 className={styles.subtitles}>Services You Need:</h4>
+        <h4 className={styles.subtitles}>{t.contact.servicesYouNeed}</h4>
         <div className={styles.buttonContainer}>
-          {servicesNeeded.map((service) => (
+          {(language === "he" ? servicesNeededHebrew : servicesNeeded).map((service) => (
             <button
               className={`${styles.buttons} ${selectedServicesNeeded.includes(service) ? styles.selected : ""
                 }`}
@@ -174,7 +199,7 @@ function Form() {
         <div className={styles.inputContainer}>
           <input
             className={styles.input}
-            placeholder="Your Name"
+            placeholder={t.contact.YourName}
             type="text"
             name="name"
             onChange={(e) => setName(e.target.value)}
@@ -182,7 +207,7 @@ function Form() {
           />
           <input
             className={styles.input}
-            placeholder="Your Email"
+            placeholder={t.contact.YourEmail}
             type="email"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
@@ -190,7 +215,7 @@ function Form() {
           />
           <TextareaAutosize
             className={styles.text}
-            placeholder="Tell us about your idea"
+            placeholder={t.contact.tellUsAbout}
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
@@ -199,7 +224,7 @@ function Form() {
           type="submit"
           className={styles.submit}
         >
-          Submit
+          {t.contact.submit}
         </button>
       </form>
     </div>

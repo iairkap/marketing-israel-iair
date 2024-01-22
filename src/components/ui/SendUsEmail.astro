@@ -2,12 +2,15 @@
 interface Props {
   title: string;
   email: string;
+  language?: string;
 }
-const { title, email } = Astro.props;
+const { title, email, language } = Astro.props;
 ---
 
 <article class="general-container">
-  <span class="title"> Send us an Email</span>
+  <span class="title"
+    >{language === "he" ? 'שלחו לנו דוא"ל' : "Send us an Email"}</span
+  >
   <br />
   <h6 class="email">{email}</h6>
 </article>

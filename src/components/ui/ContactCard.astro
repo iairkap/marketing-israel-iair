@@ -8,9 +8,10 @@ interface Props {
   name: string;
   title: string;
   href: string | URL;
+  language?: string;
 }
 
-const { name, title, href } = Astro.props;
+const { name, title, href, language } = Astro.props;
 ---
 
 <article class="general-container">

@@ -60,6 +60,12 @@
   "contact": {
     "TalkToUs": "Talk to us",
     "LetsDiver": "Let's dive deeper! don't hold back.",
-    "ScheduleCall": "Schedule a call"
+    "ScheduleCall": "Schedule a call",
+    "YourProjectTypes": "Your Project Types: ",
+    "servicesYouNeed": "Services you need: ",
+    "YourName": "Your Name",
+    "YourEmail": "Your Email",
+    "tellUsAbout": "Tell us about your idea",
+    "submit": "Submit"
   }
 }

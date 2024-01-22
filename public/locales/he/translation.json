@@ -62,6 +62,12 @@
   "contact": {
     "TalkToUs": "שוחח איתנו",
     "LetsDiver": "בואו נטפס עמוק יותר! אל תתעצרו.",
-    "ScheduleCall": "קבעו שיחה"
+    "ScheduleCall": "קבעו שיחה",
+    "YourProjectTypes": "סוגי הפרויקט שלך: ",
+    "servicesYouNeed": "שירותים שאתה צריך: ",
+    "YourName": "שמך",
+    "YourEmail": "כתובת האימייל שלך",
+    "tellUsAbout": "ספר לנו על רעיון הפרויקט שלך",
+    "submit": "שלח"
   }
 }
