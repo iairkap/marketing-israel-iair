@@ -15,10 +15,13 @@ interface Props {
 }
 
 const t = language === "he" ? he : en;
-/* style={{ direction: language === "he" ? "rtl" : "ltr" }} */
 ---
 
-<article class="general-container" id="services-card">
+<article
+  class="general-container"
+  id="services-card"
+  style={{ direction: language === "he" ? "rtl" : "ltr" }}
+>
   <div class="container">
     <h1 class="title">{title}</h1>
     <div class="services-card-container">
@@ -71,6 +74,7 @@ const t = language === "he" ? he : en;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
+    height: 80%;
     gap: 3rem;
     align-items: start;
     align-content: space-around;
