@@ -95,7 +95,7 @@ const t = language === "he" ? he : en;
     line-height: normal;
     @media screen and (max-height: 768px) {
       font-size: 1.5rem;
-      text-align: center;
+      te: center;
     }
   }
   @keyframes bounce-in-left {
@@ -139,15 +139,8 @@ const t = language === "he" ? he : en;
     animateOnScroll,
     elementAnimateOnScroll,
   } from "../../helpers/animation";
-
-  // Get the width of the window
-  const windowWidth = window.innerWidth;
-
-  // Only run the animation if the window width is greater than 768px
-  if (windowWidth > 768) {
-    elementAnimateOnScroll("#services-card-1", "bounce-in-left");
-    elementAnimateOnScroll("#services-card-2", "bounce-in-right");
-    elementAnimateOnScroll("#services-card-3", "bounce-in-left");
-    elementAnimateOnScroll("#services-card-4", "bounce-in-right");
-  }
+  elementAnimateOnScroll("#services-card-1", "bounce-in-left");
+  elementAnimateOnScroll("#services-card-2", "bounce-in-right");
+  elementAnimateOnScroll("#services-card-3", "bounce-in-left");
+  elementAnimateOnScroll("#services-card-4", "bounce-in-right");
 </script>
