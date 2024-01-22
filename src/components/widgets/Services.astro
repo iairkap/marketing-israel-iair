@@ -22,36 +22,38 @@ const t = language === "he" ? he : en;
   id="services-card"
   style={{ direction: language === "he" ? "rtl" : "ltr" }}
 >
-  <h1 class="sweepToTop">{title}</h1>
+  <div class="container">
+    <h1 class="sweepToTop">{title}</h1>
 
-  <div class="services-card-container">
-    <div id="services-card-1" class="card">
-      <ServicesCard
-        description={t.services.description1}
-        servicesTitle={t.services.servicetitle1}
-        svg={Ux}
-      />
-    </div>
-    <div id="services-card-2" class="card">
-      <ServicesCard
-        description={t.services.description2}
-        servicesTitle={t.services.servicetitle2}
-        svg={WebDev}
-      />
-    </div>
-    <div id="services-card-3" class="card">
-      <ServicesCard
-        description={t.services.description3}
-        servicesTitle={t.services.servicetitle3}
-        svg={Marketing}
-      />
-    </div>
-    <div id="services-card-4" class="card">
-      <ServicesCard
-        description={t.services.description4}
-        servicesTitle={t.services.servicetitle4}
-        svg={GraphicDesign}
-      />
+    <div class="services-card-container">
+      <div id="services-card-1" class="card">
+        <ServicesCard
+          description={t.services.description1}
+          servicesTitle={t.services.servicetitle1}
+          svg={Ux}
+        />
+      </div>
+      <div id="services-card-2" class="card">
+        <ServicesCard
+          description={t.services.description2}
+          servicesTitle={t.services.servicetitle2}
+          svg={WebDev}
+        />
+      </div>
+      <div id="services-card-3" class="card">
+        <ServicesCard
+          description={t.services.description3}
+          servicesTitle={t.services.servicetitle3}
+          svg={Marketing}
+        />
+      </div>
+      <div id="services-card-4" class="card">
+        <ServicesCard
+          description={t.services.description4}
+          servicesTitle={t.services.servicetitle4}
+          svg={GraphicDesign}
+        />
+      </div>
     </div>
   </div>
 </article>
@@ -62,7 +64,7 @@ const t = language === "he" ? he : en;
       display: none;
     }
   }
-  .general-container {
+  .container {
     height: 100vh;
     display: flex;
     flex-direction: column;
