@@ -106,6 +106,28 @@ interface Props {}
       line-height: 1.6;
     }
 
+    ::-webkit-scrollbar {
+      width: 10px;
+      padding: 2rem;
+    }
+
+    /* Estiliza el track (la parte "barra" de la barra de desplazamiento) */
+    ::-webkit-scrollbar-track {
+      background: #3a1fff;
+      border-radius: 5px;
+    }
+
+    /* Estiliza el thumb (la parte "deslizante" de la barra de desplazamiento) */
+    ::-webkit-scrollbar-thumb {
+      background: #1e1370;
+      border-radius: 12px;
+    }
+
+    /* Cambia el color del thumb al pasar el mouse */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1e1370;
+    }
+
     .astro-a {
       position: absolute;
       top: -32px;
@@ -132,8 +154,12 @@ interface Props {}
       height: 5.03431rem;
       transform: rotate(2.312deg);
       flex-shrink: 0;
-      background: #3a1fff;
+      background: red;
+      @media (max-width: 768px) {
+        display: none !important;
+      }
     }
+
     .instructions {
       margin-bottom: 2rem;
       border: 1px solid rgba(var(--accent-light), 25%);
@@ -221,6 +247,9 @@ interface Props {}
     section {
       padding: 0 15vw;
       min-height: 100vh;
+      @media screen and (max-width: 768px) {
+        padding: 0 0;
+      }
     }
   </style>
 
