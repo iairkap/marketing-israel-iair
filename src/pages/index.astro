@@ -7,7 +7,7 @@ import Header from "../components/widgets/Header.astro";
 import PortfolioSection from "../components/widgets/PortfolioSection.astro";
 import WhatOurClientSays from "../components/widgets/WhatOurClientSays.astro";
 import FAQ from "../components/widgets/FAQ.astro";
-import { faqs } from "../javascript/questions";
+import { faqsEn } from "../javascript/questions";
 import CallToAction from "../components/widgets/CallToAction.astro";
 import Footer from "../components/ui/Footer.astro";
 import i18next, { t, changeLanguage } from "i18next";
@@ -82,7 +82,7 @@ interface Props {}
       </section>
       <div class="divider"></div>
       <section>
-        <FAQ faqs={faqs} />
+        <FAQ faqs={faqsEn} language="en" />
       </section>
       <section
         style={{
@@ -106,6 +106,28 @@ interface Props {}
       color: white;
       font-size: 20px;
       line-height: 1.6;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+      padding: 2rem;
+    }
+
+    /* Estiliza el track (la parte "barra" de la barra de desplazamiento) */
+    ::-webkit-scrollbar-track {
+      background: #3a1fff;
+      border-radius: 5px;
+    }
+
+    /* Estiliza el thumb (la parte "deslizante" de la barra de desplazamiento) */
+    ::-webkit-scrollbar-thumb {
+      background: #1e1370;
+      border-radius: 12px;
+    }
+
+    /* Cambia el color del thumb al pasar el mouse */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1e1370;
     }
 
     .astro-a {

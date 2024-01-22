@@ -1,4 +1,7 @@
 ---
+import he from "../../../public/locales/he/translation.json";
+import en from "../../../public/locales/en/translation.json";
+const { faqs, language } = Astro.props;
 interface Question {
   question: string;
   answer: string;
@@ -6,15 +9,16 @@ interface Question {
 
 interface Props {
   faqs: Question[];
+  language?: string;
 }
-
-const { faqs } = Astro.props;
+const t = language === "he" ? he : en;
+const direction = language === "he" ? "rtl" : "ltr";
 ---
 
-<article>
+<article style={`direction: ${direction};`}>
   <div class="title">
-    <h2>Curious?</h2>
-    <h2>We've got you <span id="span">covered.</span></h2>
+    <h2>{t.FAQ.title}</h2>
+    <h2>{t.FAQ.span1} <span id="span">{t.FAQ.span2}</span></h2>
   </div>
 
   <div class="list">

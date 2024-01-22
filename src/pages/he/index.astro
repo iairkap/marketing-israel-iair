@@ -7,7 +7,7 @@ import Header from "../../components/widgets/Header.astro";
 import PortfolioSection from "../../components/widgets/PortfolioSection.astro";
 import WhatOurClientSays from "../../components/widgets/WhatOurClientSays.astro";
 import FAQ from "../../components/widgets/FAQ.astro";
-import { faqs } from "../../javascript/questions";
+import { faqsHe } from "../../javascript/questions";
 import CallToAction from "../../components/widgets/CallToAction.astro";
 import Footer from "../../components/ui/Footer.astro";
 import i18next, { t, changeLanguage } from "i18next";
@@ -81,7 +81,7 @@ interface Props {}
       </section>
       <div class="divider"></div>
       <section>
-        <FAQ faqs={faqs} />
+        <FAQ faqs={faqsHe} language="he" />
       </section>
       <section
         style={{
