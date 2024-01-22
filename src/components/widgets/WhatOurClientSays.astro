@@ -1,41 +1,41 @@
 ---
 import ClientsCard from "../ui/ClientsCard.astro";
-import i18next, { t, changeLanguage } from "i18next";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import he from "../../../public/locales/he/translation.json";
+import en from "../../../public/locales/en/translation.json";
 
+const { title, language } = Astro.props;
 interface Props {
   title: string;
+  language: string;
 }
 
-const { title } = Astro.props;
-
-let currentLanguage = i18next.language;
+const t = language === "he" ? he : en;
 ---
 
 <article
   class="sweepToTop"
-  style={{ flexDirection: currentLanguage === "he" ? "row-reverse" : "row" }}
+  style={{ flexDirection: language === "he" ? "row-reverse" : "row" }}
 >
   <div class="izquierda">
     <h2>{title}</h2>
   </div>
   <div class="derecha">
     <ClientsCard
-      name={t("clients.nameTalentTech")}
-      review={t("clients.reviewTalentTech")}
-      compnayName={t("clients.companyNameTalentTech")}
+      name={t.clients.nameTalentTech}
+      review={t.clients.reviewTalentTech}
+      compnayName={t.clients.companyNameTalentTech}
       picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2F1702656299277.jpeg?alt=media&token=d5fa0419-a9c1-4501-b332-3036fe4148da"
     />
     <ClientsCard
-      name={t("clients.nameRealCover")}
-      review={t("clients.reviewRealCover")}
-      compnayName={t("clients.companyNameRealCover")}
+      name={t.clients.nameRealCover}
+      review={t.clients.reviewRealCover}
+      compnayName={t.clients.companyNameRealCover}
       picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2Frealcoverpic.jpeg?alt=media&token=f2355e58-4083-48a5-b0a1-ff455e1aa36b"
     />
     <ClientsCard
-      name={t("clients.nameResilense")}
-      review={t("clients.reviewResilense")}
-      compnayName={t("clients.companyNameResilense")}
+      name={t.clients.nameResilense}
+      review={t.clients.reviewResilense}
+      compnayName={t.clients.companyNameResilense}
       picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2F1516566008920.jpeg?alt=media&token=916e6d18-f68d-45e8-88db-14a4ec305c7f"
     />
   </div>
