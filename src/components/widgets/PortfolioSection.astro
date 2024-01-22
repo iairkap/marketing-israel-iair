@@ -1,28 +1,29 @@
 ---
 import WorkCard from "../ui/WorkCard.astro";
-import i18next, { t, changeLanguage } from "i18next";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import he from "../../../public/locales/he/translation.json";
+import en from "../../../public/locales/en/translation.json";
 
+
+const { title, button, language } = Astro.props;
 interface Props {
   title: string;
   button?: string;
+  language: string;
 }
 
-const { title, button } = Astro.props;
-
-let currentLanguage = i18next.language;
+const t = language === 'he' ? he : en;
 
 
 ---
 
-<article style={{ direction: currentLanguage === 'he' ? 'rtl' : 'ltr' }}>
+<article style={{ direction: language === 'he' ? 'rtl' : 'ltr' }}>
   <h1>{title}</h1>
-  <div class="work-container" style={{ flexDirection: currentLanguage === 'he' ? 'row-reverse' : 'row' }}>
+  <div class="work-container" style={{ flexDirection: language === 'he' ? 'row-reverse' : 'row' }}>
     <div class="container-column sweepToRight">
       <WorkCard
         name="Resi-Lense"
         class="smaller"
-        description={t("portfolio.resilenseDescription")}
+        description={t.portfolio.resilenseDescription}
         picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2FResilense.png?alt=media&token=d99b1f74-5f9e-4daa-9202-2dd388d38110"
       />
  
@@ -30,7 +31,7 @@ let currentLanguage = i18next.language;
         name="Real Cover"
         class="smaller"
         picture="RealCover"
-        description={t("portfolio.realCoverDescription")}
+        description={t.portfolio.realCoverDescription}
         picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2FRealCover.jpg?alt=media&token=34ba40a6-76b1-4498-a355-b4195f56eefb"
         iframe="https://realcover-iairkap.vercel.app/"
       />
@@ -39,13 +40,13 @@ let currentLanguage = i18next.language;
       <WorkCard
       name="Javaia"
       class="taller"
-      description={t("portfolio.javaiaDescription")}
+      description={t.portfolio.javaiaDescription}
       picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2Fjavaia.png?alt=media&token=3b17b677-58a0-45e0-a638-8c3971c0421c"
     />
       <WorkCard
         name="Talent Tech Hub"
         class="taller"
-        description={t("portfolio.talentTechHub")}
+        description={t.portfolio.talentTechHub}
         picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2FTalentTech.jpeg?alt=media&token=95aa054b-6b04-4fdd-aee4-ff9d00c3fb1d"
       />
     </div>
