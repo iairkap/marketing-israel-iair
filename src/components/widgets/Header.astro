@@ -31,8 +31,9 @@ const { language } = Astro.props;
     <div class="only-desktop">
       <ButtonsNav language={language} />
     </div>
-    <button class="hamburger-button">☰</button>
-    <div class="only-mobile"></div>
+    <div class="only-mobile">
+      <button class="hamburger-button">☰</button>
+    </div>
   </div>
 </nav>
 
@@ -50,8 +51,10 @@ const { language } = Astro.props;
     margin-top: 2rem;
     position: sticky;
     @media screen and (max-width: 768px) {
+      width: 100vw !important;
       margin-top: 0;
       margin-bottom: none;
+      align-items: center;
     }
   }
 
@@ -62,10 +65,10 @@ const { language } = Astro.props;
 
   .hamburger-button {
     display: none;
-    font-size: 5rem;
+    font-size: 3rem;
     background-color: transparent;
     border: none;
-    color: var(--color-text);
+    color: rgb(136, 136, 136);
   }
   .logo {
     color: white;
@@ -73,10 +76,8 @@ const { language } = Astro.props;
   @media (max-width: 768px) {
     .navbar {
       flex-direction: column;
-      align-items: flex-start;
-      margin-left: -2rem;
-      margin-right: -2rem;
-      transform: scale(0.8);
+      align-items: center;
+      transform: scale(1);
     }
 
     .hamburger-button {
