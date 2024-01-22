@@ -67,5 +67,14 @@
     "YourEmail": "Your Email",
     "tellUsAbout": "Tell us about your idea",
     "submit": "Submit"
+  },
+  "Footer": {
+    "company": "Company",
+    "Works": "Works",
+    "Services": "Services",
+    "Contact": "Contact Us",
+    "FAQ": "FAQ",
+    "Portfolio": "Portfolio",
+    "AllRight": "BeyondTik © 2024 - All rights reserved"
   }
 }

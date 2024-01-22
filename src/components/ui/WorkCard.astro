@@ -29,7 +29,7 @@ const {
 
 <a href={`/portfolio/${name}`}>
   <div class={`container ${className}`} id={name}>
-    <h3 class="card-name">+</h3>
+    <h3 class="card-name" id="plus">+</h3>
     <h4 class="card-name">{name}</h4>
     <span class="span-name">{description}</span>
     <div class="background-container">
@@ -77,6 +77,11 @@ const {
     height: 343px;
     border-radius: 8px;
     width: 100%;
+  }
+  #plus {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   .background-container {

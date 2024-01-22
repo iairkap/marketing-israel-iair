@@ -65,8 +65,6 @@ interface Props {}
           title="Creating Web Solutions that Convert Visitors into Customers"
           language="en"
         />
-        <br class="display-only-mobile" />
-        <br class="display-only-mobile" />
       </section>
       <section id="works">
         <PortfolioSection
@@ -82,7 +80,7 @@ interface Props {}
         />
       </section>
       <div class="divider"></div>
-      <section>
+      <section id="FAQ">
         <FAQ faqs={faqsEn} language="en" />
       </section>
       <section
@@ -94,7 +92,7 @@ interface Props {}
         }}
       >
         <CallToAction language="en" />
-        <Footer />
+        <Footer language="en" />
       </section>
     </main>
   </html>
@@ -157,8 +155,12 @@ interface Props {}
       height: 5.03431rem;
       transform: rotate(2.312deg);
       flex-shrink: 0;
-      background: #3a1fff;
+      background: red;
+      @media (max-width: 768px) {
+        display: none !important;
+      }
     }
+
     .instructions {
       margin-bottom: 2rem;
       border: 1px solid rgba(var(--accent-light), 25%);
@@ -246,6 +248,9 @@ interface Props {}
     section {
       padding: 0 15vw;
       min-height: 100vh;
+      @media screen and (max-width: 768px) {
+        padding: 0 0;
+      }
     }
   </style>
 

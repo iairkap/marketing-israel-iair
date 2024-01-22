@@ -17,8 +17,6 @@ changeLanguage("he");
 
 let currentLanguage = i18next.language;
 
-console.log(currentLanguage);
-console.log(t("hero.title"));
 interface Props {}
 ---
 
@@ -81,7 +79,7 @@ interface Props {}
         <WhatOurClientSays title="מה לקוחותינו אומרים עלינו" language="he" />
       </section>
       <div class="divider"></div>
-      <section>
+      <section id="FAQ">
         <FAQ faqs={faqsHe} language="he" />
       </section>
       <section
@@ -93,7 +91,7 @@ interface Props {}
         }}
       >
         <CallToAction language="he" />
-        <Footer />
+        <Footer language="he" />
       </section>
     </main>
   </html>

@@ -69,5 +69,14 @@
     "YourEmail": "כתובת האימייל שלך",
     "tellUsAbout": "ספר לנו על רעיון הפרויקט שלך",
     "submit": "שלח"
+  },
+  "Footer": {
+    "company": "חברה",
+    "Works": "עבודות",
+    "Services": "שירותים",
+    "Contact": "צור קשר",
+    "FAQ": "שאלות נפוצות",
+    "Portfolio": "PortFolio",
+    "AllRight": "BeyondTik © 2024 - כל הזכויות שמורות"
   }
 }

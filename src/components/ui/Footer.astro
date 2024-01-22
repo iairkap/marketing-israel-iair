@@ -1,25 +1,47 @@
 ---
+import he from "../../../public/locales/he/translation.json";
+import en from "../../../public/locales/en/translation.json";
+import Loader from "./Loader.astro";
 
+interface Props {
+  language?: string;
+}
+
+const { language } = Astro.props;
+
+const t = language === "he" ? he.Footer : en.Footer;
+const direction = language === "he" ? "rtl" : "ltr";
+
+const contact = language === "he" ? "/he/contact" : "/contact";
 ---
 
-<article>
+<article style={`direction: ${direction};`}>
   <div class="container">
     <div class="izq">
-      <span>BeyondTik</span>
-      <span>Subtitles</span>
+      <Loader />
+      <h6>BeyondTik</h6>
     </div>
     <div class="der">
       <div class="col">
-        <h6>Company</h6>
-        <span>Works</span>
-        <span>Services</span>
-        <span>Portfolio</span>
-        <span>FAQ</span>
-        <span>Contact Us</span>
+        <a href="/">
+          <h6>{t.company}</h6>
+        </a>
+        <a href="#works">
+          <span>{t.Works}</span>
+        </a>
+        <a href="#services">
+          <span>{t.Services}</span>
+        </a>
+        <a href="#FAQ">
+          <span>{t.FAQ}</span>
+        </a>
+        <a href={contact}>
+          <span>{t.Contact}</span>
+        </a>
       </div>
     </div>
   </div>
-  <span class="all-right">All rights Reserved</span>
+  <span class="all-right">{t.AllRight}</span>
 </article>
 
 <style>
@@ -27,14 +49,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 2rem;
     align-items: flex-start;
   }
   h6 {
     margin-top: 0px;
+    font-size: 1.2rem;
+    font-weight: 900;
   }
 
   span {
     font-size: 1rem;
+    font-weight: 600;
   }
   .izq {
     display: flex;
@@ -53,5 +79,9 @@
     display: block;
     font-weight: 100;
     font-size: 1rem;
+  }
+  a {
+    text-decoration: none;
+    color: white;
   }
 </style>

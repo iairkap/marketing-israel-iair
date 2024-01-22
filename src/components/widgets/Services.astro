@@ -23,10 +23,7 @@ const t = language === "he" ? he : en;
   style={{ direction: language === "he" ? "rtl" : "ltr" }}
 >
   <h1 class="sweepToTop">{title}</h1>
-  <br class="display-only-mobile" />
-  <br class="display-only-mobile" />
-  <br class="display-only-mobile" />
-  <br class="display-only-mobile" />
+
   <div class="services-card-container">
     <div id="services-card-1" class="card">
       <ServicesCard
@@ -60,12 +57,6 @@ const t = language === "he" ? he : en;
 </article>
 
 <style>
-  .sweepToTop {
-    /*    @media screen and (max-width: 768px) {
-      display: none;
-    } */
-  }
-
   .display-only-mobile {
     @media screen and (min-width: 1024px) {
       display: none;
@@ -76,6 +67,10 @@ const t = language === "he" ? he : en;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    @media screen and (max-height: 768px) {
+      height: 100%;
+      padding: 0 1rem;
+    }
   }
   .services-card-container {
     display: grid;
@@ -98,6 +93,10 @@ const t = language === "he" ? he : en;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    @media screen and (max-height: 768px) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
   }
   @keyframes bounce-in-left {
     0% {

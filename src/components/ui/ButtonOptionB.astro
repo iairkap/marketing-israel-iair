@@ -65,6 +65,11 @@ const { text, onClick } = Astro.props;
     font-weight: 700;
     transition: all 0.4s ease;
     cursor: pointer;
+    @media screen and (max-width: 768px) {
+      padding: 0.625rem 1.25rem;
+      min-width: 5.31rem;
+      font-size: 0.875rem;
+    }
   }
 
   .button-container button:hover{

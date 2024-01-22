@@ -32,8 +32,7 @@ const { language } = Astro.props;
       <ButtonsNav language={language} />
     </div>
     <button class="hamburger-button">☰</button>
-    <!--     <LanguageSelector />
- -->
+    <div class="only-mobile"></div>
   </div>
 </nav>
 
@@ -59,7 +58,7 @@ const { language } = Astro.props;
 
   .hamburger-button {
     display: none;
-    font-size: 1.5rem;
+    font-size: 5rem;
     background-color: transparent;
     border: none;
     color: var(--color-text);
@@ -69,7 +68,11 @@ const { language } = Astro.props;
   }
   @media (max-width: 768px) {
     .navbar {
-      padding: 1rem;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: -2rem;
+      margin-right: -2rem;
+      transform: scale(0.8);
     }
 
     .hamburger-button {

@@ -3,7 +3,6 @@ import WorkCard from "../ui/WorkCard.astro";
 import he from "../../../public/locales/he/translation.json";
 import en from "../../../public/locales/en/translation.json";
 
-
 const { title, button, language } = Astro.props;
 interface Props {
   title: string;
@@ -11,14 +10,15 @@ interface Props {
   language: string;
 }
 
-const t = language === 'he' ? he : en;
-
-
+const t = language === "he" ? he : en;
 ---
 
-<article style={{ direction: language === 'he' ? 'rtl' : 'ltr' }}>
+<article style={{ direction: language === "he" ? "rtl" : "ltr" }}>
   <h1>{title}</h1>
-  <div class="work-container" style={{ flexDirection: language === 'he' ? 'row-reverse' : 'row' }}>
+  <div
+    class="work-container"
+    style={{ flexDirection: language === "he" ? "row-reverse" : "row" }}
+  >
     <div class="container-column sweepToRight">
       <WorkCard
         name="Resi-Lense"
@@ -26,7 +26,7 @@ const t = language === 'he' ? he : en;
         description={t.portfolio.resilenseDescription}
         picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2FResilense.png?alt=media&token=d99b1f74-5f9e-4daa-9202-2dd388d38110"
       />
- 
+
       <WorkCard
         name="Real Cover"
         class="smaller"
@@ -38,11 +38,11 @@ const t = language === 'he' ? he : en;
     </div>
     <div class="container-column sweepToLeft">
       <WorkCard
-      name="Javaia"
-      class="taller"
-      description={t.portfolio.javaiaDescription}
-      picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2Fjavaia.png?alt=media&token=3b17b677-58a0-45e0-a638-8c3971c0421c"
-    />
+        name="Javaia"
+        class="taller"
+        description={t.portfolio.javaiaDescription}
+        picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2Fjavaia.png?alt=media&token=3b17b677-58a0-45e0-a638-8c3971c0421c"
+      />
       <WorkCard
         name="Talent Tech Hub"
         class="taller"
@@ -60,12 +60,9 @@ const t = language === 'he' ? he : en;
     gap: 1rem;
     height: 100%;
     width: 100%;
-@media screen and (max-width: 1053px) {
-  flex-direction: column;
-  .container-column
-  
-}
-
+    @media screen and (max-width: 1053px) {
+      flex-direction: column !important;
+    }
   }
 
   .container-column {
@@ -73,5 +70,18 @@ const t = language === 'he' ? he : en;
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+  }
+  h1 {
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  article {
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+      margin-top: 5rem;
+    }
   }
 </style>
