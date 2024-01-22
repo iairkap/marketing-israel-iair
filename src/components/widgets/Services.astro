@@ -23,7 +23,7 @@ const t = language === "he" ? he : en;
   style={{ direction: language === "he" ? "rtl" : "ltr" }}
 >
   <div class="container">
-    <h1 class="sweepToTop">{title}</h1>
+    <h1 class="title">{title}</h1>
     <div class="services-card-container">
       <div id="services-card-1" class="card">
         <ServicesCard
@@ -139,7 +139,7 @@ const t = language === "he" ? he : en;
   } from "../../helpers/animation";
 
   // Get the width of the window
-  /*   const windowWidth = window.innerWidth;
+  const windowWidth = window.innerWidth;
 
   // Only run the animation if the window width is greater than 768px
   if (windowWidth > 768) {
@@ -147,5 +147,5 @@ const t = language === "he" ? he : en;
     elementAnimateOnScroll("#services-card-2", "bounce-in-right");
     elementAnimateOnScroll("#services-card-3", "bounce-in-left");
     elementAnimateOnScroll("#services-card-4", "bounce-in-right");
-  } */
+  }
 </script>
