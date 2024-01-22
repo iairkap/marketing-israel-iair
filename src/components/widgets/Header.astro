@@ -49,6 +49,10 @@ const { language } = Astro.props;
     z-index: 100;
     margin-top: 2rem;
     position: sticky;
+    @media screen and (max-width: 768px) {
+      margin-top: 0;
+      margin-bottom: none;
+    }
   }
 
   .navbar-right {
