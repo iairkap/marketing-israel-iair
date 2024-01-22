@@ -145,10 +145,8 @@ const t = language === "he" ? he : en;
   const windowWidth = window.innerWidth;
 
   // Only run the animation if the window width is greater than 768px
-  if (windowWidth > 768) {
-    elementAnimateOnScroll("#services-card-1", "bounce-in-left");
-    elementAnimateOnScroll("#services-card-2", "bounce-in-right");
-    elementAnimateOnScroll("#services-card-3", "bounce-in-left");
-    elementAnimateOnScroll("#services-card-4", "bounce-in-right");
-  }
+  elementAnimateOnScroll("#services-card-1", "bounce-in-left");
+  elementAnimateOnScroll("#services-card-2", "bounce-in-right");
+  elementAnimateOnScroll("#services-card-3", "bounce-in-left");
+  elementAnimateOnScroll("#services-card-4", "bounce-in-right");
 </script>
