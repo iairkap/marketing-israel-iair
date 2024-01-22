@@ -74,13 +74,15 @@ const t = language === "he" ? he : en;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
-    height: 80%;
     gap: 3rem;
     align-items: start;
     align-content: space-around;
+
     @media screen and (max-width: 1024px) {
       grid-template-columns: 1fr;
       gap: 1rem;
+      height: 100%;
+      background-color: red;
     }
   }
 
