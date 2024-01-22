@@ -6,6 +6,10 @@ import Loader from "../ui/Loader.astro";
 import i18next, { t, changeLanguage } from "i18next";
 
 let currentLanguage = i18next.language;
+
+interface Props {
+  language: string;
+}
 ---
 
 <nav
