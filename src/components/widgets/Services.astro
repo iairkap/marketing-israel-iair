@@ -77,6 +77,10 @@ const t = language === "he" ? he : en;
     gap: 3rem;
     align-items: start;
     align-content: space-around;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      height: 100%;
+    }
   }
 
   h1 {
