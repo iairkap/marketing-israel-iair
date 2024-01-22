@@ -1,15 +1,26 @@
 ---
 import ButtonOptionA from "../ui/ButtonOptionA.astro";
 import ButtonOptionB from "../ui/ButtonOptionB.astro";
+import he from "../../../public/locales/he/translation.json";
+import en from "../../../public/locales/en/translation.json";
+
+interface Props {
+  language: string;
+}
+
+const { language } = Astro.props;
+
+const t = language === "he" ? he : en;
+const direction = language === "he" ? "rtl" : "ltr";
 ---
 
-<article>
+<article style={`direction: ${direction};`}>
   <div class="container">
     <div class="title">
-      <h1 class="h1">Talk To Us!</h1>
-      <h4>Let's dive deeper! Don't hold back</h4>
+      <h1 class="h1">{t.contact.TalkToUs}</h1>
+      <h4>{t.contact.LetsDiver}</h4>
     </div>
-    <ButtonOptionA text="Schedule a Call" />
+    <ButtonOptionA text={t.contact.ScheduleCall} />
   </div>
 </article>
 

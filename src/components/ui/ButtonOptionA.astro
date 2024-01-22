@@ -21,6 +21,9 @@ const { text, onClick } = Astro.props;
     min-width: 7.31rem;
     border: none;
     border-radius: 0.3125rem;
+    background-color: #391fff09;
+    border: 3px solid #3a1fff;
+
     background: #3a1fff;
     color: #fff;
     font-family: "Manrope" sans-serif;
@@ -28,5 +31,11 @@ const { text, onClick } = Astro.props;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    transition: all 0.2s ease-in-out;
+  }
+  button:hover {
+    background-color: #391fff09;
+    border: 3px solid #7464ed;
+    color: white;
   }
 </style>

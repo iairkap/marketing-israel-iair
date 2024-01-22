@@ -7,17 +7,22 @@ interface Props {
   description: string;
   button1: string;
   button2: string;
+  language?: string;
 }
 
-const { title, description, button1, button2 } = Astro.props;
+const { title, description, button1, button2, language } = Astro.props;
+const direction = language === "he" ? "rtl" : "ltr";
 ---
 
-<article class="general-container">
+<article
+  class="general-container"
+  style={{ flexDirection: language === "he" ? "row-reverse" : "row" }}
+>
   <!--   <div class="grid" style="position: absolute">
     <BackgroundGrid />
   </div> -->
   <div class="background-gradient"></div>
-  <div class="left-container">
+  <div class="left-container" style={`direction: ${direction};`}>
     <h1 class="title">{title}</h1>
     <span>{description}</span>
     <div class="button-container">

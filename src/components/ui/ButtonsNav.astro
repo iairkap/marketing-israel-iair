@@ -71,7 +71,7 @@ if (language === "he") {
     },
     {
       title: "צור קשר",
-      href: "/contact",
+      href: "he/contact",
     },
   ];
 } else {
@@ -100,7 +100,10 @@ console.log(language);
 
 <div
   class="buttons-nav"
-  style={{ flexDirection: language === "he" ? "row-reverse" : "row" }}
+  style={{
+    flexDirection: language === "he" ? "row-reverse" : "row",
+    alignItems: "center",
+  }}
 >
   {
     links.map((link) => (
@@ -109,9 +112,73 @@ console.log(language);
       </a>
     ))
   }
+  <div class="world-container">
+    <button class="world buttonNav"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        ><g
+          fill="none"
+          stroke="white"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          ><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m.6-3h16.8M3.6 15h16.8"
+          ></path><path d="M11.5 3a17 17 0 0 0 0 18m1-18a17 17 0 0 1 0 18"
+          ></path></g
+        ></svg
+      ></button
+    >
+    <div id="dropdown" class="dropdown">
+      <a href="/" class="buttonNav">English</a>
+      <a href="/he" class="buttonNav">עיברית</a>
+    </div>
+  </div>
 </div>
 
 <style>
+  .world-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .world {
+    background-color: transparent;
+    border: none;
+  }
+  svg g {
+    transition: all 0.3s ease 0s;
+  }
+  .world-container:hover .world svg g {
+    stroke: #3a1fff;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: #3a1fff 3px solid;
+    z-index: 1;
+    color: white;
+  }
+
+  .dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: white;
+    stroke: 1px solid white;
+  }
+
+  .world-container:hover .dropdown {
+    display: block;
+  }
+
   .buttons-nav {
     display: flex;
     gap: 1rem;
@@ -141,63 +208,6 @@ console.log(language);
     border: 1px solid white;
   }
 
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    z-index: 2;
-  }
-
-  .dropdown-wrapper:hover::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(2px);
-    z-index: 1;
-  }
-  .dropdown-wrapper:hover .dropdown-content {
-    display: flex;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: row;
-    height: fit-content;
-    padding: 2rem;
-    width: 40vw;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 3;
-    border-radius: 0.3125rem;
-    background: #1b1f27;
-    color: #fff;
-    font-family: "Manrope" sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: flex;
-  }
-
-  .dropdown-content {
-    display: none;
-    flex-direction: row;
-  }
-
-  .dropdown-column {
-    flex: 1;
-    padding: 1rem;
-  }
-
   .subtitle {
     color: #fff;
     font-family: "Manrope";
@@ -219,26 +229,40 @@ console.log(language);
 </style>
 <script>
   const navLinks = document.querySelectorAll(".nav-link");
-
   navLinks.forEach((link: Element) => {
     link.addEventListener("click", function (this: Element, e: Event) {
       const href = this.getAttribute("href");
 
-      if (
-        href &&
-        href.startsWith("#") &&
-        window.location.pathname === "/contact"
-      ) {
-        window.location.href = "/" + href;
-      } else if (href && href.startsWith("#")) {
+      if (href && href.startsWith("#")) {
         e.preventDefault();
 
-        const target = document.querySelector(href);
+        // Check if the current path includes '/he'
+        const isHebrew = window.location.pathname.includes("/he");
 
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth" });
+        // If on '/contact' page, redirect to home page with the same language
+        if (window.location.pathname.includes("/contact")) {
+          window.location.href = isHebrew ? "/he" + href : "/" + href;
+        } else {
+          const target = document.querySelector(href);
+
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
         }
       }
     });
   });
+
+  const worldButton = document.querySelector(".world") as HTMLElement | null;
+  const dropdown = document.getElementById("dropdown") as HTMLElement | null;
+
+  if (worldButton && dropdown) {
+    worldButton.addEventListener("click", () => {
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    });
+  }
 </script>
