@@ -4,7 +4,6 @@ import Ux from "../../../public/ux.svg";
 import WebDev from "../../../public/webDev.svg";
 import Marketing from "../../../public/marketing.svg";
 import GraphicDesign from "../../../public/graphicDesign.svg";
-import map from "../../../public/map.png";
 import he from "../../../public/locales/he/translation.json";
 import en from "../../../public/locales/en/translation.json";
 const { title, language } = Astro.props;
@@ -78,13 +77,6 @@ const t = language === "he" ? he : en;
     gap: 3rem;
     align-items: start;
     align-content: space-around;
-
-    @media screen and (max-width: 1024px) {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      height: 100%;
-      background-color: red;
-    }
   }
 
   h1 {
