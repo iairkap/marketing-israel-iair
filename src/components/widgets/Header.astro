@@ -35,7 +35,12 @@ const { language } = Astro.props;
 </nav>
 <div
   class="only-mobile"
-  style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
+  style={{
+    width: "100%",
+    display: "flex",
+    justifyContent: "flex-end",
+    marginBottom: "-2rem",
+  }}
 >
   <button class="hamburger-button">☰</button>
 </div>
@@ -68,10 +73,10 @@ const { language } = Astro.props;
 
   .hamburger-button {
     display: none;
-    font-size: 3rem;
+    font-size: 2.5rem;
     background-color: transparent;
     border: none;
-    color: rgb(136, 136, 136);
+    color: rgb(184, 184, 184);
     justify-self: flex-end;
   }
   .logo {
