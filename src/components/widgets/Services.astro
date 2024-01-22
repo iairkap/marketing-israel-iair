@@ -5,22 +5,22 @@ import WebDev from "../../../public/webDev.svg";
 import Marketing from "../../../public/marketing.svg";
 import GraphicDesign from "../../../public/graphicDesign.svg";
 import map from "../../../public/map.png";
-
-import i18next, { t, changeLanguage } from "i18next";
-
-let currentLanguage = i18next.language;
+import he from "../../../public/locales/he/translation.json";
+import en from "../../../public/locales/en/translation.json";
+const { title, language } = Astro.props;
 
 interface Props {
   title: string;
+  language: string;
 }
 
-const { title } = Astro.props;
+const t = language === "he" ? he : en;
 ---
 
 <article
   class="general-container"
   id="services-card"
-  style={{ direction: currentLanguage === "he" ? "rtl" : "ltr" }}
+  style={{ direction: language === "he" ? "rtl" : "ltr" }}
 >
   <h1 class="sweepToTop">{title}</h1>
   <br class="display-only-mobile" />
@@ -30,29 +30,29 @@ const { title } = Astro.props;
   <div class="services-card-container">
     <div id="services-card-1" class="card">
       <ServicesCard
-        description={t("services.description1")}
-        servicesTitle={t("services.servicetitle1")}
+        description={t.services.description1}
+        servicesTitle={t.services.servicetitle1}
         svg={Ux}
       />
     </div>
     <div id="services-card-2" class="card">
       <ServicesCard
-        description={t("services.description2")}
-        servicesTitle={t("services.servicetitle2")}
+        description={t.services.description2}
+        servicesTitle={t.services.servicetitle2}
         svg={WebDev}
       />
     </div>
     <div id="services-card-3" class="card">
       <ServicesCard
-        description={t("services.description3")}
-        servicesTitle={t("services.servicetitle3")}
+        description={t.services.description3}
+        servicesTitle={t.services.servicetitle3}
         svg={Marketing}
       />
     </div>
     <div id="services-card-4" class="card">
       <ServicesCard
-        description={t("services.description4")}
-        servicesTitle={t("services.servicetitle4")}
+        description={t.services.description4}
+        servicesTitle={t.services.servicetitle4}
         svg={GraphicDesign}
       />
     </div>
