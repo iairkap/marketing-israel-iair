@@ -15,13 +15,10 @@ interface Props {
 }
 
 const t = language === "he" ? he : en;
+/* style={{ direction: language === "he" ? "rtl" : "ltr" }} */
 ---
 
-<article
-  class="general-container"
-  id="services-card"
-  style={{ direction: language === "he" ? "rtl" : "ltr" }}
->
+<article class="general-container" id="services-card">
   <div class="container">
     <h1 class="title">{title}</h1>
     <div class="services-card-container">
