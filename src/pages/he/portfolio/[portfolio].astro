@@ -9,16 +9,16 @@ changeLanguage("he");
 let iframeSrc = "";
 const currentPath = Astro.url.pathname;
 switch (currentPath) {
-    case "/portfolio/Real%20Cover":
-        iframeSrc = "https://realcover-iairkap.vercel.app/";
-        break;
-    case "/portfolio/Resi-Lense":
-        iframeSrc = "https://resilense.com/";
-        break;
-    case "/portfolio/Talent%20Tech%20Hub":
-        iframeSrc =
-            "https://tech-talent-hub-actual-git-develop-equipo3henry.vercel.app/";
-        break;
+  case "/portfolio/Real%20Cover":
+    iframeSrc = "https://realcover-iairkap.vercel.app/";
+    break;
+  case "/portfolio/Resi-Lense":
+    iframeSrc = "https://resilense.com/";
+    break;
+  case "/portfolio/Talent%20Tech%20Hub":
+    iframeSrc =
+      "https://tech-talent-hub-actual-git-develop-equipo3henry.vercel.app/";
+    break;
 }
 ---
 
@@ -32,7 +32,7 @@ switch (currentPath) {
     }}
   >
     <div style={{ padding: "0 15vw", marginBottom: "2rem" }}>
-      <Header />
+      <Header language="he" />
     </div>
     <iframe
       id="iframe"
