@@ -1,7 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import i18next, { t, changeLanguage } from "i18next";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
+
+const { href, className, language } = Astro.props as Props;
+
 interface SubLink {
   Subtitle: string;
   options: string[];
@@ -11,6 +12,7 @@ interface SubLink {
 interface Props extends HTMLAttributes<"a"> {
   myProp?: boolean;
   className?: string;
+  language?: string;
 }
 
 interface Link {
@@ -19,7 +21,7 @@ interface Link {
   subLinks?: SubLink[];
 }
 
-let links: Link[] = [
+/* let links: Link[] = [
   { title: t("buttonNav.work"), href: "#works" },
   {
     title: t("buttonNav.services"),
@@ -49,15 +51,56 @@ let links: Link[] = [
   },
   { title: t("buttonNav.about"), href: "#about" },
   { title: t("buttonNav.contact"), href: "/contact" },
-];
-let currentLanguage = i18next.language;
+]; */
 
-const { href, className } = Astro.props as Props;
+let links: Link[];
+
+if (language === "he") {
+  links = [
+    {
+      title: "שירותים",
+      href: "#services",
+    },
+    {
+      title: "עבודות",
+      href: "#works",
+    },
+    {
+      title: "אודות",
+      href: "#about",
+    },
+    {
+      title: "צור קשר",
+      href: "/contact",
+    },
+  ];
+} else {
+  links = [
+    {
+      title: "Services",
+      href: "#services",
+    },
+    {
+      title: "Works",
+      href: "#works",
+    },
+    {
+      title: "About",
+      href: "#about",
+    },
+    {
+      title: "Contact",
+      href: "/contact",
+    },
+  ];
+}
+
+console.log(language);
 ---
 
 <div
   class="buttons-nav"
-  style={{ flexDirection: currentLanguage === "he" ? "row-reverse" : "row" }}
+  style={{ flexDirection: language === "he" ? "row-reverse" : "row" }}
 >
   {
     links.map((link) => (

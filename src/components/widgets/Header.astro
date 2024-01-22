@@ -10,6 +10,8 @@ let currentLanguage = i18next.language;
 interface Props {
   language: string;
 }
+
+const { language } = Astro.props;
 ---
 
 <nav
@@ -27,7 +29,7 @@ interface Props {
   </div>
   <div class="navbar-right">
     <div class="only-desktop">
-      <ButtonsNav />
+      <ButtonsNav language={language} />
     </div>
     <button class="hamburger-button">☰</button>
     <!--     <LanguageSelector />
