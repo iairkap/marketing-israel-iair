@@ -16,108 +16,111 @@ interface Props {}
   <main dir="rtl">
     <div style={{ margin: "0vw -7.5vw" }}>
       <Top language="he" />
-    </div>
+      <div class="background-gradient"></div>
 
-    <div class="background-gradient"></div>
-
-    <div class="container">
-      <section class="left">
-        <div class="containerL">
-          <div>
-            <SendUsEmail title="hola" email="iairkap@gmail.com" language="he" />
+      <div class="container">
+        <section class="left">
+          <div class="containerL">
             <div>
-              <ContactCard
-                name="יאיר קפלון"
-                title="Web Developer"
-                href="https://www.linkedin.com/in/iair-kaplun-50872a292/"
+              <SendUsEmail
+                title="hola"
+                email="iairkap@gmail.com"
                 language="he"
               />
+              <div>
+                <ContactCard
+                  name="יאיר קפלון"
+                  title="Web Developer"
+                  href="https://www.linkedin.com/in/iair-kaplun-50872a292/"
+                  language="he"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="right">
-        <ContactForm title="שלום! יש לך פרויקט?" language="he" />
-      </section>
+        </section>
+        <section class="right">
+          <ContactForm title="שלום! יש לך פרויקט?" language="he" />
+        </section>
+      </div>
     </div>
-  </main>
 
-  <style>
-    main {
-      width: calc(100vw - 15vw);
-      margin: 0vw 7.5vw;
-      height: calc(100vh - 2rem);
+    <style>
+      main {
+        width: calc(100vw - 15vw);
+        margin: 0vw 7.5vw;
+        height: calc(100vh - 2rem);
 
-      @media (max-width: 768px) {
+        @media (max-width: 768px) {
+          width: 100vw;
+          margin: 0;
+        }
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        grid-template-areas: "left right";
+        padding-left: 7.5vw;
+        padding-right: 5vw;
+        margin-top: 5rem;
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+          grid-template-areas: "right" "left";
+          padding-left: 0;
+          padding-right: 0;
+          gap: 2rem;
+          margin-top: 4rem;
+        }
+      }
+
+      .left {
+        grid-area: left;
+      }
+
+      .right {
+        grid-area: right;
+      }
+      .header {
+        padding: 0 15vw;
+
+        @media (max-width: 768px) {
+          padding: 0;
+        }
+      }
+
+      .left,
+      .right {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .background-gradient {
+        left: 0;
         width: 100vw;
-        margin: 0;
+        position: absolute;
+        margin-top: -350px;
+        opacity: 40%;
+        height: 100%;
+        background: radial-gradient(
+          102.91% 64.71% at 75.38% 27.65%,
+          #391fffc9 0%,
+          #3820f1d8 3%,
+          #2e1cb9 18%,
+          #241988 33%,
+          #1c1660 47%,
+          #161441 61%,
+          #12132b 75%,
+          #0f121e 88%,
+          #0f121a 100%
+        );
+        z-index: -1;
+        transform: scaleX(-1);
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
       }
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: 0.5fr 1fr;
-      grid-template-areas: "left right";
-      padding-right: 9.5vw;
-      padding-left: 5vw;
-      margin-top: 5rem;
-
-      @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-        grid-template-areas: "right" "left";
-        padding-left: 0;
-        padding-right: 0;
-        gap: 2rem;
-        margin-top: 4rem;
-      }
-    }
-
-    .left {
-      grid-area: left;
-    }
-
-    .right {
-      grid-area: right;
-    }
-    .header {
-      padding: 0 15vw;
-
-      @media (max-width: 768px) {
-        padding: 0;
-      }
-    }
-
-    .left,
-    .right {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .background-gradient {
-      left: 0;
-      width: 100vw;
-      position: absolute;
-      margin-top: -350px;
-      opacity: 40%;
-      height: 100%;
-      background: radial-gradient(
-        102.91% 64.71% at 75.38% 27.65%,
-        #391fffc9 0%,
-        #3820f1d8 3%,
-        #2e1cb9 18%,
-        #241988 33%,
-        #1c1660 47%,
-        #161441 61%,
-        #12132b 75%,
-        #0f121e 88%,
-        #0f121a 100%
-      );
-      z-index: -1;
-      transform: scaleX(-1);
-
-      @media screen and (max-width: 768px) {
-        display: none;
-      }
-    }
-  </style>
+    </style>
+  </main>
 </Layout>
