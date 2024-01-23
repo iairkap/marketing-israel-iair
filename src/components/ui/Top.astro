@@ -8,6 +8,8 @@ interface Props {
 }
 
 const { language } = Astro.props;
+
+const href = language === "he" ? "/he" : "/";
 ---
 
 <div class="header">
@@ -15,7 +17,9 @@ const { language } = Astro.props;
     <Header language={language} />
   </div>
   <div class="mobile">
-    <Loader />
+    <a href={href}>
+      <Loader />
+    </a>
     <Mobile language={language} />
   </div>
 </div>
