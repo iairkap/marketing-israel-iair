@@ -13,8 +13,11 @@ interface Props {}
 ---
 
 <Layout title="Contact Form">
-  <main>
-    <Top language="he" />
+  <main dir="rtl">
+    <div style={{ margin: "0vw -7.5vw" }}>
+      <Top language="he" />
+    </div>
+
     <div class="background-gradient"></div>
 
     <div class="container">
@@ -110,6 +113,8 @@ interface Props {}
         #0f121a 100%
       );
       z-index: -1;
+      transform: scaleX(-1);
+
       @media screen and (max-width: 768px) {
         display: none;
       }

@@ -8,7 +8,7 @@ interface Props {
 const { title, language } = Astro.props;
 ---
 
-<article>
+<article dir={language === "he" ? "rtl" : "ltr"}>
   <h1>{title}</h1>
   <Form client:idle language={language} />
 </article>

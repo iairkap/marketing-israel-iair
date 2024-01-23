@@ -166,7 +166,8 @@ function Form({ language = "defaultLanguage" }: FormProps) {
     );
   }
   return (
-    <div>
+    <div dir={language === 'he' ? 'rtl' : 'ltr'}>
+
       <form onSubmit={onSubmit} className={styles.generalContainer}>
         <h4 className={styles.subtitles}>{t.contact.YourProjectTypes}</h4>
         <div className={styles.buttonContainer}>

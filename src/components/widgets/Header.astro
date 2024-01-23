@@ -14,10 +14,7 @@ interface Props {
 const { language } = Astro.props;
 ---
 
-<nav
-  class="navbar"
-  style={{ flexDirection: currentLanguage === "he" ? "row-reverse" : "row" }}
->
+<nav class="navbar" dir={language === "he" ? "rtl" : "ltr"}>
   <div>
     <a href="/">
       <h4>
@@ -33,16 +30,6 @@ const { language } = Astro.props;
     </div>
   </div>
 </nav>
-<div
-  class="only-mobile"
-  style={{
-    width: "100%",
-    display: "flex",
-    justifyContent: "flex-end",
-    marginBottom: "-2rem",
-  }}
->
-</div>
 
 <style>
   .only-desktop {
