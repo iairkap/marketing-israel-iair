@@ -13,6 +13,7 @@ import Footer from "../components/ui/Footer.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 import Top from "../components/ui/Top.astro";
+import { Picture } from "astro:assets";
 
 changeLanguage("en");
 
@@ -26,7 +27,9 @@ interface Props {}
       <HeadHrefLangs />
     </head>
     <main>
-      <Top language="en" />
+      <div>
+        <Top language="en" />
+      </div>
       <section class="first-section">
         <Hero
           language="en"
@@ -198,6 +201,7 @@ interface Props {}
         #0f121e 88%,
         #0f121a 100%
       );
+
       z-index: -1;
     }
     @keyframes fadeInUp {
