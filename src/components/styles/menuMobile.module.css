@@ -1,0 +1,68 @@
+.button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 32px;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  z-index: 12000;
+}
+
+.menuOpen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #0f121a;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+  height: 100%;
+}
+
+.menuOpenOpen {
+  opacity: 1;
+  visibility: visible;
+}
+.menuOptions {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  transition: all 0.3s ease 0s;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  border: 1px solid #fff;
+  min-width: 200px;
+}
+
+.callUs {
+  background-color: white;
+  border: none;
+  color: #0f121a;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  transition: all 0.3s ease 0s;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  border: 1px solid #fff;
+  min-width: 200px;
+}
+
+.cotnainer {
+  background-color: red;
+}

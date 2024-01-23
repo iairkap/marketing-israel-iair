@@ -5,7 +5,7 @@ import SendUsEmail from "../components/ui/SendUsEmail.astro";
 import Header from "../components/widgets/Header.astro";
 import Layout from "../layouts/Layout.astro";
 import ContactForm from "../components/widgets/ContactForm.astro";
-
+import MenuForMobile from "../components/ui/MenuForMobile";
 changeLanguage("en");
 
 interface Props {}
@@ -13,7 +13,20 @@ interface Props {}
 
 <Layout title="Contact Form">
   <div class="header">
-    <Header language="en" />
+    <div class="desktop">
+      <Header language="en" />
+    </div>
+    <div
+      class="mobile"
+      style={{
+        display: "flex",
+        height: "100%",
+        justifyContent: "flex-end",
+        padding: "1rem",
+      }}
+    >
+      <MenuForMobile language="en" client:idle />
+    </div>
   </div>
   <main>
     <div class="background-gradient"></div>
@@ -109,6 +122,20 @@ interface Props {}
       z-index: -1;
       @media screen and (max-width: 768px) {
         display: none;
+      }
+    }
+
+    .desktop {
+      display: block;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .mobile {
+      display: none;
+      @media screen and (max-width: 768px) {
+        display: block;
       }
     }
   </style>

@@ -22,12 +22,6 @@
   flex-direction: row;
   gap: 1rem;
   flex-wrap: wrap;
-  width: 90vw;
-  @media screen and (max-width: 768px) {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
 }
 
 .input {
