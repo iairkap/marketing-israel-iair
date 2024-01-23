@@ -1,0 +1,251 @@
+---
+import he from "../../../public/locales/he/translation.json";
+import en from "../../../public/locales/en/translation.json";
+import LanguageSelector from "../ui/LanguageSelector.astro";
+interface Props {
+    language?: string
+}
+
+const {language} = Astro.props
+
+const t = language === "he" ? he.buttonNav : en.buttonNav
+console.log(language)
+
+
+---
+
+<div class="hamburger">
+  <a class="main-nav-toggle" href="#main-nav"><i>Menu</i></a>
+  <div id="dropdown-menu" style={{display: "none",  width:"100%"}}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        heigh: "100vh",
+        height: "100vh"
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          gap:"2rem"
+        }}
+      >
+      <a href="#works" class="nav-link">{t.work}</a>
+      <a href="#services" class="nav-link">{t.services}</a>
+      <a href="#about" class="nav-link">{t.about}</a>
+      {
+        language === "he" ? <a href="he/contact" class="nav-link">{t.contact}</a> : <a href="/contact" class="nav-link">{t.contact}</a>
+      }
+      </div>
+      <br><br><br><br>
+      <div class="button-container">
+          <button class="button">CALL US</button>
+        </div>
+    </div>
+</div>
+</div>
+<style>
+
+
+.button-container {
+    display: inline-block;
+    background: linear-gradient(
+      270deg,
+      #3b1fff 0%,
+      rgba(38, 15, 191, 0) 96.29%
+    );
+    background-size: 200% 200%;
+    border-radius: 0.3125rem;
+    padding: 4px; 
+  }
+
+  #dropdown-menu {
+    position: absolute;
+    background-color: #0f121a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    z-index: 1;
+    left: 0;
+    z-index: 2;
+    margin: 2rem -5vw;
+    height: 100vh;
+    justify-content: center;
+  }
+  @keyframes sweep {
+    0% {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scaleY(1);
+      opacity: 100;
+    }
+  }
+
+  #dropdown-menu {
+    transform-origin: top center;
+    animation: sweep 0.3s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  #dropdown-menu a {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    transition: all 0.3s ease 0s;
+    padding: 1rem 2rem;
+    border-radius: 0.25rem;
+    text-decoration: none;s
+  }
+
+  #dropdown-menu a:hover {
+    background-color: #391fff22;
+    color: #3a1fff;
+  }
+
+
+
+  .button {
+    display: flex;
+    flex-direction:;
+    padding: 1.25rem 2rem;
+    justify-content: center;
+    align-items: center;
+    min-width: 7.31rem;
+    border: none;
+    border-radius: 0.3125rem;
+    background: rgba(15, 18, 26, 1);
+    color: #fff;
+    font-family: "Manrope" sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .button-container {
+    background: rgba(46, 53, 74, 0.383);
+  }
+
+  .hamburger {
+    display: inline-block;
+    height: 26px;
+    margin-right: 57px;
+
+    a.main-nav-toggle {
+      display: block;
+      width: 28px;
+      height: 16px;
+      position: absolute;
+
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        height: 0;
+        border-bottom: 4px solid #bbb;
+        width: 100%;
+        left: 0;
+        transition: all ease-out 0.3s;
+      }
+
+      &:after {
+        top: 100%;
+      }
+
+      i {
+        display: block;
+        text-indent: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        height: 4px;
+        background-color: #bbb;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transition: all ease-out 0.1s;
+      }
+
+      &.active-menu {
+        &:after {
+          transform: rotate(-45deg);
+          transform-origin: center;
+          top: 50%;
+        }
+
+        &:before {
+          transform: rotate(45deg);
+          transform-origin: center;
+          top: 50%;
+        }
+
+        i {
+          opacity: 0;
+        }
+      }
+    }
+  }
+</style>
+<script>
+   
+
+    document.querySelector(".main-nav-toggle")?.addEventListener("click", (e: Event) => {
+      e.preventDefault();
+      const dropdownMenu = document.getElementById("dropdown-menu") as HTMLElement;
+      const mainNavToggle = document.querySelector(".main-nav-toggle") as HTMLElement;
+      const body = document.body as HTMLElement;
+  
+      if (mainNavToggle?.classList.contains("active-menu")) {
+        mainNavToggle.classList.remove("active-menu");
+        dropdownMenu.style.display = "none";
+        body.style.overflow = "visible"; // permitir el desplazamiento cuando el menú está cerrado
+      } else {
+        mainNavToggle?.classList.add("active-menu");
+        dropdownMenu.style.display = "block";
+        body.style.overflow = "hidden"; // evitar el desplazamiento cuando el menú está abierto
+      }
+    });  
+
+    const navLinks = document.querySelectorAll(".nav-link");
+navLinks.forEach((link) => {
+  link.addEventListener("click", function (this: Element, e:Event) {
+    const href = this.getAttribute("href");
+
+    if (href !== "/contact" && href !== "he/contact") {
+      e.preventDefault();
+    }
+
+    if (href && href.startsWith("#")) {
+      const target = document.querySelector(href);
+
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    // Cerrar el menú
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    const mainNavToggle = document.querySelector(".main-nav-toggle");
+    const body = document.body;
+
+    if (dropdownMenu && mainNavToggle?.classList.contains("active-menu")) {
+      mainNavToggle.classList.remove("active-menu");
+      dropdownMenu.style.display = "none";
+      body.style.overflow = "visible"; // permitir el desplazamiento cuando el menú está cerrado
+    }
+  });
+});
+
+  </script>

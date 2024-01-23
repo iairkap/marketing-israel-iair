@@ -12,6 +12,7 @@ import CallToAction from "../components/widgets/CallToAction.astro";
 import Footer from "../components/ui/Footer.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import Top from "../components/ui/Top.astro";
 
 changeLanguage("en");
 
@@ -25,8 +26,8 @@ interface Props {}
       <HeadHrefLangs />
     </head>
     <main>
+      <Top language="en" />
       <section class="first-section">
-        <Header language="en" />
         <Hero
           language="en"
           title="Website Design & Marketing Agency in Israel"

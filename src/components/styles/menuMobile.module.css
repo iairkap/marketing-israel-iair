@@ -9,17 +9,16 @@
   z-index: 12000;
 }
 
-.menuOpen {
+.container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   gap: 1rem;
   position: absolute;
   top: 0;
+  justify-content: center;
   left: 0;
   width: 100%;
-  min-height: 100%;
   background-color: #0f121a;
   transition: opacity 0.5s ease;
   opacity: 0;
@@ -27,10 +26,6 @@
   height: 100%;
 }
 
-.menuOpenOpen {
-  opacity: 1;
-  visibility: visible;
-}
 .menuOptions {
   background-color: transparent;
   border: none;
@@ -63,6 +58,37 @@
   min-width: 200px;
 }
 
-.cotnainer {
+.container {
   background-color: red;
+}
+.button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.line {
+  width: 30px;
+  height: 4px;
+  background-color: #333;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.button.open .line-1 {
+  transform: translateY(12px) rotate(45deg);
+}
+
+.button.open .line-2 {
+  opacity: 0;
+}
+
+.button.open .line-3 {
+  transform: translateY(-12px) rotate(-45deg);
 }

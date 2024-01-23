@@ -109,3 +109,16 @@
 }
 
 /* sa */
+
+.nav {
+  z-index: 1000;
+}
+
+.button {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out; /* Agregar transición para todos los cambios con duración de 0.3 segundos */
+}
+
+.button.open {
+  transform: rotate(180deg); /* Gira el icono cuando el botón está abierto */
+}

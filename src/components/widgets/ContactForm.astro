@@ -16,6 +16,9 @@ const { title, language } = Astro.props;
 <style>
   article {
     color: white;
+    @media screen and (max-width: 768px) {
+      margin-top: 5rem;
+    }
   }
   h1 {
     font-size: 3rem;

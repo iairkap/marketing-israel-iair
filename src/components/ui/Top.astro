@@ -1,0 +1,49 @@
+---
+import Header from "../widgets/Header.astro";
+import Mobile from "../widgets/Mobile.astro";
+import Loader from "./Loader.astro";
+
+interface Props {
+  language: string;
+}
+
+const { language } = Astro.props;
+---
+
+<div class="header">
+  <div class="desktop">
+    <Header language={language} />
+  </div>
+  <div class="mobile">
+    <Loader />
+    <Mobile language={language} />
+  </div>
+</div>
+
+<style>
+  .header {
+    padding: 0 15vw;
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  .desktop {
+    display: block;
+    width: 100%;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  .mobile {
+    display: none !important;
+    @media screen and (max-width: 768px) {
+      display: flex !important;
+      position: absolute;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 12000;
+    }
+  }
+</style>

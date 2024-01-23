@@ -10,6 +10,7 @@ import FAQ from "../../components/widgets/FAQ.astro";
 import { faqsHe } from "../../javascript/questions";
 import CallToAction from "../../components/widgets/CallToAction.astro";
 import Footer from "../../components/ui/Footer.astro";
+import Top from "../../components/ui/Top.astro";
 
 interface Props {}
 ---
@@ -20,8 +21,9 @@ interface Props {}
       <meta name="description" />
     </head>
     <main>
+      <Top language="he" />
+
       <section class="first-section">
-        <Header language="he" />
         <Hero
           title={"סטודיו לעיצוב אתרים ושיווק בישראל"}
           description={"צריך נוכחות אונליין יפה ומתקדמת? הגבר את המותג שלך עם עיצוב מתקדם ושיווק אסטרטגי. בואו נגדיר מחדש את ההצלחה יחד"}
