@@ -4,7 +4,9 @@ import en from "../../../public/locales/en/translation.json";
 import LanguageSelector from "../ui/LanguageSelector.astro";
 interface Props {
     language?: string
+   
 }
+
 
 const {language} = Astro.props
 
@@ -50,10 +52,18 @@ const t = language === "he" ? he.buttonNav : en.buttonNav
       }
       </div>
       <br><br><br><br>
-      <div class="button-container">
-          <button class="button"></button>
-        </div>
-    </div>
+      <div style={{display:"flex", gap:"1rem"}}>
+
+          <a href="/">
+
+            <button class="button">English</button>
+          </a>
+          <a href="/he">
+            <button  class="button" >עברית</button>
+          </a>
+      </div>
+
+      </div>
 </div>
 </div>
 <style>
@@ -117,7 +127,6 @@ const t = language === "he" ? he.buttonNav : en.buttonNav
   }
 
   #dropdown-menu a:hover {
-    background-color: #391fff22;
     color: #3a1fff;
   }
 
@@ -141,9 +150,6 @@ const t = language === "he" ? he.buttonNav : en.buttonNav
     cursor: pointer;
   }
 
-  .button-container {
-    background: rgba(46, 53, 74, 0.383);
-  }
 
   
 </style>
