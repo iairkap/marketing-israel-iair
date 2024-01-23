@@ -19,15 +19,17 @@ interface Props {}
 
     <div class="container">
       <section class="left">
-        <div>
-          <SendUsEmail title="hola" email="iairkap@gmail.com" language="he" />
+        <div class="containerL">
           <div>
-            <ContactCard
-              name="יאיר קפלון"
-              title="Web Developer"
-              href="https://www.linkedin.com/in/iair-kaplun-50872a292/"
-              language="he"
-            />
+            <SendUsEmail title="hola" email="iairkap@gmail.com" language="he" />
+            <div>
+              <ContactCard
+                name="יאיר קפלון"
+                title="Web Developer"
+                href="https://www.linkedin.com/in/iair-kaplun-50872a292/"
+                language="he"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -82,6 +84,7 @@ interface Props {}
         padding: 0;
       }
     }
+
     .left,
     .right {
       display: flex;

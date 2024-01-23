@@ -22,6 +22,17 @@
   flex-direction: row;
   gap: 1rem;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    width: 100vw;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+}
+
+.buttonContainer::-webkit-scrollbar {
+  display: none; /* Para Chrome, Safari y Opera */
 }
 
 .input {
@@ -34,8 +45,8 @@
   font-weight: 900;
   font-size: 1.2rem;
   @media screen and (max-width: 768px) {
-    width: 80%;
-    margin: 0 10%;
+    width: 90%;
+    margin-bottom: 2rem;
   }
 }
 
@@ -70,8 +81,7 @@
   height: fit-content;
   margin-bottom: 5rem;
   @media screen and (max-width: 768px) {
-    width: 80%;
-    align-self: center;
+    width: 90%;
   }
 }
 
