@@ -149,19 +149,18 @@ function Form({ language = "defaultLanguage" }: FormProps) {
             gap: "1rem",
           }}
         >
-          <h1 className={styles.thankYouTitle}>Thank You for Trusting Us!</h1>
+          <h1 className={styles.thankYouTitle}>{t.contact.thankYou}</h1>
         </div>
 
         <p className={styles.thankYouMessage}>
-          We appreciate your project submission and can't wait to bring your
-          ideas to life. Our team will get in touch with you shortly.
+          {t.contact.message}
         </p>
       </div>
     );
   } else if (submitStatus === "error") {
     return (
       <h1>
-        Error al enviar el correo electrónico, contáctate a iairkap@gmail.com
+        {t.contact.error}
       </h1>
     );
   }

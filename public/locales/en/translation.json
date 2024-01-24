@@ -66,7 +66,10 @@
     "YourName": "Your Name",
     "YourEmail": "Your Email",
     "tellUsAbout": "Tell us about your idea",
-    "submit": "Submit"
+    "submit": "Submit",
+    "thankYou": "Thank You for Trusting Us",
+    "message": "We appreciate your project submission and can't wait to bring your ideas to life. Our team will get in touch with you shortly.",
+    "error": "Oops! Something went wrong. Please try again."
   },
   "Footer": {
     "company": "Company",
@@ -76,5 +79,53 @@
     "FAQ": "FAQ",
     "Portfolio": "Portfolio",
     "AllRight": "BeyondTik © 2024 - All rights reserved"
+  },
+
+  "Portfolio": {
+    "RealCover": {
+      "title": "Real Cover",
+      "Description": "\bReal Cover\b, an online store specializing in wholesale custom laptop case sales.\n\nThis platform offers a wide range of unique and customizable designs for various preferences and styles.\n\nLeveraging \bNext.js\b and \bReact\b, we ensure a fast, secure, and user-friendly experience.\n\n\bPrisma\b, a modern ORM for Node.js and TypeScript, facilitates efficient database management.\n\nRealCover is an \bintuitive, secure service\b, making each laptop case an expression of identity.\n\nAs a leading wholesale supplier, we unveil an \be-commerce\b platform with a \buser-friendly dashboard\b, \bdata analytics\b, and strategic marketing insights.\n\nOur toolkit, including Next.js and JavaScript, delivers a lightning-fast and user-friendly experience.\n\nWe integrated the \bMercadoLibre API\b for product expansion, used the \bGoogle Maps API\b for location data, and implemented QR code generation for quick access to additional product information.\n\nExplore our hard work by visiting the deployed site at RealCover.\n\nFor the details, the code is available on our GitHub repository.",
+
+      "tech": [
+        "NextJs",
+        "Prisma",
+        "JavaScript",
+        "Figma",
+        "API",
+        "Vercel",
+        "Zustand",
+        "Firebase"
+      ],
+      "Github": "https://github.com/iairkap/realcover"
+    },
+    "TalentTech": {
+      "title": "Talent Tech",
+      "Description": "talent tech desc",
+      "tech": [
+        "NextJs",
+        "React",
+        "Figma",
+        "Redux",
+        "Cloudinary",
+        "Mercado-Pago Integration"
+      ]
+    },
+    "Reslience": {
+      "title": "Resilence",
+      "Description": "Resilence desc",
+      "tech": [
+        "NextJs",
+        "React",
+        "Figma",
+        "Redux",
+        "Cloudinary",
+        "Mercado-Pago Integration"
+      ]
+    },
+    "Javaia": {
+      "title": "javaia",
+      "Description": "Javaia description",
+      "tech": ["a", "b"]
+    }
   }
 }

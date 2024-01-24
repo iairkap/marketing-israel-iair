@@ -27,6 +27,7 @@
     "astro-icon": "^1.0.2",
     "classname": "^0.0.0",
     "classnames": "^2.5.1",
+    "cloudinary": "^1.41.3",
     "formik": "^2.4.5",
     "gsap": "^3.12.4",
     "i18next": "^23.7.18",

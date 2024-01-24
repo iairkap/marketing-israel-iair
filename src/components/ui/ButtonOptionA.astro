@@ -7,9 +7,11 @@ interface Button {
 const { text, onClick } = Astro.props;
 ---
 
-<button onclick={onClick}>
-  <span class="parallax-text">{text}</span>
-</button>
+<a href="/contact">
+  <button onclick={onClick}>
+    <span class="parallax-text">{text}</span>
+  </button>
+</a>
 
 <style>
   button {
