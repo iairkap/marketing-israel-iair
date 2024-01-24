@@ -81,5 +81,51 @@
     "FAQ": "שאלות נפוצות",
     "Portfolio": "PortFolio",
     "AllRight": "BeyondTik © 2024 - כל הזכויות שמורות"
+  },
+  "Portfolio": {
+    "RealCover": {
+      "title": "Real Cover",
+      "Description": "\bReal Cover\b, חנות מקוונת המתמחה במכירת קיסים למחשב סיטונאית.\n\nהפלטפורמה הזו מציעה מגוון רחב של עיצובים ייחודיים וניתן להתאמה לכל סגנון והעדפה.\n\nבאמצעות \bNext.js\b ו-\bReact\b, אנו מבטיחים חוויית משתמש מהירה, מאובטחת וידידותית.\n\n\bPrisma\b, ORM מודרני עבור Node.js ו-TypeScript, תומך בניהול מסד נתונים יעיל.\n\nRealCover היא שירות \bאינטואיטיבי ומאובטח\b, שהופך כל קייס למחשב לביטוי של זהות.\n\nכספקן סיטונאי מוביל, אנו חושפים פלטפורמת \bמסחר אלקטרוני\b עם \bלוח בקרה ידידותי למשתמש\b, \bנתונים אנליטיים\b, ותובנות שיווקיות אסטרטגיות.\n\nקורות הכלים שלנו, כוללים את Next.js ו-JavaScript, מספקים חוויית משתמש מהירה וידידותית.\n\nשקדנו על \bאינטגרציה של API של MercadoLibre\b להרחבת המוצר, השתמשנו ב-\bAPI של Google Maps\b לנתוני מיקום, ויישמנו יצירת קודי QR לגישה מהירה למידע נוסף על המוצר.\n\nגלו את כל העבודה הקשה שלנו על ידי ביקור באתר שפורסם ב- RealCover.\n\nלפרטים נוספים, הקוד זמין במאגר ה-GitHub שלנו.",
+      "tech": [
+        "NextJs",
+        "Prisma",
+        "JavaScript",
+        "Figma",
+        "API",
+        "Vercel",
+        "Zustand",
+        "Firebase"
+      ],
+      "Github": "https://github.com/iairkap/realcover"
+    },
+    "TalentTech": {
+      "title": "Talent Tech",
+      "Description": "תיאור של Talent Tech",
+      "tech": [
+        "NextJs",
+        "React",
+        "Figma",
+        "Redux",
+        "Cloudinary",
+        "אינטגרציה של Mercado-Pago"
+      ]
+    },
+    "Reslience": {
+      "title": "Resilence",
+      "Description": "תיאור של Resilence",
+      "tech": [
+        "NextJs",
+        "React",
+        "Figma",
+        "Redux",
+        "Cloudinary",
+        "אינטגרציה של Mercado-Pago"
+      ]
+    },
+    "Javaia": {
+      "title": "Javaia",
+      "Description": "תיאור של Javaia",
+      "tech": ["a", "b"]
+    }
   }
 }

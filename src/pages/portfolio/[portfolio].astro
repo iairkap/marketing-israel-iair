@@ -17,11 +17,14 @@ const currentPath = Astro.url.pathname;
 let deploy = "";
 
 let github = "";
+let video = "";
 switch (currentPath) {
   case "/portfolio/Real%20Cover":
     github = "https://github.com/iairkap/realcover";
     deploy = "https://realcover-iairkap.vercel.app/";
-    t = en.Portfolio.RealCover;
+    (video =
+      "https://res.cloudinary.com/dna02aqp4/video/upload/v1706103662/demo_qt2fms.mp4"),
+      (t = en.Portfolio.RealCover);
     break;
   case "/portfolio/Resi-Lense":
     iframeSrc = "https://resilense.com/";
@@ -41,7 +44,6 @@ let descriptionLines = t?.Description.split("\n");
   <article style={{ marginTop: "-6rem" }}>
     <div
       style={{
-        margin: "-2rem",
         padding: "3rem",
       }}
     >
@@ -82,10 +84,7 @@ let descriptionLines = t?.Description.split("\n");
               width="90%"
               style={{ borderRadius: "16px" }}
             >
-              <source
-                src="https://res.cloudinary.com/dna02aqp4/video/upload/v1706103662/demo_qt2fms.mp4"
-                type="video/mp4"
-              />
+              <source src={video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

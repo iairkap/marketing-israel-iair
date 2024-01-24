@@ -14,6 +14,7 @@ interface Props {
   iframe?: string;
   toggleIframe?: string;
   link?: string;
+  language?: string;
 }
 
 const {
@@ -24,10 +25,11 @@ const {
   github,
   url,
   class: className,
+  language,
 } = Astro.props;
 ---
 
-<a href={`/portfolio/${name}`}>
+<a href={language === "he" ? `/he/portfolio/${name}` : `/portfolio/${name}`}>
   <div class={`container ${className}`} id={name}>
     <h3 class="card-name" id="plus">+</h3>
     <h4 class="card-name">{name}</h4>
@@ -50,6 +52,16 @@ const {
       }
       {
         name === "Talent Tech Hub" && (
+          <img src={picture} alt={name} class="cover-image" />
+        )
+      }
+      {
+        name === "Conectemos" && (
+          <img src={picture} alt={name} class="cover-image" />
+        )
+      }
+      {
+        name === "Rather Labs" && (
           <img src={picture} alt={name} class="cover-image" />
         )
       }

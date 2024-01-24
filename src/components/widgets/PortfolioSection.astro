@@ -21,6 +21,7 @@ const t = language === "he" ? he : en;
   >
     <div class="container-column sweepToRight">
       <WorkCard
+        language={language}
         name="Resi-Lense"
         class="smaller"
         description={t.portfolio.resilenseDescription}
@@ -28,6 +29,7 @@ const t = language === "he" ? he : en;
       />
 
       <WorkCard
+        language={language}
         name="Real Cover"
         class="smaller"
         picture="RealCover"
@@ -35,19 +37,37 @@ const t = language === "he" ? he : en;
         picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2FRealCover.jpg?alt=media&token=34ba40a6-76b1-4498-a355-b4195f56eefb"
         iframe="https://realcover-iairkap.vercel.app/"
       />
+      <WorkCard
+        language={language}
+        name="Conectemos"
+        class="smaller"
+        picture="Conectemos"
+        description={t.portfolio.realCoverDescription}
+        picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/Light%20theme.png?alt=media&token=970d1080-23e3-46da-bdff-1340406db006"
+        iframe="https://realcover-iairkap.vercel.app/"
+      />
     </div>
     <div class="container-column sweepToLeft">
       <WorkCard
+        language={language}
         name="Javaia"
         class="taller"
         description={t.portfolio.javaiaDescription}
         picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2Fjavaia.png?alt=media&token=3b17b677-58a0-45e0-a638-8c3971c0421c"
       />
       <WorkCard
+        language={language}
         name="Talent Tech Hub"
         class="taller"
         description={t.portfolio.talentTechHub}
         picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/iair%2FTalentTech.jpeg?alt=media&token=95aa054b-6b04-4fdd-aee4-ff9d00c3fb1d"
+      />
+      <WorkCard
+        language={language}
+        name="Rather Labs"
+        class="taller"
+        description={t.portfolio.talentTechHub}
+        picture="https://firebasestorage.googleapis.com/v0/b/real-cover.appspot.com/o/ratherlabs.png?alt=media&token=abaaa1b1-2e02-4b68-8f7a-32e372bd99b3"
       />
     </div>
   </div>
