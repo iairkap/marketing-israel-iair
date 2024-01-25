@@ -15,21 +15,27 @@ let t;
 
 const currentPath = Astro.url.pathname;
 let deploy = "";
+let video = "";
 
 let github = "";
 switch (currentPath) {
   case "/he/portfolio/Real%20Cover":
     github = "https://github.com/iairkap/realcover";
     deploy = "https://realcover-iairkap.vercel.app/";
-    t = he.Portfolio.RealCover;
+    (video =
+      "https://res.cloudinary.com/dna02aqp4/video/upload/v1706103662/demo_qt2fms.mp4"),
+      (t = he.Portfolio.RealCover);
     break;
-  case "/he/portfolio/Resi-Lense":
+  case "/portfolio/Resi-Lense":
     iframeSrc = "https://resilense.com/";
     t = he.Portfolio.Reslience;
     break;
   case "/he/portfolio/Talent%20Tech%20Hub":
-    iframeSrc =
+    github = "https://github.com/iairkap/tech-talent-hub-actual";
+    deploy =
       "https://tech-talent-hub-actual-git-develop-equipo3henry.vercel.app/";
+    video =
+      "https://res.cloudinary.com/dna02aqp4/video/upload/v1706147218/cfgquz0mg6vk03mkx7ev.mp4";
     t = he.Portfolio.TalentTech;
     break;
 }
@@ -39,12 +45,11 @@ console.log(currentPath);
 ---
 
 <Layout title="portfolio">
-  <article style={{ marginTop: "-6rem" }}>
+  <article style={{ marginTop: "-6rem", direction: "rtl" }}>
     <div
       style={{
         margin: "-2rem",
         padding: "3rem",
-        dir: "rtl",
       }}
     >
       <div
@@ -76,25 +81,25 @@ console.log(currentPath);
       <div class="generalContainer">
         <div class="oneThird">
           <div class="videoContainer">
-            <video
-              autoplay
-              loop
-              muted
-              width="90%"
-              style={{ borderRadius: "16px" }}
-            >
-              <source
-                src="https://res.cloudinary.com/dna02aqp4/video/upload/v1706103662/demo_qt2fms.mp4"
-                type="video/mp4"
-              />
-              הדפדפן שלך לא תומך בתג וידאו
-            </video>
-          </div>
-          <h4>טכנולוגיות בהן נעשה שימוש</h4>
-          <div class="techUsed">
-            {t?.tech.map((techItem) => <span>{techItem}</span>)}
+            <div class="videoContainer">
+              <video
+                autoplay
+                loop
+                muted
+                width="90%"
+                style={{ borderRadius: "16px" }}
+              >
+                <source src={video} type="video/mp4" />
+                הדפדפן שלך לא תומך בתג וידאו
+              </video>
+            </div>
+            <h4>טכנולוגיות בהן נעשה שימוש</h4>
+            <div class="techUsed">
+              {t?.tech.map((techItem) => <span>{techItem}</span>)}
+            </div>
           </div>
         </div>
+
         <div class="twoThird">
           <h2 class="project">תיאור הפרויקט</h2>
           <div class="text-container">
@@ -141,7 +146,6 @@ console.log(currentPath);
   }
 
   article {
-    direction: rtl;
     color: white;
     width: 100vw;
     height: 100vh;
@@ -214,3 +218,6 @@ console.log(currentPath);
     text-decoration: none;
   }
 </style>
+
+""
+

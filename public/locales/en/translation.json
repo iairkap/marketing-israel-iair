@@ -102,7 +102,7 @@
     },
     "TalentTech": {
       "title": "Talent Tech",
-      "Description": "talent tech desc",
+      "Description": "💡\bOur Goal:\b Tackling global challenges by connecting Israel's booming startups with the skilled talent pool in Latin America.\n\n✨ \bCutting-Edge Technologies:\b We leverage advanced tools to exceed expectations and deliver an outstanding website:\n\n🚀 \bNext.js:\b Optimized for stellar performance with server-side rendering, SEO optimization, and an integrated routing system.\n\n🛢️ \bPrisma:\b Efficiently manage your database for seamless functionality.\n\n🌐 \bVercel\b: Experience a streamlined development process with one-click deployment and real-time previews.\n\n💸 \bPayment Gateway\b: Facilitating secure and efficient monetary transactions between parties.\n\n🔐 \bSecure Third-Party Authentication:\b Ensuring user security and efficiency through robust authentication methods.\n\n🌥️ \bCloudinary:\b Streamlining platform media assets for faster and more efficient page loading.\n\n🔥 \bFirebase:\b Offering a range of backend services, including real-time database storage and notifications.\n\n🎛️ \bAdmin Dashboard:\b Designed for efficient site management and user activity control.\n\nTurn your vision into reality and launch your online presence!",
       "tech": [
         "NextJs",
         "React",
