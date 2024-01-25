@@ -114,7 +114,7 @@
     },
     "Reslience": {
       "title": "Resi-Lense",
-      "Description": "Resilence desc",
+      "Description": "\bResilense\b, a pioneering company in its early stages, is reshaping the landscape of therapeutic support by providing comprehensive guidance from its inception. Specializing in \badvisory and support services\b, Resilense aims to offer innovative therapeutic resources to support emotional well-being. The platform, developed with leading technologies like \bNext.js\b and \bReact\b, ensures a seamless, secure, and user-centered experience.\n\nOur services encompass a variety of therapeutic resources, from \bpuppets\b to \bvideo courses\b in the style of \bUdemy\b, available through subscription. Additionally, we provide a \bbook for shared reading with children\b, strengthening emotional bonds between parents and children.\n\nAs a technologically advanced company, we have integrated \bVideo-Api\b for delivering captivating content and facilitated \bPayPal Integration\b for hassle-free transactions.\n\nAt the core of Resilense's mission is the commitment to providing \bintuitive and secure therapeutic services\b, where each resource becomes a personalized expression of emotional support. With a \buser-friendly dashboard\b, \bdata analytics\b, and \bstrategic marketing insights\b, Resilense stands as a beacon for those seeking to enhance their emotional well-being.\n\nExplore the journey of resilience by visiting our website at \bresilense.com\b.\n\nFor more details about our code, feel free to explore our GitHub repository.",
       "tech": [
         "NextJs",
         "React",
@@ -124,10 +124,19 @@
         "Mercado-Pago Integration"
       ]
     },
-    "Javaia": {
-      "title": "javaia",
-      "Description": "Javaia description",
-      "tech": ["a", "b"]
+    "IsraelProgram": {
+      "title": "Israel Program APP",
+      "Description": "\bAn innovative mobile application\b designed to cater to various mass groups, providing a comprehensive solution for \bpre-trip planning, in-Israel activities, and administrative management\b.\n\nFor Participants:\n- Display an interactive gallery showcasing detailed descriptions of available programs, including dates, duration, and highlighted activities.\n- \bStreamline the registration process\b, enabling participants to upload necessary documents, make secure payments, and receive automatic confirmations. Integration with \bSalesforce credentials ensures a seamless experience\n- Allow participants to view and customize their schedules and register for specific activities.\n- Provide a \bdatabase\b of participating companies and search tools for participants to find suitable internship opportunities.\n- Provide a detailed daily calendar of activities with maps and directions to locations.\n- Enable participants to rate both activities and individuals, recording everything in the database for a comprehensive record of the best activities. \bLinkedIn credentials\b for completed activities.\n- Provide an \badministrator control\b panel for supervision and management.\n- Visualize various graphs to understand participant statistics for informed digital marketing decisions.\n- Integrate supplier orders into the app, automating processes like automatic supply orders based on uploaded information.\n\nEmail Marketing:\n- Generate automatic emails based on weekly activities for parents, establishing an open communication channel.\n- Generate automatic emails for siblings of participants who are of age to register ",
+
+      "tech": [
+        "Next JS",
+        "React",
+        "Zustand",
+        "Email-Marketing",
+        "i18n",
+        "Prisma",
+        "TypeScript"
+      ]
     }
   }
 }

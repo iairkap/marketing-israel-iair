@@ -214,6 +214,12 @@ const { title } = Astro.props;
         Courier New,
         monospace;
     }
+    @media (max-width: 768px) {
+      .sweepToRight,
+      .sweepToLeft {
+        animation: none !important;
+      }
+    }
   </style>
   <script>
     const elements = document.querySelectorAll(
