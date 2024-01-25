@@ -27,9 +27,17 @@ const {
   class: className,
   language,
 } = Astro.props;
+
+// Calcula la URL aquí
+let urlPath;
+if (name === "Conectemos" || name === "Olivera" || name === "Trinka") {
+  urlPath = "#works";
+} else {
+  urlPath = language === "he" ? `/he/portfolio/${name}` : `/portfolio/${name}`;
+}
 ---
 
-<a href={language === "he" ? `/he/portfolio/${name}` : `/portfolio/${name}`}>
+<a href={urlPath}>
   <div class={`container ${className}`} id={name}>
     <h3 class="card-name" id="plus">+</h3>
     <h4 class="card-name">{name}</h4>
