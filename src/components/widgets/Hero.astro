@@ -16,33 +16,61 @@ const direction = language === "he" ? "rtl" : "ltr";
 
 <article
   class="general-container"
-  style={{ flexDirection: language === "he" ? "row-reverse" : "row" }}
+  style={{ flexDirection: language === "he" ? "column" : "column" }}
 >
   <!--   <div class="grid" style="position: absolute">
     <BackgroundGrid />
   </div> -->
-  <div class="background-gradient"></div>
-  <div class="left-container" style={`direction: ${direction};`}>
-    <h1 class="title">{title}</h1>
-    <span>{description}</span>
-    <div class="button-container">
-      <ButtonOptionA
-        text={button1}
-        onClick={() => console.log("Button clicked")}
-      />
-      <ButtonOptionB
-        text={button2}
-        onClick={() => console.log("Button clicked")}
-      />
-    </div>
+
+  <h1
+    class="title"
+    style={{
+      marginTop: "25vh",
+    }}
+  >
+    {title}
+  </h1>
+  <!--     <span>{description}</span>
+ -->
+  <div
+    class="button-container"
+    style={{
+      flexDirection: "row",
+      display: "flex",
+      gap: "4rem",
+      marginTop: "9rem",
+      justifySelf: "center",
+    }}
+  >
+    <ButtonOptionA
+      text={button1}
+      onClick={() => console.log("Button clicked")}
+    />
+    <ButtonOptionB
+      text={button2}
+      onClick={() => console.log("Button clicked")}
+    />
   </div>
   <div>
-    <div class="image-container">
+    <!--   <div class="image-container">
       <img src="./HeroVector.png" alt="background vector" class="vector" />
-    </div>
+    </div> -->
   </div>
 
   <style>
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 9rem;
+      width: 100%;
+      justify-content: center;
+      @media screen and (max-width: 768px) {
+        margin-top: 2rem !important;
+        gap: 1rem;
+      }
+    }
     * {
       @media screen and (max-width: 768px) {
         text-align: center;
@@ -58,13 +86,10 @@ const direction = language === "he" ? "rtl" : "ltr";
       @media screen and (max-width: 768px) {
         flex-direction: column !important;
         justify-items: center;
-        height: 100vh;
+        height: 110vh;
         margin-bottom: 0;
-        gap: 2rem;
         width: 100%;
         justify-content: center;
-        gap: 2rem;
-        margin-top: 3rem;
       }
     }
     .background-gradient {
@@ -106,10 +131,11 @@ const direction = language === "he" ? "rtl" : "ltr";
       }
     }
     .title {
-      font-size: 3.5rem;
+      font-size: 5rem;
       font-style: normal;
-      font-weight: 700;
+      font-weight: 900;
       line-height: normal;
+      text-align: center;
 
       @media screen and (max-width: 768px) {
         font-size: 2rem;
@@ -141,6 +167,18 @@ const direction = language === "he" ? "rtl" : "ltr";
       width: 100vw;
       align-items: center;
       opacity: 0.5;
+    }
+    h1.title {
+      transition: all 0.5s;
+    }
+
+    h1.title:hover {
+      /* Resto de tus estilos */
+      text-shadow:
+        0 0 10px #ffffff92,
+        0 0 20px #ffffff89,
+        0 0 30px #ffffff4a,
+        0 0 40px #3c00ff96;
     }
   </style>
 </article>

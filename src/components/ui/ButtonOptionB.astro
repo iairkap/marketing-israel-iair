@@ -8,90 +8,49 @@ interface Button {
 const { text, onClick } = Astro.props;
 ---
 
-<div class="button-container">
-  <a href="https://wa.me/972586925442?text=Hola%20estoy%20interesado%20en%20su%20producto" target="_blank">
-
-  <button
-    >{text}
-    <svg
-      width="34"
-      height="24"
-      viewBox="0 0 34 24"
-      style="fill: #4737c2;transform: ;msFilter:;"
-      ><path
-        d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-      ></path></svg
-    >
+<a href="/contact">
+  <button onclick={onClick}>
+    <span class="parallax-text">{text}</span>
   </button>
-  </a>
-</div>
+</a>
 
 <style>
-  .button-container {
-    display: inline-block;
-    background: linear-gradient(
-      270deg,
-      #3b1fff 0%,
-      rgba(59, 31, 255, 0) 96.29%
-    );
-    background-size: 200% 200%;
-    border-radius: 0.3125rem;
-    padding: 4px; /* This will be the width of the border */
-    animation: Gradient 120s ease infinite;
-  }
-
-  @keyframes Gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .button-container button {
+  button {
     display: flex;
-    flex-direction:;
     padding: 1.25rem 2rem;
     justify-content: center;
     align-items: center;
+    gap: 0.625rem;
     min-width: 7.31rem;
     border: none;
     border-radius: 0.3125rem;
-    background: rgba(15, 18, 26, 1);
-    color: #fff;
+    background-color: 88898C;
+    border: 3px solid 88898C;
+
+    background: #88898c;
+    color: #2c1d8c;
     font-family: "Manrope" sans-serif;
     font-size: 1rem;
+    font-style: normal;
     font-weight: 700;
-    transition: all 0.4s ease;
-    cursor: pointer;
+    line-height: normal;
+    transition: all 0.2s ease-in-out;
     @media screen and (max-width: 768px) {
       padding: 0.625rem 1.25rem;
       min-width: 5.31rem;
       font-size: 0.875rem;
     }
   }
+  button:hover {
+    background-color: white;
+    /*     border: 3px solid #7464ed;
+ */
+    border: 3px solid 88898C;
 
-  .button-container button:hover{
-    background: rgba(46, 53, 74, 0.383);
+    color: #3a1fff;
   }
 
-  .button-container button svg,
-  .button-container button span {
-    transition: transform 0.4s ease;
+  a {
+    text-decoration: none;
   }
-
-  .button-container button:hover svg {
-    transform: translateX(10px);
-    transform: scale(2));
-  }
-
-  .button-container button:hover span {
-    transform: translateX(10px);
-  }
-
-  
 </style>

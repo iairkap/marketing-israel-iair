@@ -18,7 +18,13 @@ const href = language === "he" ? "/he" : "/";
   </div>
   <div class="mobile" dir={language === "he" ? "rtl" : "ltr"}>
     <a href={href}>
-      <Loader />
+      <div
+        style={language == "he"
+          ? { marginTop: "2rem", marginRight: "1rem" }
+          : { marginTop: "2rem", marginLeft: "1rem" }}
+      >
+        <Loader />
+      </div>
     </a>
     <Mobile language={language} />
   </div>
