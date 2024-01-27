@@ -29,57 +29,59 @@ interface Props {}
     <main>
       <div style={{ width: "100%" }}>
         <Top language="en" />
-        <video autoplay loop muted class="background-video">
+        <video autoplay loop muted playsinline class="background-video">
           <source
             src="https://res.cloudinary.com/dna02aqp4/video/upload/v1706305775/bn6nyx22lhwz8fjjchr1.mp4"
             type="video/mp4"
           />
         </video>
       </div>
-      <section class="first-section">
-        <Hero
-          language="en"
-          title="Crafting Distinctive Digital Elegance: BeyondTik"
-          description="Your Premier Website Design & Marketing Alchemists in Israel. Transform Your Online Presence, Redefine Success With Us."
-          button1="Request a Quote"
-          button2="Schedule a call"
-        />
-      </section>
+      <div class="phone-padding">
+        <section class="first-section">
+          <Hero
+            language="en"
+            title="Crafting Distinctive Digital Elegance: BeyondTik"
+            description="Your Premier Website Design & Marketing Alchemists in Israel. Transform Your Online Presence, Redefine Success With Us."
+            button1="Request a Quote"
+            button2="Schedule a call"
+          />
+        </section>
 
-      <section id="services" style={{ minHeight: "100vh" }}>
-        <Services
-          title="Creating Web Solutions that Convert Visitors into Customers"
-          language="en"
-        />
-      </section>
-      <section id="works">
-        <PortfolioSection
-          title="Our latest website design projects."
-          language="en"
-        />
-      </section>
-      <section>
-        <WhatOurClientSays
-          title="What our clients say about us"
-          ,
-          language="en"
-        />
-      </section>
-      <div class="divider"></div>
-      <section id="FAQ">
-        <FAQ faqs={faqsEn} language="en" />
-      </section>
-      <section
-        style={{
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <CallToAction language="en" />
-        <Footer language="en" />
-      </section>
+        <section id="services" style={{ minHeight: "100vh" }}>
+          <Services
+            title="Creating Web Solutions that Convert Visitors into Customers"
+            language="en"
+          />
+        </section>
+        <section id="works">
+          <PortfolioSection
+            title="Our latest website design projects."
+            language="en"
+          />
+        </section>
+        <section>
+          <WhatOurClientSays
+            title="What our clients say about us"
+            ,
+            language="en"
+          />
+        </section>
+        <div class="divider"></div>
+        <section id="FAQ">
+          <FAQ faqs={faqsEn} language="en" />
+        </section>
+        <section
+          style={{
+            height: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <CallToAction language="en" />
+          <Footer language="en" />
+        </section>
+      </div>
     </main>
   </html>
 
@@ -245,7 +247,13 @@ interface Props {}
       height: 100%;
       object-fit: cover;
       z-index: -1;
-      opacity: 0.5;
+      opacity: 0.3;
+    }
+
+    .phone-padding {
+      @media screen and (max-width: 768px) {
+        padding: 16px;
+      }
     }
   </style>
 
