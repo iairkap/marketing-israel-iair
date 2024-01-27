@@ -30,6 +30,9 @@ const { servicesTitle, description, svg } = Astro.props;
     gap: 2rem;
     border: 1px solid transparent; /* Añade un borde transparente */
     transition: border 0.2s ease-in-out; /* Añade una transición al borde */
+    @media screen and (max-width: 1145px) {
+      padding: 2rem;
+    }
   }
   .container:hover {
     border: 1px solid #3a1fff;
