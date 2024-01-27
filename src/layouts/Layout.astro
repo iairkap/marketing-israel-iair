@@ -1,10 +1,12 @@
 ---
+import Top from "../components/ui/Top.astro";
 import Header from "../components/widgets/Header.astro";
 interface Props {
   title: string;
+  language: string;
 }
 
-const { title } = Astro.props;
+const { title, language } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,7 +17,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-
+    <Top language={language} />
     <title>{title}</title>
   </head><div class="cursor"></div>
   <div class="cursor2"></div>
@@ -267,6 +269,4 @@ const { title } = Astro.props;
       }
     });
   </script>
-
-
 </html>

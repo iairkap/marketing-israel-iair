@@ -23,7 +23,7 @@
   gap: 1rem;
   flex-wrap: wrap;
   @media (max-width: 768px) {
-    width: 100vw;
+    width: 85vw;
     flex-wrap: nowrap;
     overflow-x: scroll;
     scrollbar-width: none !important;
