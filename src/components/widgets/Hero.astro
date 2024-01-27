@@ -22,12 +22,7 @@ const direction = language === "he" ? "rtl" : "ltr";
     <BackgroundGrid />
   </div> -->
 
-  <h1
-    class="title"
-    style={{
-      marginTop: "25vh",
-    }}
-  >
+  <h1 class="title">
     {title}
   </h1>
   <!--     <span>{description}</span>
@@ -126,12 +121,14 @@ const direction = language === "he" ? "rtl" : "ltr";
       font-weight: 900;
       line-height: normal;
       text-align: center;
+      margin-top: 25vh;
 
       @media screen and (max-width: 768px) {
         font-size: 2rem;
+        margin-top: 0;
       }
       @media screen and (min-width: 768px) and (max-width: 1024px) {
-        font-size: 2.5rem;
+        font-size: 1rem;
       }
     }
     span {
