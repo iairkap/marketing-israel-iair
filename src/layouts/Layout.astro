@@ -3,7 +3,7 @@ import Top from "../components/ui/Top.astro";
 import Header from "../components/widgets/Header.astro";
 interface Props {
   title: string;
-  language: string;
+  language?: string;
 }
 
 const { title, language } = Astro.props;
