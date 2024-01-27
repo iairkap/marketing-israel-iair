@@ -23,54 +23,55 @@ interface Props {}
     <main style={{ direction: "ltl" }}>
       <div style={{ width: "100%" }}>
         <Top language="he" />
-        <video autoplay loop muted class="background-video">
+        <video autoplay loop muted playsinline class="background-video">
           <source
             src="https://res.cloudinary.com/dna02aqp4/video/upload/v1706305775/bn6nyx22lhwz8fjjchr1.mp4"
             type="video/mp4"
           />
         </video>
       </div>
+      <div class="phone-padding">
+        <section class="first-section">
+          <Hero
+            title={"סטודיו לעיצוב אתרים ושיווק בישראל"}
+            description={"צריך נוכחות אונליין יפה ומתקדמת? הגבר את המותג שלך עם עיצוב מתקדם ושיווק אסטרטגי. בואו נגדיר מחדש את ההצלחה יחד"}
+            button1="בקש הצעת מחיר"
+            button2="קבע שיחה"
+            language="he"
+          />
+        </section>
 
-      <section class="first-section">
-        <Hero
-          title={"סטודיו לעיצוב אתרים ושיווק בישראל"}
-          description={"צריך נוכחות אונליין יפה ומתקדמת? הגבר את המותג שלך עם עיצוב מתקדם ושיווק אסטרטגי. בואו נגדיר מחדש את ההצלחה יחד"}
-          button1="בקש הצעת מחיר"
-          button2="קבע שיחה"
-          language="he"
-        />
-      </section>
+        <section id="services" style={{ minHeight: "100vh" }}>
+          <Services
+            title="יצירת פתרונות אינטרנט המהפכים מבקרים ללקוחות"
+            language="he"
+          />
+        </section>
+        <section id="works">
+          <PortfolioSection
+            title="פרויקטי עיצוב האתר האחרונים שלנו"
+            language="he"
+          />
+        </section>
+        <section>
+          <WhatOurClientSays title="מה לקוחותינו אומרים עלינו" language="he" />
+        </section>
 
-      <section id="services" style={{ minHeight: "100vh" }}>
-        <Services
-          title="יצירת פתרונות אינטרנט המהפכים מבקרים ללקוחות"
-          language="he"
-        />
-      </section>
-      <section id="works">
-        <PortfolioSection
-          title="פרויקטי עיצוב האתר האחרונים שלנו"
-          language="he"
-        />
-      </section>
-      <section>
-        <WhatOurClientSays title="מה לקוחותינו אומרים עלינו" language="he" />
-      </section>
-
-      <section id="FAQ">
-        <FAQ faqs={faqsHe} language="he" />
-      </section>
-      <section
-        style={{
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <CallToAction language="he" />
-        <Footer language="he" />
-      </section>
+        <section id="FAQ">
+          <FAQ faqs={faqsHe} language="he" />
+        </section>
+        <section
+          style={{
+            height: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <CallToAction language="he" />
+          <Footer language="he" />
+        </section>
+      </div>
     </main>
   </html>
 
@@ -250,6 +251,11 @@ interface Props {}
       object-fit: cover;
       z-index: -1;
       opacity: 0.5;
+    }
+    .phone-padding {
+      @media screen and (max-width: 768px) {
+        padding: 16px;
+      }
     }
   </style>
 
