@@ -17,21 +17,25 @@ const t = language === "he" ? he.buttonNav : en.buttonNav
 
 <div class="hamburger">
 
-  <a class="main-nav-toggle" href="#main-nav"><i>
+  <a class="main-nav-toggle" href="#main-nav" @click="open = !open"><i>
     <div style={language === 'he' ? { marginRight: "-3.5rem", marginTop: "2rem" } : { marginLeft: "-3.5rem", marginTop: "2rem" }}>
       <svg xmlns="http://www.w3.org/2000/svg" width="31" height="21" viewBox="0 0 21 21" fill="none">
         <path d="M0.875 20.25V17H30.125V20.25H0.875ZM0.875 12.125V8.875H30.125V12.125H0.875ZM0.875 4V0.75H30.125V4H0.875Z" fill="white"/>
-      </svg>
+      </svg> 
+      
     </div>
   </i></a>
-  <div id="dropdown-menu" style={{display: "none",  width:"100%"}}>
+  <div x-data="{ open: false }">
+  
+  <div id="dropdown-menu" style={{display: "none",  width:"100%"}} x-show="open" @click.away="open = false" x-cloak>
+    <span id="close-menu" class="close">x</span>    
     <div
       style={{
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        heigh: "100vh",
+        heigh: "190vh",
         height: "100vh"
       }}
     >
@@ -50,6 +54,7 @@ const t = language === "he" ? he.buttonNav : en.buttonNav
       {
         language === "he" ? <a href="he/contact" class="nav-link">{t.contact}</a> : <a href="/contact" class="nav-link">{t.contact}</a>
       }
+
       </div>
       <br><br><br><br>
       <div style={{display:"flex", gap:"1rem"}}>
@@ -68,7 +73,16 @@ const t = language === "he" ? he.buttonNav : en.buttonNav
 </div>
 <style>
 
+.close{
+position: absolute;
+top:0;
+right:0;
+margin-right: 4rem;
+margin-top:2rem;
+font-size: 2rem;
+font-weight: 900;
 
+}
 .button-container {
     display: inline-block;
     background: linear-gradient(
@@ -87,12 +101,12 @@ const t = language === "he" ? he.buttonNav : en.buttonNav
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    min-width: 110%;
     z-index: 1;
+    top: 0;
     left: 0;
     z-index: 2;
-    margin-top: 2rem;
-    height: 100vh;
+    height: 120vh;
     justify-content: center;
   }
   @keyframes sweep {
@@ -155,23 +169,23 @@ const t = language === "he" ? he.buttonNav : en.buttonNav
 </style>
 <script>
    
+   document.querySelector(".main-nav-toggle")?.addEventListener("click", (e: Event) => {
+  e.preventDefault();
+  const dropdownMenu = document.getElementById("dropdown-menu") as HTMLElement;
+  const mainNavToggle = document.querySelector(".main-nav-toggle") as HTMLElement;
+  const body = document.body as HTMLElement;
 
-    document.querySelector(".main-nav-toggle")?.addEventListener("click", (e: Event) => {
-      e.preventDefault();
-      const dropdownMenu = document.getElementById("dropdown-menu") as HTMLElement;
-      const mainNavToggle = document.querySelector(".main-nav-toggle") as HTMLElement;
-      const body = document.body as HTMLElement;
-  
-      if (mainNavToggle?.classList.contains("active-menu")) {
-        mainNavToggle.classList.remove("active-menu");
-        dropdownMenu.style.display = "none";
-        body.style.overflow = "visible"; // permitir el desplazamiento cuando el menú está cerrado
-      } else {
-        mainNavToggle?.classList.add("active-menu");
-        dropdownMenu.style.display = "block";
-        body.style.overflow = "hidden"; // evitar el desplazamiento cuando el menú está abierto
-      }
-    });  
+  if (mainNavToggle?.classList.contains("active-menu")) {
+    mainNavToggle.classList.remove("active-menu");
+    dropdownMenu.style.display = "none";
+    body.style.overflow = body.dataset.previousOverflow || ""; // restaurar el overflow original
+  } else {
+    body.dataset.previousOverflow = body.style.overflow; // guardar el overflow original
+    mainNavToggle?.classList.add("active-menu");
+    dropdownMenu.style.display = "block";
+    body.style.overflow = "hidden"; // evitar el desplazamiento cuando el menú está abierto
+  }
+});
 
     const navLinks = document.querySelectorAll(".nav-link");
 navLinks.forEach((link) => {
@@ -202,5 +216,17 @@ navLinks.forEach((link) => {
     }
   });
 });
+window.onload = function() {
+  const closeMenuButton = document.getElementById('close-menu');
+  const dropdownMenu = document.getElementById('dropdown-menu');
+
+  if (!closeMenuButton || !dropdownMenu) {
+    return;
+  }
+
+  closeMenuButton.addEventListener('click', function() {
+    dropdownMenu.style.display = 'none';
+  });
+};
 
   </script>

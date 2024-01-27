@@ -16,7 +16,7 @@ const href = language === "he" ? "/he" : "/";
   <div class="desktop">
     <Header language={language} />
   </div>
-  <div class="mobile" dir={language === "he" ? "rtl" : "ltr"}>
+  <div class="mobile" class="mobile" dir={language === "he" ? "rtl" : "ltr"}>
     <a href={href}>
       <div
         style={language == "he"
@@ -50,7 +50,7 @@ const href = language === "he" ? "/he" : "/";
     @media screen and (max-width: 768px) {
       display: flex !important;
       position: absolute;
-      width: 100%;
+      width: 100vw;
       justify-content: space-between;
       align-items: center;
       z-index: 12000;

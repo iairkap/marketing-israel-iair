@@ -12,11 +12,9 @@ interface Props {}
 
 <Layout title="Contact">
   <main>
-    <div class="cry">
+    <section class="cry">
       <Top language="en" />
-    </div>
-    <div class="background-gradient"></div>
-
+    </section>
     <div class="container">
       <section class="left">
         <div>
@@ -44,93 +42,76 @@ interface Props {}
       </section>
     </div>
   </main>
-
-  <style>
-    main {
-      width: calc(100vw - 15vw);
-      margin: 0vw 7.5vw;
-      height: calc(100vh - 2rem);
-
-      @media (max-width: 768px) {
-        width: 100vw;
-        margin: 0;
-      }
-    }
-
-    .cry {
-      margin: 0vw -7.5vw;
-      @media (max-width: 768px) {
-        margin: 0;
-      }
-    }
-
-    .right {
-      @media (max-width: 768px) {
-        margin-top: 5rem !important;
-      }
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: 0.5fr 1fr;
-      grid-template-areas: "left right";
-      padding-left: 7.5vw;
-      padding-right: 5vw;
-      margin-top: 5rem;
-
-      @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-        grid-template-areas: "right" "left";
-        padding-left: 0;
-        padding-right: 0;
-        gap: 2rem;
-        margin-top: 4rem;
-      }
-    }
-
-    .left {
-      grid-area: left;
-    }
-
-    .right {
-      grid-area: right;
-    }
-    .header {
-      padding: 0 15vw;
-
-      @media (max-width: 768px) {
-        padding: 0;
-      }
-    }
-    .left,
-    .right {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .background-gradient {
-      left: 0;
-      width: 100vw;
-      position: absolute;
-      margin-top: -350px;
-      opacity: 40%;
-      height: 100%;
-      background: radial-gradient(
-        102.91% 64.71% at 75.38% 27.65%,
-        #391fffc9 0%,
-        #3820f1d8 3%,
-        #2e1cb9 18%,
-        #241988 33%,
-        #1c1660 47%,
-        #161441 61%,
-        #12132b 75%,
-        #0f121e 88%,
-        #0f121a 100%
-      );
-      z-index: -1;
-      @media screen and (max-width: 768px) {
-        display: none;
-      }
-    }
-  </style>
 </Layout>
+
+<style>
+  main {
+    width: 100vw;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+
+    @media (max-width: 768px) {
+      padding: 0 0 !important;
+      width: 100vw;
+    }
+  }
+
+  .cry {
+    margin-top: 5rem;
+    @media screen and (max-width: 768px) {
+      display: flex;
+      width: 190vw;
+      margin-left: 2rem;
+    }
+  }
+  .right {
+    @media (max-width: 768px) {
+      margin-top: 5rem !important;
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-areas: "left right";
+    padding-left: 15vw;
+    padding-right: 5vw;
+    margin-top: 5rem;
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-areas: "right" "left";
+      padding-right: 0;
+      gap: 2rem;
+      margin-top: -3rem;
+    }
+  }
+
+  .left {
+    grid-area: left;
+  }
+
+  .right {
+    grid-area: right;
+  }
+  .header {
+    padding: 0 15vw;
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+  .left,
+  .right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  body {
+    margin-top: -4rem;
+  }
+</style>
