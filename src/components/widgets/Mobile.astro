@@ -25,11 +25,11 @@ const t = language === "he" ? he.buttonNav : en.buttonNav
       
     </div>
   </i></a>
-  <div x-data="{ open: false }">
+  <div >
   
   <div id="dropdown-menu" style={{display: "none",  width:"100%"}} x-show="open" @click.away="open = false" x-cloak>
-    <span id="close-menu" class="close">x</span>    
-    <div
+<!--     <span id="close-menu" class="close" x-data="{ open: false }" @click="open = !open">x</span>    
+ -->    <div
       style={{
         display: "flex",
         flexDirection: "column",
@@ -77,10 +77,11 @@ const t = language === "he" ? he.buttonNav : en.buttonNav
 position: absolute;
 top:0;
 right:0;
-margin-right: 4rem;
-margin-top:2rem;
+margin-right: 2.5rem;
+margin-top:3rem;
 font-size: 2rem;
 font-weight: 900;
+color: white;
 
 }
 .button-container {
@@ -108,6 +109,7 @@ font-weight: 900;
     z-index: 2;
     height: 120vh;
     justify-content: center;
+    margin-top: 5rem;
   }
   @keyframes sweep {
     0% {
@@ -167,28 +169,30 @@ font-weight: 900;
 
   
 </style>
-<script>
-   
-   document.querySelector(".main-nav-toggle")?.addEventListener("click", (e: Event) => {
+<script>document.querySelector(".main-nav-toggle")?.addEventListener("click", (e: Event) => {
   e.preventDefault();
-  const dropdownMenu = document.getElementById("dropdown-menu") as HTMLElement;
-  const mainNavToggle = document.querySelector(".main-nav-toggle") as HTMLElement;
-  const body = document.body as HTMLElement;
+  const dropdownMenu = document.getElementById("dropdown-menu");
+  const mainNavToggle = document.querySelector(".main-nav-toggle");
+  const body = document.body;
 
   if (mainNavToggle?.classList.contains("active-menu")) {
     mainNavToggle.classList.remove("active-menu");
-    dropdownMenu.style.display = "none";
+    if (dropdownMenu) {
+      dropdownMenu.style.display = "none";
+    }
     body.style.overflow = body.dataset.previousOverflow || ""; // restaurar el overflow original
   } else {
     body.dataset.previousOverflow = body.style.overflow; // guardar el overflow original
     mainNavToggle?.classList.add("active-menu");
-    dropdownMenu.style.display = "block";
+    if (dropdownMenu) {
+      dropdownMenu.style.display = "block";
+    }
     body.style.overflow = "hidden"; // evitar el desplazamiento cuando el menú está abierto
   }
 });
 
-    const navLinks = document.querySelectorAll(".nav-link");
-navLinks.forEach((link) => {
+const navLinks = document.querySelectorAll(".nav-link");
+navLinks.forEach((link: Element) => {
   link.addEventListener("click", function (this: Element, e:Event) {
     const href = this.getAttribute("href");
 
@@ -216,6 +220,7 @@ navLinks.forEach((link) => {
     }
   });
 });
+
 window.onload = function() {
   const closeMenuButton = document.getElementById('close-menu');
   const dropdownMenu = document.getElementById('dropdown-menu');
